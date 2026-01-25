@@ -4,6 +4,7 @@
     --accent: #c5a059;
     --green: #2d5a27;
     --text: #ffffff;
+    --gray: #b3b3b3;
 }
 
 body {
@@ -12,87 +13,190 @@ body {
     background-color: var(--bg);
     color: var(--text);
     line-height: 1.6;
+    font-size: 16px;
 }
 
-/* --- NAVIGATION FIX --- */
+/* =========================================
+   1. NAVIGATION (Mobile Layout)
+   ========================================= */
 nav {
     display: flex;
-    flex-direction: column; /* Stacks logo over links on mobile */
-    padding: 1.5rem 5%;
-    align-items: center;
-    gap: 1rem;
+    flex-direction: column; /* Stack Logo on top, Links below */
+    align-items: center;    /* Center everything */
+    padding: 1rem 5%;
     background: var(--bg);
+    border-bottom: 1px solid #333; /* Visual divider */
 }
 
-ul { 
-    display: flex; 
-    flex-wrap: wrap; /* Allows links to wrap to a second line if needed */
+.logo {
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--accent);
+    font-size: 1.4rem;
+    margin-bottom: 1rem; /* Space between logo and links */
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping if screen is TINY */
     justify-content: center;
-    list-style: none; 
-    gap: 10px; 
+    align-items: center;
+    list-style: none;
     padding: 0;
+    gap: 1.5rem; /* Space between nav items */
+    margin: 0;
 }
 
 nav a {
-    color: var(--text);
+    color: var(--gray); /* Softer white for unselected links */
     text-decoration: none;
-    font-size: 0.85rem;
-    white-space: nowrap; /* Prevents words like "Join Waitlist" from breaking */
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent; /* Invisible border for hover effect */
+    transition: all 0.3s ease;
 }
 
-.logo { font-weight: 700; letter-spacing: 2px; color: var(--accent); }
+nav a:hover {
+    color: var(--text);
+    border-bottom: 2px solid var(--accent); /* clearly clickable on hover */
+}
 
 .cta-btn {
     background: var(--accent);
-    color: #000 !important;
-    padding: 0.5rem 0.8rem;
+    color: #000 !important; /* Force black text */
+    padding: 0.6rem 1.2rem;
     border-radius: 4px;
     font-weight: 700;
+    white-space: nowrap; /* PREVENTS "Waitlist" from dropping to next line */
+    border: none;
 }
 
-/* --- HERO & FEATURES --- */
+/* =========================================
+   2. HERO SECTION
+   ========================================= */
 .hero {
-    padding: 4rem 1.5rem;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&q=80');
     background-size: cover;
+    background-position: center;
+    padding: 4rem 1.5rem;
 }
 
-.hero h1 { font-size: 2rem; }
+.hero-content {
+    max-width: 800px;
+}
 
-.features {
+.hero h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-btns {
     display: flex;
-    flex-direction: column; /* Stacks cards vertically */
-    gap: 1.5rem;
-    padding: 3rem 5%;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.primary-btn, .secondary-btn {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.primary-btn { background-color: var(--green); color: white; border: none; }
+.secondary-btn { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
+
+/* =========================================
+   3. SECTIONS (General)
+   ========================================= */
+.features, .comparison {
+    padding: 4rem 5%;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
 .feature-card, .comparison-card {
     background: var(--card);
-    padding: 1.5rem;
+    padding: 2rem;
     border-top: 3px solid var(--accent);
+    margin-bottom: 1.5rem; /* Spacing for mobile stack */
 }
 
-/* --- TABLE/COMPARISON FIX --- */
+/* =========================================
+   4. COMPARISON TABLE (Mobile Default)
+   ========================================= */
 .comparison-grid {
     display: flex;
-    flex-direction: column; /* Vertical stack - NO SIDE SCROLLING */
-    gap: 1.5rem;
+    flex-direction: column; /* Stacked vertically on mobile */
+    gap: 2rem;
 }
 
-/* --- DESKTOP VIEW (Screens wider than 768px) --- */
+.comparison-card h3 {
+    margin-top: 0;
+    color: var(--accent);
+}
+
+.comparison-list {
+    list-style: none;
+    padding: 0;
+}
+
+.comparison-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #333;
+}
+
+/* =========================================
+   5. DESKTOP OVERRIDES (Screens > 768px)
+   ========================================= */
 @media (min-width: 768px) {
+    /* Restore Horizontal Nav */
     nav {
         flex-direction: row;
         justify-content: space-between;
+        padding: 1.5rem 5%;
     }
 
+    .logo { margin-bottom: 0; }
+
+    /* Restore Huge Hero Text */
     .hero h1 { font-size: 3.5rem; }
 
-    .features, .comparison-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr; /* Side-by-side only on big screens */
+    /* Restore Side-by-Side Buttons */
+    .hero-btns {
+        flex-direction: row;
+        justify-content: center;
     }
+    .primary-btn, .secondary-btn { width: auto; padding: 1rem 2.5rem; }
 
-    .section-header { grid-column: 1 / -1; }
+    /* Restore 3-Column Features */
+    .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    .feature-card { margin-bottom: 0; }
+
+    /* Restore Side-by-Side Comparison */
+    .comparison-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two equal columns */
+        gap: 3rem;
+        max-width: 1000px; /* Prevents it from getting too wide on huge monitors */
+        margin: 0 auto; /* Centers the grid */
+    }
 }
