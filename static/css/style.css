@@ -17,15 +17,15 @@ body {
 }
 
 /* =========================================
-   1. NAVIGATION (Mobile Layout)
+   1. NAVIGATION
    ========================================= */
 nav {
     display: flex;
-    flex-direction: column; /* Stack Logo on top, Links below */
-    align-items: center;    /* Center everything */
+    flex-direction: column;
+    align-items: center;
     padding: 1rem 5%;
     background: var(--bg);
-    border-bottom: 1px solid #333; /* Visual divider */
+    border-bottom: 1px solid #333;
 }
 
 .logo {
@@ -33,42 +33,41 @@ nav {
     letter-spacing: 2px;
     color: var(--accent);
     font-size: 1.4rem;
-    margin-bottom: 1rem; /* Space between logo and links */
+    margin-bottom: 1rem;
 }
 
 ul {
     display: flex;
-    flex-wrap: wrap; /* Allow wrapping if screen is TINY */
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     list-style: none;
     padding: 0;
-    gap: 1.5rem; /* Space between nav items */
+    gap: 1.5rem;
     margin: 0;
 }
 
 nav a {
-    color: var(--gray); /* Softer white for unselected links */
+    color: var(--gray);
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
     padding-bottom: 2px;
-    border-bottom: 2px solid transparent; /* Invisible border for hover effect */
+    border-bottom: 2px solid transparent;
     transition: all 0.3s ease;
 }
 
 nav a:hover {
     color: var(--text);
-    border-bottom: 2px solid var(--accent); /* clearly clickable on hover */
+    border-bottom: 2px solid var(--accent);
 }
 
 .cta-btn {
     background: var(--accent);
-    color: #000 !important; /* Force black text */
+    color: #000 !important;
     padding: 0.6rem 1.2rem;
     border-radius: 4px;
     font-weight: 700;
-    white-space: nowrap; /* PREVENTS "Waitlist" from dropping to next line */
+    white-space: nowrap;
     border: none;
 }
 
@@ -85,10 +84,6 @@ nav a:hover {
     background-size: cover;
     background-position: center;
     padding: 4rem 1.5rem;
-}
-
-.hero-content {
-    max-width: 800px;
 }
 
 .hero h1 {
@@ -118,7 +113,7 @@ nav a:hover {
 .secondary-btn { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
 
 /* =========================================
-   3. SECTIONS (General)
+   3. SECTIONS & CARDS (Mobile Default)
    ========================================= */
 .features, .comparison {
     padding: 4rem 5%;
@@ -133,21 +128,24 @@ nav a:hover {
     background: var(--card);
     padding: 2rem;
     border-top: 3px solid var(--accent);
-    margin-bottom: 1.5rem; /* Spacing for mobile stack */
+    margin-bottom: 1.5rem;
 }
 
 /* =========================================
-   4. COMPARISON TABLE (Mobile Default)
+   4. COMPARISON LIST FIX
    ========================================= */
 .comparison-grid {
     display: flex;
-    flex-direction: column; /* Stacked vertically on mobile */
+    flex-direction: column;
     gap: 2rem;
 }
 
 .comparison-card h3 {
     margin-top: 0;
     color: var(--accent);
+    border-bottom: 1px solid #333; /* Adds a clean separator line */
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .comparison-list {
@@ -156,47 +154,68 @@ nav a:hover {
 }
 
 .comparison-list li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #333;
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem; /* FIX: Adds breathing room between items */
+    color: #e0e0e0;
+}
+
+.comparison-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
 }
 
 /* =========================================
    5. DESKTOP OVERRIDES (Screens > 768px)
    ========================================= */
 @media (min-width: 768px) {
-    /* Restore Horizontal Nav */
+    /* Horizontal Nav */
     nav {
         flex-direction: row;
         justify-content: space-between;
         padding: 1.5rem 5%;
     }
-
     .logo { margin-bottom: 0; }
 
-    /* Restore Huge Hero Text */
+    /* Big Hero Text */
     .hero h1 { font-size: 3.5rem; }
-
-    /* Restore Side-by-Side Buttons */
-    .hero-btns {
-        flex-direction: row;
-        justify-content: center;
-    }
+    .hero-btns { flex-direction: row; justify-content: center; }
     .primary-btn, .secondary-btn { width: auto; padding: 1rem 2.5rem; }
 
-    /* Restore 3-Column Features */
+    /* --- THE CONCEPT SECTION FIX --- */
+    /* Using Flexbox instead of Grid prevents the "2 blocks then 1" issue.
+       It forces items to wrap nicely or stay centered. */
     .features {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 2rem;
     }
-    .feature-card { margin-bottom: 0; }
 
-    /* Restore Side-by-Side Comparison */
+    /* Force the header to take full width so it sits on top */
+    .section-header { width: 100%; }
+
+    /* The 3 Concept Cards */
+    .feature-card {
+        flex: 1 1 300px; /* Grow to fill space, but ideally ~300px wide */
+        max-width: 400px; /* Prevents them from getting ridiculously wide */
+        margin-bottom: 0;
+    }
+
+    /* --- COMPARISON TABLE FIX --- */
     .comparison-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Two equal columns */
+        grid-template-columns: 1fr 1fr; /* Strict 50/50 split */
         gap: 3rem;
-        max-width: 1000px; /* Prevents it from getting too wide on huge monitors */
-        margin: 0 auto; /* Centers the grid */
+        max-width: 1000px;
+        margin: 0 auto;
     }
+
+    /* --- CURRENT STATUS FIX --- */
+    /* Because we switched .features to Flexbox + Centered above,
+       the single "Current Status" card will now automatically center
+       itself at the bottom, looking much more professional. */
 }
