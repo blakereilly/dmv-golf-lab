@@ -7,6 +7,39 @@
     --gray: #b3b3b3;
 }
 
+/* New Announcement Banner */
+.announcement-banner {
+    background-color: #1a1a1a;
+    color: var(--gray);
+    text-align: center;
+    padding: 10px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #333;
+    letter-spacing: 0.5px;
+}
+
+.announcement-banner span {
+    color: var(--accent);
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+/* Enhancing the Hero Text */
+.hero-content p {
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+    font-size: 1.1rem;
+    color: #e0e0e0;
+}
+
+/* Stronger Feature Headings */
+.feature-card h3 {
+    color: var(--accent);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
