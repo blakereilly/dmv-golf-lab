@@ -222,6 +222,11 @@ footer a {
     font-weight: 700;
 }
 
+footer a:hover {
+    color: #00ff00; /* Or whatever your brand accent color is */
+    text-decoration: underline;
+}
+
 /* =========================================
    5. DESKTOP OVERRIDES (Screens > 768px)
    ========================================= */
