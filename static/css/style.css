@@ -435,27 +435,21 @@ section#comparison h2 {
    ========================================= */
 footer {
     text-align: center;
-    padding: 3.5rem 1.5rem;
-    background: #050505;
-    border-top: 1px solid var(--border);
+    padding: 3rem 1.5rem;
+    background: #0a0a0a;
+    border-top: 1px solid #333;
     color: var(--gray);
-    font-size: 0.95rem;
-}
-
-footer p {
-    margin: 0.5rem 0;
-    line-height: 1.8;
+    font-size: 0.9rem;
 }
 
 footer a {
     color: var(--accent);
     text-decoration: none;
     font-weight: 700;
-    transition: all 0.3s ease;
 }
 
 footer a:hover {
-    color: var(--accent-dark);
+    color: #00ff00;
     text-decoration: underline;
 }
 
