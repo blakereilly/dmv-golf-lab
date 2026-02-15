@@ -1,52 +1,67 @@
 :root {
-    --bg: #121212;
-    --card: #1e1e1e;
-    --accent: #c5a059;
+    --bg: #0a0a0a;
+    --bg-secondary: #121212;
+    --card: #1a1a1a;
+    --card-hover: #222222;
+    --accent: #d4af37;
+    --accent-dark: #b8963d;
     --green: #2d5a27;
+    --green-hover: #3a7233;
     --text: #ffffff;
-    --gray: #b3b3b3;
+    --text-secondary: #e5e5e5;
+    --gray: #a0a0a0;
+    --gray-light: #cccccc;
+    --border: rgba(212, 175, 55, 0.15);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
-/* New Announcement Banner */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================
+   ANNOUNCEMENT BANNER
+   ========================================= */
 .announcement-banner {
-    background-color: #1a1a1a;
-    color: var(--gray);
+    background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+    color: var(--gray-light);
     text-align: center;
-    padding: 10px;
-    font-size: 0.85rem;
-    border-bottom: 1px solid #333;
+    padding: 12px 20px;
+    font-size: 0.875rem;
+    border-bottom: 1px solid var(--border);
     letter-spacing: 0.5px;
+    font-weight: 500;
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .announcement-banner span {
     color: var(--accent);
     font-weight: 700;
     margin-left: 10px;
-}
-
-/* Enhancing the Hero Text */
-.hero-content p {
-    max-width: 600px;
-    margin: 0 auto 2rem auto;
-    font-size: 1.1rem;
-    color: #e0e0e0;
-}
-
-/* Stronger Feature Headings */
-.feature-card h3 {
-    color: var(--accent);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
-    font-size: 16px;
 }
 
 /* =========================================
@@ -56,17 +71,34 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem 5%;
-    background: var(--bg);
-    border-bottom: 1px solid #333;
+    padding: 1.5rem 5%;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .logo {
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-weight: 800;
+    letter-spacing: 3px;
     color: var(--accent);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
+    text-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    text-shadow: 0 4px 16px rgba(212, 175, 55, 0.5);
+    letter-spacing: 3.5px;
 }
 
 ul {
@@ -75,7 +107,7 @@ ul {
     justify-content: center;
     list-style: none;
     padding: 0;
-    gap: 1.5rem;
+    gap: 2rem;
     margin: 0;
 }
 
@@ -84,9 +116,10 @@ nav a {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
-    padding-bottom: 2px;
+    padding-bottom: 3px;
     border-bottom: 2px solid transparent;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
 nav a:hover {
@@ -95,34 +128,81 @@ nav a:hover {
 }
 
 .cta-btn {
-    background: var(--accent);
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
     color: #000 !important;
-    padding: 0.6rem 1.2rem;
-    border-radius: 4px;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
     font-weight: 700;
     white-space: nowrap;
     border: none;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
 }
 
 /* =========================================
    2. HERO SECTION
    ========================================= */
 .hero {
-    min-height: 70vh;
+    min-height: 75vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&q=80');
+    background: linear-gradient(rgba(0,0,0,0.75), rgba(10,10,10,0.9)), url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&q=80');
     background-size: cover;
     background-position: center;
-    padding: 4rem 1.5rem;
+    background-attachment: fixed;
+    padding: 5rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     line-height: 1.2;
     margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content p {
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-weight: 400;
 }
 
 .hero-btns {
@@ -134,58 +214,155 @@ nav a:hover {
 
 .primary-btn, .secondary-btn {
     width: 100%;
-    padding: 1rem;
-    border-radius: 4px;
-    font-weight: bold;
+    padding: 1.1rem 2rem;
+    border-radius: 8px;
+    font-weight: 700;
     cursor: pointer;
     font-size: 1rem;
     text-align: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.5px;
 }
 
-.primary-btn { background-color: var(--green); color: white; border: none; }
-.secondary-btn { background: transparent; color: var(--accent); border: 2px solid var(--accent); }
+.primary-btn {
+    background: linear-gradient(135deg, var(--green) 0%, var(--green-hover) 100%);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 16px rgba(45, 90, 39, 0.4);
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(45, 90, 39, 0.5);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+}
+
+.secondary-btn:hover {
+    background: rgba(212, 175, 55, 0.1);
+    transform: translateY(-2px);
+}
 
 /* =========================================
-   3. SECTIONS & CARDS (Mobile Default)
+   3. SECTIONS & CARDS
    ========================================= */
 .features, .comparison {
-    padding: 4rem 5%;
+    padding: 5rem 5%;
+    background: var(--bg-secondary);
+}
+
+.features:nth-of-type(even), .comparison:nth-of-type(even) {
+    background: var(--bg);
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+    animation: fadeIn 1s ease-out;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+    color: var(--text);
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--gray-light);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
 }
 
 .feature-card, .comparison-card {
     background: var(--card);
-    padding: 2rem;
-    border-top: 3px solid var(--accent);
+    padding: 2.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
     margin-bottom: 1.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before, .comparison-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dark) 100%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.feature-card:hover::before, .comparison-card:hover::before {
+    transform: scaleX(1);
+}
+
+.feature-card:hover, .comparison-card:hover {
+    background: var(--card-hover);
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.feature-card h3 {
+    color: var(--accent);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+
+.feature-card p, .comparison-card p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
 }
 
 /* =========================================
-   4. COMPARISON LIST FIX
+   4. COMPARISON SECTION
    ========================================= */
 .comparison-grid {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
+
 section#comparison h2 {
-    display: block;      /* Ensures it takes up the full width */
-    text-align: center;  /* Centers the text inside that width */
+    display: block;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    margin-bottom: 2rem; /* Adds space before the grid starts */
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
+
 .comparison-card h3 {
     margin-top: 0;
     color: var(--accent);
-    border-bottom: 1px solid #333; /* Adds a clean separator line */
+    border-bottom: 2px solid var(--border);
     padding-bottom: 1rem;
     margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    font-weight: 700;
 }
 
 .comparison-list {
@@ -195,9 +372,16 @@ section#comparison h2 {
 
 .comparison-list li {
     position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 1rem; /* FIX: Adds breathing room between items */
-    color: #e0e0e0;
+    padding-left: 2rem;
+    margin-bottom: 1.2rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    transition: all 0.3s ease;
+}
+
+.comparison-list li:hover {
+    color: var(--text);
+    transform: translateX(4px);
 }
 
 .comparison-list li::before {
@@ -206,47 +390,110 @@ section#comparison h2 {
     left: 0;
     color: var(--accent);
     font-weight: bold;
+    font-size: 1.5rem;
+    line-height: 1.3;
 }
+
+/* =========================================
+   5. SOCIAL PROOF SECTION
+   ========================================= */
+.social-proof {
+    padding: 5rem 5%;
+    background: var(--bg);
+}
+
+.social-proof .feature-card {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    padding-top: 2.5rem;
+}
+
+.social-proof h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.social-proof a {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.social-proof a:hover {
+    color: var(--accent-dark);
+    transform: scale(1.05);
+}
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
 footer {
     text-align: center;
-    padding: 3rem 1.5rem;
-    background: #0a0a0a;
-    border-top: 1px solid #333;
+    padding: 3.5rem 1.5rem;
+    background: #050505;
+    border-top: 1px solid var(--border);
     color: var(--gray);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    line-height: 1.8;
 }
 
 footer a {
     color: var(--accent);
     text-decoration: none;
     font-weight: 700;
+    transition: all 0.3s ease;
 }
 
 footer a:hover {
-    color: #00ff00; /* Or whatever your brand accent color is */
+    color: var(--accent-dark);
     text-decoration: underline;
 }
 
 /* =========================================
-   5. DESKTOP OVERRIDES (Screens > 768px)
+   7. DESKTOP OVERRIDES (Screens > 768px)
    ========================================= */
 @media (min-width: 768px) {
-    /* Horizontal Nav */
     nav {
         flex-direction: row;
         justify-content: space-between;
         padding: 1.5rem 5%;
     }
-    .logo { margin-bottom: 0; }
+    
+    .logo {
+        margin-bottom: 0;
+        font-size: 1.6rem;
+    }
 
-    /* Big Hero Text */
-    .hero h1 { font-size: 3.5rem; }
-    .hero-btns { flex-direction: row; justify-content: center; }
-    .primary-btn, .secondary-btn { width: auto; padding: 1rem 2.5rem; }
+    .hero h1 {
+        font-size: 4rem;
+        letter-spacing: -1px;
+    }
+    
+    .hero-content p {
+        font-size: 1.25rem;
+    }
+    
+    .hero-btns {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    
+    .primary-btn, .secondary-btn {
+        width: auto;
+        padding: 1.2rem 3rem;
+    }
 
-    /* --- THE CONCEPT SECTION FIX --- */
-    /* Using Flexbox instead of Grid prevents the "2 blocks then 1" issue.
-       It forces items to wrap nicely or stay centered. */
     .features {
         display: flex;
         flex-wrap: wrap;
@@ -254,27 +501,39 @@ footer a:hover {
         gap: 2rem;
     }
 
-    /* Force the header to take full width so it sits on top */
-    .section-header { width: 100%; }
+    .section-header {
+        width: 100%;
+    }
 
-    /* The 3 Concept Cards */
     .feature-card {
-        flex: 1 1 300px; /* Grow to fill space, but ideally ~300px wide */
-        max-width: 400px; /* Prevents them from getting ridiculously wide */
+        flex: 1 1 320px;
+        max-width: 420px;
         margin-bottom: 0;
     }
 
-    /* --- COMPARISON TABLE FIX --- */
     .comparison-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Strict 50/50 split */
+        grid-template-columns: 1fr 1fr;
         gap: 3rem;
-        max-width: 1000px;
+        max-width: 1100px;
         margin: 0 auto;
     }
 
-    /* --- CURRENT STATUS FIX --- */
-    /* Because we switched .features to Flexbox + Centered above,
-       the single "Current Status" card will now automatically center
-       itself at the bottom, looking much more professional. */
+    .section-header h2, section#comparison h2 {
+        font-size: 3rem;
+    }
+}
+
+/* =========================================
+   8. ANIMATIONS & EFFECTS
+   ========================================= */
+@media (prefers-reduced-motion: no-preference) {
+    .feature-card, .comparison-card {
+        animation: fadeInUp 0.8s ease-out backwards;
+    }
+    
+    .feature-card:nth-child(1) { animation-delay: 0.1s; }
+    .feature-card:nth-child(2) { animation-delay: 0.2s; }
+    .feature-card:nth-child(3) { animation-delay: 0.3s; }
+    .feature-card:nth-child(4) { animation-delay: 0.4s; }
 }
