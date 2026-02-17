@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capital Golf Labs | Private Golf Simulator Studio (DMV)</title>
     <link rel="stylesheet" href="static/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -17,6 +17,7 @@
     <div class="logo">CAPITAL GOLF LABS</div>
     <ul>
         <li><a href="#tech">The Concept</a></li>
+        <li><a href="#trackman">Technology</a></li>
         <li><a href="#comparison">Who It's For</a></li>
         <li>
             <a href="https://forms.gle/fjFhxJwyRkByqQQn9" class="cta-btn">
@@ -28,11 +29,11 @@
 
 <header class="hero">
     <div class="hero-content">
-        <h1>Private, Data-Driven Golf Practice.</h1>
+        <div class="hero-eyebrow">DMV's Premier Private Simulator Studio</div>
+        <h1>Private, Data-Driven<br>Golf Practice.</h1>
         <p>
             A high-tech golf sanctuary in the DMV. 24/7 access. Zero distractions.
         </p>
-
         <div class="hero-btns">
             <button class="primary-btn"
                 onclick="window.location.href='https://forms.gle/fjFhxJwyRkByqQQn9'">
@@ -40,8 +41,12 @@
             </button>
         </div>
     </div>
+    <div class="hero-scroll-indicator">
+        <span></span>
+    </div>
 </header>
 
+<!-- ===================== CONCEPT SECTION ===================== -->
 <section id="tech" class="features">
     <div class="section-header">
         <h2>The Concept</h2>
@@ -51,13 +56,15 @@
     </div>
 
     <div class="feature-card">
+        <div class="feature-icon">⬡</div>
         <h3>Elite Tech Lab</h3>
         <p>
-            We have selected the <strong>Trackman iO</strong> launch monitor to power our studio, providing the most accurate overhead data and impact video available.
+            Powered by the <strong>Trackman iO</strong> — the most accurate overhead launch monitor available. Used by tour professionals worldwide to measure every variable of their game.
         </p>
     </div>
 
     <div class="feature-card">
+        <div class="feature-icon">⬡</div>
         <h3>24/7 Unstaffed Access</h3>
         <p>
             Total autonomy. Use your phone to unlock the lab, turn on the lights, and start your session on your schedule.
@@ -65,6 +72,7 @@
     </div>
 
     <div class="feature-card">
+        <div class="feature-icon">⬡</div>
         <h3>Focused Pricing</h3>
         <p>
             By skipping the bar, the lounge, and the extra staff, the membership stays affordable. You're paying for what matters: the technology and the space.
@@ -72,34 +80,97 @@
     </div>
 </section>
 
+<!-- ===================== TRACKMAN SECTION ===================== -->
+<section id="trackman" class="trackman-section">
+
+    <div class="trackman-hero-img">
+        <img src="static/img/trackman-press.jpg" alt="Trackman iO overhead camera detail" />
+        <div class="trackman-hero-overlay">
+            <div class="trackman-hero-label">Powered By</div>
+            <div class="trackman-hero-brand">TRACKMAN iO</div>
+        </div>
+    </div>
+
+    <div class="trackman-content">
+        <div class="trackman-stat-bar">
+            <div class="stat-item">
+                <span class="stat-number">90</span>
+                <span class="stat-label">of the Top 100 PGA Tour Players<br>Trust Trackman</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number">26+</span>
+                <span class="stat-label">Ball Flight &amp;<br>Club Data Parameters</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+                <span class="stat-number">#1</span>
+                <span class="stat-label">Overhead Launch Monitor<br>on the Market</span>
+            </div>
+        </div>
+
+        <div class="trackman-body">
+            <div class="trackman-text">
+                <h2>Tour-Level Technology.<br>Available to You.</h2>
+                <p>
+                    The Trackman iO is mounted overhead — out of your way — and captures every shot with radar-synchronized high-speed video. No floor pads, no interference, no guesswork.
+                </p>
+                <p>
+                    Every session generates a precise data record: ball speed, club speed, spin rate, launch angle, carry distance, and impact video. This is how tour players practice. Now it's yours.
+                </p>
+                <ul class="trackman-features-list">
+                    <li>Overhead radar + radar-synchronized impact camera</li>
+                    <li>Full swing, short game, and putting data</li>
+                    <li>Shot dispersion mapping across every club</li>
+                    <li>Session history saved to your Trackman profile</li>
+                </ul>
+            </div>
+
+            <div class="trackman-product-img">
+                <img src="static/img/Trackman_iO_Side.jpg" alt="Trackman iO unit render" />
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- ===================== COMPARISON SECTION ===================== -->
 <section id="comparison" class="comparison">
-    <h2>What Capital Golf Labs Is — and Isn't</h2>
+    <h2>What Capital Golf Labs Is &mdash; and Isn't</h2>
 
     <div class="comparison-grid">
         <div class="comparison-card is">
-            <h3>What We Are</h3>
+            <div class="comparison-card-header">
+                <span class="comparison-icon is-icon">✓</span>
+                <h3>What We Are</h3>
+            </div>
             <ul class="comparison-list">
-                <li>Professional-grade practice technology</li>
-                <li>Private, quiet, focused environment</li>
-                <li>24/7 Smartphone-based access</li>
-                <li>Built for golfers who want to improve</li>
+                <li><span class="check-icon">✓</span>Professional-grade practice technology</li>
+                <li><span class="check-icon">✓</span>Private, quiet, focused environment</li>
+                <li><span class="check-icon">✓</span>24/7 Smartphone-based access</li>
+                <li><span class="check-icon">✓</span>Built for golfers who want to improve</li>
             </ul>
         </div>
 
         <div class="comparison-card isnt">
-            <h3>What We Aren't</h3>
+            <div class="comparison-card-header">
+                <span class="comparison-icon isnt-icon">✗</span>
+                <h3>What We Aren't</h3>
+            </div>
             <ul class="comparison-list">
-                <li>A bar or social venue</li>
-                <li>A loud group simulator space</li>
-                <li>Entertainment-first</li>
-                <li>Upsell-driven or time-pressured</li>
+                <li><span class="x-icon">✗</span>A bar or social venue</li>
+                <li><span class="x-icon">✗</span>A loud group simulator space</li>
+                <li><span class="x-icon">✗</span>Entertainment-first</li>
+                <li><span class="x-icon">✗</span>Upsell-driven or time-pressured</li>
             </ul>
         </div>
     </div>
 </section>
 
-<section class="features">
-    <div class="feature-card">
+<!-- ===================== STATUS SECTION ===================== -->
+<section class="features status-section">
+    <div class="feature-card status-card">
+        <div class="status-dot"></div>
         <h3>Current Status</h3>
         <p>
             Capital Golf Labs is in the site selection phase.
@@ -109,21 +180,24 @@
     </div>
 </section>
 
+<!-- ===================== FOLLOW SECTION ===================== -->
 <section class="social-proof">
-    <div class="feature-card" style="text-align: center; border-top: 1px solid #333; padding-top: 40px;">
+    <div class="feature-card social-card">
         <h3>Follow the Build</h3>
         <p>See our latest updates and progress in real-time on Instagram.</p>
-        <a href="https://instagram.com/capitalgolflabs" target="_blank" style="color: #fff; text-decoration: none; font-weight: 700; font-size: 1.2rem;">
+        <a href="https://instagram.com/capitalgolflabs" target="_blank">
             @capitalgolflabs
         </a>
     </div>
 </section>
 
 <footer>
+    <div class="footer-logo">CAPITAL GOLF LABS</div>
     <p>&copy; 2026 Capital Golf Labs | DMV</p>
     <p>
-        Inquiries: <a href="mailto:blake@capitalgolflabs.com">blake@capitalgolflabs.com</a> 
-        | Instagram: <a href="https://instagram.com/capitalgolflabs" target="_blank">@capitalgolflabs</a>
+        Inquiries: <a href="mailto:blake@capitalgolflabs.com">blake@capitalgolflabs.com</a>
+        &nbsp;|&nbsp;
+        Instagram: <a href="https://instagram.com/capitalgolflabs" target="_blank">@capitalgolflabs</a>
     </p>
 </footer>
 
