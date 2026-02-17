@@ -166,11 +166,11 @@ nav a:hover {
     justify-content: center;
     text-align: center;
     background:
-        linear-gradient(to bottom, rgba(8,12,16,0.6) 0%, rgba(8,12,16,0.85) 70%, rgba(8,12,16,1) 100%),
-        url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&q=80');
+        linear-gradient(135deg, rgba(8,12,16,1) 0%, rgba(13,17,23,0.98) 40%, rgba(8,12,16,1) 100%),
+        radial-gradient(ellipse at 30% 20%, rgba(79, 163, 209, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(79, 163, 209, 0.05) 0%, transparent 50%);
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     padding: 5rem 1.5rem 4rem;
     position: relative;
     overflow: hidden;
@@ -299,6 +299,7 @@ nav a:hover {
 .features, .comparison {
     padding: 5rem 5%;
     background: var(--bg-secondary);
+    scroll-margin-top: 80px; /* Offset for sticky nav */
 }
 
 .features:nth-of-type(even) {
@@ -392,6 +393,7 @@ nav a:hover {
 .trackman-section {
     background: var(--bg);
     overflow: hidden;
+    scroll-margin-top: 80px; /* Offset for sticky nav */
 }
 
 /* Full-width cinematic photo at top */
