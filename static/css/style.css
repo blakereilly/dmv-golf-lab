@@ -434,7 +434,11 @@ nav a:hover {
     letter-spacing: 6px;
     color: #ffffff;
     text-shadow: 0 4px 30px rgba(0,0,0,0.8), 0 0 40px rgba(79,163,209,0.2);
-    text-transform: uppercase;
+    text-transform: none;
+}
+
+.trackman-hero-brand .io {
+    text-transform: none;
 }
 
 /* Stats bar */
