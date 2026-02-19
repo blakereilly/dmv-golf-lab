@@ -240,13 +240,14 @@ nav a:hover {
     border-radius: 7px;
     font-weight: 700;
     cursor: pointer;
-    font-size: 0.95rem;
     text-align: center;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     letter-spacing: 1px;
     text-transform: uppercase;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 1.05rem;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .primary-btn {
@@ -259,6 +260,22 @@ nav a:hover {
 .primary-btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 28px rgba(30, 107, 62, 0.55);
+    color: white;
+}
+
+/* Secondary ghost button */
+.secondary-btn {
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    box-shadow: none;
+}
+
+.secondary-btn:hover {
+    background: var(--accent-subtle);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(79, 163, 209, 0.2);
+    color: var(--accent);
 }
 
 .hero-scroll-indicator {
@@ -768,6 +785,44 @@ section#comparison h2 {
 @keyframes pulse {
     0%, 100% { box-shadow: 0 0 0 3px rgba(46,204,113,0.2); }
     50%       { box-shadow: 0 0 0 8px rgba(46,204,113,0.08); }
+}
+
+/* Status section links */
+.status-links {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.status-link-primary {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: color 0.2s ease;
+}
+
+.status-link-primary:hover {
+    color: #7ec8e8;
+}
+
+.status-link-divider {
+    color: var(--gray);
+    font-size: 0.85rem;
+}
+
+.status-link-secondary {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.status-link-secondary:hover {
+    color: var(--text-secondary);
 }
 
 /* =========================================
