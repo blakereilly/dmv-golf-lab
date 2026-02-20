@@ -3,64 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Capital Golf Labs — a private 24/7 golf simulator studio coming to the DMV. TrackMan iO technology. Private Access. No crowds, no bar, no distractions.">
-    <title>Capital Golf Labs | Private Golf Simulator Studio (DMV)</title>
+    <meta name="description" content="Capital Golf Labs — a private 24/7 golf training studio featuring Trackman iO technology. Private access. No crowds, no bar, no distractions.">
+    <title>Capital Golf Labs | Private Golf Training Studio</title>
     <link rel="stylesheet" href="static/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<nav>
-    <div class="logo">CAPITAL GOLF LABS</div>
-    <ul>
+<!-- ===================== NAV ===================== -->
+<nav id="main-nav">
+    <a href="#" class="logo">CAPITAL GOLF LABS</a>
+
+    <ul class="nav-links">
         <li><a href="#tech">The Concept</a></li>
         <li><a href="#trackman">Technology</a></li>
         <li><a href="#comparison">Who It's For</a></li>
+        <li><a href="#founder">Our Story</a></li>
         <li>
-            <!-- WAITLIST FORM: replace YOUR_WAITLIST_FORM_URL with your new simple waitlist Google Form link -->
-            <a href="https://forms.gle/SUdiG1LNcRmVzhmd6" class="cta-btn">
-                Join Waitlist
-            </a>
+            <a href="https://forms.gle/SUdiG1LNcRmVzhmd6" class="cta-btn">Join Waitlist</a>
         </li>
     </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 </nav>
 
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <ul>
+        <li><a href="#tech" class="mobile-link">The Concept</a></li>
+        <li><a href="#trackman" class="mobile-link">Technology</a></li>
+        <li><a href="#comparison" class="mobile-link">Who It's For</a></li>
+        <li><a href="#founder" class="mobile-link">Our Story</a></li>
+        <li><a href="https://forms.gle/SUdiG1LNcRmVzhmd6" class="mobile-link mobile-cta">Join Waitlist</a></li>
+        <li><a href="https://forms.gle/fjFhxJwyRkByqQQn9" class="mobile-link mobile-founding">Secure Founding Access</a></li>
+    </ul>
+</div>
+
+<!-- ===================== HERO ===================== -->
 <header class="hero">
     <div class="hero-content">
-        <h1>Private, Data-Driven<br>Golf Practice.</h1>
-        <p>
-            Open 24/7. Zero distractions.
+        <div class="hero-eyebrow reveal-up">Join the Founder’s Interest List</div> <h1 class="reveal-up" style="animation-delay:0.1s">Private, Data-Driven<br>Golf Practice.</h1>
+        <p class="reveal-up" style="animation-delay:0.2s">
+            Open 24/7. One bay. No bar, no crowds, no distractions.<br>
+            Just you, your swing, and tour-level data.
         </p>
-        <div class="hero-btns">
-            <!-- FOUNDING MEMBER FORM: this keeps your existing founding member Google Form link -->
-            <a href="https://forms.gle/fjFhxJwyRkByqQQn9" class="primary-btn">
-                Secure Founding Access
-            </a>
-            <!-- WAITLIST FORM: replace YOUR_WAITLIST_FORM_URL with your new simple waitlist Google Form link -->
-            <a href="https://forms.gle/SUdiG1LNcRmVzhmd6" class="secondary-btn">
-                Join Waitlist
-            </a>
+        <div class="hero-btns reveal-up" style="animation-delay:0.3s">
+            <a href="https://forms.gle/fjFhxJwyRkByqQQn9" class="primary-btn">Get Priority Access</a> <a href="https://forms.gle/SUdiG1LNcRmVzhmd6" class="secondary-btn">Join Waitlist</a>
         </div>
-    </div>
-    <div class="hero-scroll-indicator">
-        <span></span>
-    </div>
+        </div>
 </header>
 
 <div class="announcement-banner">
-    Limited founding memberships available.
+    <span class="banner-dot"></span>
+    Become a Founding Interest Member — get early updates and priority for founding rates when we open. 
 </div>
 
 <!-- ===================== CONCEPT SECTION ===================== -->
 <section id="tech" class="features">
-    <div class="section-header">
+    <div class="section-header reveal-up">
+        <div class="section-eyebrow">Why We're Building This</div>
         <h2>The Concept</h2>
         <p>
-            Capital Golf Labs is being designed as a quiet, private environment for golfers who want focused, data-driven practice.
+            The DMV has great golfers and no great place for them to practice. Capital Golf Labs is fixing that — a quiet, private environment built entirely around serious improvement.
         </p>
     </div>
 
-    <div class="feature-card">
+    <div class="feature-card reveal-up">
         <div class="feature-icon">⬡</div>
         <h3>Tour-Level Technology</h3>
         <p>
@@ -68,19 +82,19 @@
         </p>
     </div>
 
-    <div class="feature-card">
+    <div class="feature-card reveal-up">
         <div class="feature-icon">⬡</div>
         <h3>24/7 Private Access</h3>
         <p>
-            Train on your schedule. Unlock the studio, control the environment, and start your session directly from your phone — no staff required.
+            Train on your schedule. Unlock the studio, control the environment, and start your session directly from your phone — no staff required, no booking windows, no waiting.
         </p>
     </div>
 
-    <div class="feature-card">
+    <div class="feature-card reveal-up">
         <div class="feature-icon">⬡</div>
-        <h3>Simple, Transparent Pricing</h3>
+        <h3>Member Benefits</h3>
         <p>
-            Your membership invests in what matters: professional-grade technology, a premium environment, and a better training experience.
+            Membership goes beyond bay access. Members receive a personalized Trackman performance profile, exclusive equipment access through our <strong>PXG partnership</strong>, and priority access to founding rates.
         </p>
     </div>
 </section>
@@ -97,14 +111,14 @@
     </div>
 
     <div class="trackman-content">
-        <div class="trackman-stat-bar">
+        <div class="trackman-stat-bar reveal-up">
             <div class="stat-item">
-                <span class="stat-number">90</span>
+                <span class="stat-number">90<span class="stat-suffix">%</span></span>
                 <span class="stat-label">of the Top 100 PGA Tour Players<br>Trust Trackman</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-                <span class="stat-number">26+</span>
+                <span class="stat-number">26<span class="stat-suffix">+</span></span>
                 <span class="stat-label">Ball Flight &amp;<br>Club Data Parameters</span>
             </div>
             <div class="stat-divider"></div>
@@ -115,7 +129,7 @@
         </div>
 
         <div class="trackman-body">
-            <div class="trackman-text">
+            <div class="trackman-text reveal-left">
                 <h2>Tour-Level Technology.<br>Available to You.</h2>
                 <p>
                     The Trackman iO is mounted overhead — out of your way — and captures every shot with radar-synchronized high-speed video. No floor pads, no interference, no guesswork.
@@ -131,7 +145,7 @@
                 </ul>
             </div>
 
-            <div class="trackman-product-img">
+            <div class="trackman-product-img reveal-right">
                 <img src="static/img/Trackman_iO_Front.png" alt="Trackman iO unit render" />
             </div>
         </div>
@@ -141,10 +155,10 @@
 
 <!-- ===================== COMPARISON SECTION ===================== -->
 <section id="comparison" class="comparison">
-    <h2>What Capital Golf Labs Is &mdash; and Isn't</h2>
+    <h2 class="reveal-up">What Capital Golf Labs Is &mdash; and Isn't</h2>
 
     <div class="comparison-grid">
-        <div class="comparison-card is">
+        <div class="comparison-card is reveal-left">
             <div class="comparison-card-header">
                 <span class="comparison-icon is-icon">✔</span>
                 <h3>What We Are</h3>
@@ -152,12 +166,13 @@
             <ul class="comparison-list">
                 <li><span class="check-icon">✔</span>Professional-grade practice technology</li>
                 <li><span class="check-icon">✔</span>Private, quiet, focused environment</li>
-                <li><span class="check-icon">✔</span>24/7 Smartphone-based access</li>
+                <li><span class="check-icon">✔</span>24/7 smartphone-based access</li>
                 <li><span class="check-icon">✔</span>Built for golfers serious about improving</li>
+                <li><span class="check-icon">✔</span>Your personal Trackman data profile</li>
             </ul>
         </div>
 
-        <div class="comparison-card isnt">
+        <div class="comparison-card isnt reveal-right">
             <div class="comparison-card-header">
                 <span class="comparison-icon isnt-icon">✗</span>
                 <h3>What We Aren't</h3>
@@ -167,49 +182,150 @@
                 <li><span class="x-icon">✗</span>A loud group simulator space</li>
                 <li><span class="x-icon">✗</span>Entertainment-first</li>
                 <li><span class="x-icon">✗</span>Upsell-driven or time-pressured</li>
+                <li><span class="x-icon">✗</span>Crowded or hard to book</li>
             </ul>
         </div>
     </div>
 </section>
 
+<!-- ===================== PXG PARTNERSHIP SECTION ===================== -->
+<section class="partnership-section reveal-up">
+    <div class="partnership-inner">
+        <div class="partnership-badge">Member Benefit</div>
+        <h2>Preferred Fitting Partnership: PXG</h2> <p>
+            Capital Golf Labs members gain exclusive access to professional-grade club fittings through our partnership with PXG. Better data deserves the right equipment for your swing—we’re making the connection easy with member fitting sessions. </p>
+        <div class="partnership-note">
+            Fitting vouchers and details shared with members at onboarding.
+        </div>
+    </div>
+</section>
+
+<!-- ===================== FOUNDER SECTION ===================== -->
+<section id="founder" class="founder-section">
+    <div class="founder-inner">
+        <div class="founder-label reveal-up">From the Founder</div>
+        <blockquote class="founder-quote reveal-up">
+            <p>
+                I’m a normal guy obsessed with golf who happens to have a pretty technical day job. I studied Aerospace Engineering at Virginia Tech and by day, I work as a Satellite Operations Engineer in Northern Virginia. My team is responsible for flying 40 geostationary satellites that provide 24/7 connectivity around the globe.
+            </p>
+            <p>
+                I decided to start <strong>Capital Golf Labs</strong> because I got frustrated with the golf scene in the high-density parts of the DMV. You’re either stuck fighting traffic to get to a crowded outdoor range, paying for an exclusive country club, or trying to practice in a loud "golf-tainment" bar with a beer in your hand.
+            </p>
+            <p>
+                Golf is expensive, time-consuming, and a constant battle for consistency. I wanted to build a place that I would actually use—a space centered on three things:
+            </p>
+
+            <div class="founder-features-list">
+                <p><span class="feature-highlight">Premium Tech:</span> Access to the same data the pros use.</p>
+                <p><span class="feature-highlight">Focus:</span> A private, comfortable environment without the crowds.</p>
+                <p><span class="feature-highlight">True Access:</span> 24/7 availability for busy professionals.</p>
+            </div>
+
+            <p>
+                I’m using my expertise in managing complex, 24/7 remote systems to create a studio that runs itself. You can book a session from your phone in 30 seconds, park right outside, and walk into a private studio with the <strong>Trackman iO</strong> warmed up and waiting for you.
+            </p>
+            <p>
+                Golf is hard enough. I want to make the practice part easy, fun, and available whenever you have an hour to spare.
+            </p>
+
+            <footer class="founder-attribution">
+                <span class="founder-name">Blake</span>
+                <span class="founder-title">Founder, Capital Golf Labs</span>
+            </footer>
+        </blockquote>
+    </div>
+</section>
+
 <!-- ===================== STATUS SECTION ===================== -->
 <section class="features status-section">
-    <div class="feature-card status-card">
+    <div class="feature-card status-card reveal-up">
         <div class="status-dot"></div>
         <h3>Current Status</h3>
         <p>
-            Capital Golf Labs is currently in site selection.
-            We're working with brokers to secure our first location in Alexandria.
+            Capital Golf Labs is currently finalizing its first location in the Alexandria, Virginia area. We're close.
         </p>
-        <div class="status-links">
-            <!-- FOUNDING MEMBER FORM: keeps your existing founding member Google Form link -->
-            <a href="https://forms.gle/fjFhxJwyRkByqQQn9" class="status-link-primary">Secure founding access →</a>
-            <span class="status-link-divider">or</span>
-            <!-- WAITLIST FORM: replace YOUR_WAITLIST_FORM_URL with your new simple waitlist Google Form link -->
-            <a href="https://forms.gle/SUdiG1LNcRmVzhmd6" class="status-link-secondary">join the general waitlist</a>
-        </div>
+<div class="status-links">
+    <a href="https://forms.gle/fjFhxJwyRkByqQQn9" class="status-link-primary">Join the founder's list for early updates →</a> <span class="status-link-divider">or</span>
+    <a href="https://forms.gle/SUdiG1LNcRmVzhmd6" class="status-link-secondary">join the general waitlist</a>
+</div>
     </div>
 </section>
 
 <!-- ===================== FOLLOW SECTION ===================== -->
 <section class="social-proof">
-    <div class="feature-card social-card">
+    <div class="feature-card social-card reveal-up">
         <h3>Follow the Build</h3>
-        <p>See our latest updates and progress in real-time on Instagram.</p>
-        <a href="https://instagram.com/capitalgolflabs" target="_blank">
-            @capitalgolflabs
-        </a>
+        <p>Behind-the-scenes updates, site progress, and the road to opening day — all on Instagram.</p>
+        <a href="https://instagram.com/capitalgolflabs" target="_blank" rel="noopener">@capitalgolflabs</a>
     </div>
 </section>
 
+<!-- ===================== FOOTER ===================== -->
 <footer>
-    <p>&copy; 2026 Capital Golf Labs LLC | DMV</p>
+    <div class="footer-logo">CAPITAL GOLF LABS</div>
+    <p>&copy; 2026 Capital Golf Labs LLC</p>
     <p>
-        Inquiries: <a href="mailto:blake@capitalgolflabs.com">blake@capitalgolflabs.com</a>
+        <a href="mailto:info@capitalgolflabs.com">info@capitalgolflabs.com</a>
         &nbsp;|&nbsp;
-        Instagram: <a href="https://instagram.com/capitalgolflabs" target="_blank">@capitalgolflabs</a>
+        <a href="https://instagram.com/capitalgolflabs" target="_blank" rel="noopener">@capitalgolflabs</a>
     </p>
 </footer>
+
+<script>
+// ── Hamburger menu ────────────────────────────────────────────────────────────
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileLinks = document.querySelectorAll('.mobile-link');
+
+hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('is-open');
+    mobileMenu.classList.toggle('is-open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    mobileMenu.setAttribute('aria-hidden', !isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+
+mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('is-open');
+        mobileMenu.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', false);
+        mobileMenu.setAttribute('aria-hidden', true);
+        document.body.style.overflow = '';
+    });
+});
+
+// ── Nav scroll shadow ─────────────────────────────────────────────────────────
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+// ── Scroll reveal ─────────────────────────────────────────────────────────────
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el => {
+    revealObserver.observe(el);
+});
+
+// ── Smooth scroll ─────────────────────────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+</script>
 
 </body>
 </html>
