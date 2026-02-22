@@ -81,42 +81,6 @@ img { max-width: 100%; display: block; }
     to   { opacity: 1; transform: none; }
 }
 
-/* =========================================
-   ANNOUNCEMENT BANNER
-   ========================================= */
-.announcement-banner {
-    background: linear-gradient(135deg, #0c1320 0%, #080e18 100%);
-    color: var(--gray-light);
-    text-align: center;
-    padding: 11px 20px;
-    font-size: 0.76rem;
-    border-bottom: 1px solid var(--border);
-    letter-spacing: 1.2px;
-    font-weight: 500;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.7rem;
-    animation: slideDown 0.6s var(--ease-out);
-    position: sticky;
-    top: 0;
-    z-index: 1001;
-}
-
-.banner-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #2ecc71;
-    flex-shrink: 0;
-    animation: pulse 2.5s ease-in-out infinite;
-}
-
-@keyframes slideDown {
-    from { transform: translateY(-100%); opacity: 0; }
-    to   { transform: translateY(0);    opacity: 1; }
-}
 
 /* =========================================
    NAVIGATION
@@ -132,7 +96,7 @@ nav {
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
     position: sticky;
-    top: 36px; /* height of banner */
+    top: 0;
     z-index: 1000;
     transition: box-shadow 0.4s var(--ease), border-color 0.4s var(--ease);
 }
@@ -168,7 +132,7 @@ nav.scrolled {
 nav a:not(.logo):not(.cta-btn) {
     color: var(--gray);
     text-decoration: none;
-    font-size: 0.82rem;
+    font-size: 0.88rem;
     font-weight: 500;
     letter-spacing: 0.6px;
     padding-bottom: 3px;
@@ -192,7 +156,7 @@ nav a:not(.logo):not(.cta-btn):hover {
     box-shadow: 0 4px 18px rgba(26, 120, 194, 0.3);
     transition: all 0.3s ease;
     letter-spacing: 0.6px;
-    font-size: 0.78rem;
+    font-size: 0.84rem;
     text-transform: uppercase;
     text-decoration: none;
 }
@@ -233,7 +197,7 @@ nav a:not(.logo):not(.cta-btn):hover {
 /* ── Mobile menu ────────────────────────────────────────────────────────── */
 .mobile-menu {
     position: fixed;
-    top: calc(var(--nav-height) + 36px);
+    top: var(--nav-height);
     left: 0;
     right: 0;
     bottom: 0;
@@ -352,7 +316,7 @@ nav a:not(.logo):not(.cta-btn):hover {
 
 .hero-eyebrow {
     display: inline-block;
-    font-size: 0.7rem;
+    font-size: 0.82rem;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--accent);
@@ -420,7 +384,7 @@ nav a:not(.logo):not(.cta-btn):hover {
 .waitlist-text-link {
     color: var(--gray-light);
     text-decoration: none;
-    font-size: 0.88rem;
+    font-size: 0.93rem;
     letter-spacing: 0.4px;
     transition: color 0.2s ease;
     font-weight: 500;
@@ -432,7 +396,7 @@ nav a:not(.logo):not(.cta-btn):hover {
    ========================================= */
 .section-eyebrow {
     display: inline-block;
-    font-size: 0.68rem;
+    font-size: 0.8rem;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--accent);
@@ -524,7 +488,7 @@ nav a:not(.logo):not(.cta-btn):hover {
 .feature-card p {
     color: var(--text-secondary);
     line-height: 1.8;
-    font-size: 0.95rem;
+    font-size: 1rem;
 }
 
 /* =========================================
@@ -566,7 +530,7 @@ nav a:not(.logo):not(.cta-btn):hover {
 }
 
 .trackman-hero-label {
-    font-size: 0.65rem;
+    font-size: 0.78rem;
     letter-spacing: 5px;
     text-transform: uppercase;
     color: var(--accent);
@@ -619,7 +583,7 @@ nav a:not(.logo):not(.cta-btn):hover {
 
 .stat-label {
     display: block;
-    font-size: 0.72rem;
+    font-size: 0.82rem;
     letter-spacing: 0.6px;
     color: var(--gray-light);
     line-height: 1.6;
@@ -673,8 +637,8 @@ nav a:not(.logo):not(.cta-btn):hover {
     align-items: flex-start;
     gap: 0.75rem;
     color: var(--text-secondary);
-    font-size: 0.93rem;
-    line-height: 1.5;
+    font-size: 0.97rem;
+    line-height: 1.55;
     padding: 0.7rem 1rem;
     background: var(--accent-subtle);
     border-left: 2px solid var(--accent);
@@ -786,7 +750,7 @@ section#comparison h2 {
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
 }
 
 .is-icon   { background: rgba(46,204,113,0.1); color: #2ecc71; border: 1px solid rgba(46,204,113,0.25); }
@@ -815,7 +779,7 @@ section#comparison h2 {
     align-items: center;
     gap: 0.9rem;
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 1rem;
     line-height: 1.5;
     padding: 0.55rem 0;
     border-bottom: 1px solid rgba(255,255,255,0.035);
@@ -846,7 +810,7 @@ section#comparison h2 {
 
 .partnership-badge {
     display: inline-block;
-    font-size: 0.65rem;
+    font-size: 0.78rem;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--accent);
@@ -906,7 +870,7 @@ section#comparison h2 {
 
 .partnership-note {
     display: inline-block;
-    font-size: 0.8rem;
+    font-size: 0.88rem;
     color: var(--gray);
     letter-spacing: 0.5px;
     font-style: italic;
@@ -963,9 +927,9 @@ section#comparison h2 {
 }
 
 .founder-quote p {
-    font-size: 0.96rem;
-    line-height: 1.75;
-    margin-bottom: 1.2rem;
+    font-size: 0.875rem;
+    line-height: 1.65;
+    margin-bottom: 1rem;
     color: var(--text-secondary);
     font-style: normal;
     font-weight: 400;
@@ -999,7 +963,7 @@ section#comparison h2 {
 }
 
 .founder-title {
-    font-size: 0.76rem;
+    font-size: 0.84rem;
     color: var(--gray);
     letter-spacing: 0.5px;
 }
@@ -1069,7 +1033,7 @@ section#comparison h2 {
     color: var(--accent);
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     letter-spacing: 0.4px;
     transition: color 0.2s ease;
 }
@@ -1080,7 +1044,7 @@ section#comparison h2 {
 .status-link-secondary {
     color: var(--gray);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     transition: color 0.2s ease;
 }
 .status-link-secondary:hover { color: var(--text-secondary); }
