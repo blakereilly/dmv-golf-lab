@@ -185,24 +185,24 @@
 
 <!-- ===================== PXG PARTNERSHIP SECTION ===================== -->
 <section class="partnership-section reveal-up">
-    <div class="partnership-inner">
-        <div class="partnership-badge">Community Perk</div>
-        <h2>Train With Better Data. Play With Better Gear.</h2>
-        <p>
-            Capital Golf Labs has partnered with PXG to give our community access to a complimentary club fitting session. Use your Trackman data to find equipment that actually fits your swing.
-        </p>
-        <div class="partnership-highlights">
-            <div class="partnership-highlight-item">
-                <span class="ph-icon">&#9678;</span>
-                <span>Complimentary PXG fitting session</span>
-            </div>
-            <div class="partnership-highlight-item">
-                <span class="ph-icon">&#9678;</span>
-                <span>Trackman data paired with custom club fitting</span>
-            </div>
+    <div class="partnership-layout">
+        <div class="partnership-img">
+            <img src="static/img/pxg-cgl.jpg" alt="PXG X Capital Golf Labs — Lightning Woods and Gen 8 Irons" />
         </div>
-        <div class="partnership-note">
-            Fitting link shared at onboarding.
+        <div class="partnership-inner">
+            <div class="partnership-badge">PXG X Capital Golf Labs</div>
+            <h2>Train With Better Data.<br>Play With Better Gear.</h2>
+            <p>
+                We've partnered with PXG Fairfax to offer a complimentary club fitting. Pair your Trackman swing data with custom-fit PXG equipment — the way a fitting should work.
+            </p>
+            <div class="partnership-code">
+                <span class="code-label">Use Code</span>
+                <span class="code-value">CAPITALGOLF</span>
+                <span class="code-label">for a free fitting at PXG Fairfax</span>
+            </div>
+            <div class="partnership-note">
+                9600 Main Street STE P, Fairfax VA 22031
+            </div>
         </div>
     </div>
 </section>
@@ -325,7 +325,7 @@
     </p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── Hamburger menu ─────────────────────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -436,21 +436,21 @@ form.addEventListener('submit', async (e) => {
         }, 1500);
 
     } catch (err) {
-        // Even with no-cors, fetch won't throw on success
-        // Show success anyway (Google Apps Script with no-cors doesn't return readable response)
-        submitLoading.style.display = 'none';
-        submitSuccess.style.display = 'inline-flex';
-        submitBtn.classList.remove('is-loading');
-        submitBtn.classList.add('is-success');
+                // Even with no-cors, fetch won't throw on success
+                // Show success anyway (Google Apps Script with no-cors doesn't return readable response)
+                submitLoading.style.display = 'none';
+                submitSuccess.style.display = 'inline-flex';
+                submitBtn.classList.remove('is-loading');
+                submitBtn.classList.add('is-success');
 
-        setTimeout(() => {
-            form.style.display = 'none';
-            formSuccess.style.display = 'block';
-            formSuccess.classList.add('reveal-up', 'revealed');
-        }, 1500);
-    }
-});
-</script>
-
-</body>
-</html>
+                // After brief delay, swap form for success message
+                setTimeout(() => {
+                    form.style.display = 'none';
+                    formSuccess.style.display = 'block';
+                    formSuccess.classList.add('reveal-up', 'revealed');
+                }, 1500);
+            }
+        });
+    </script>
+    </body>
+    </html>

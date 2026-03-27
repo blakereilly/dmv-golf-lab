@@ -802,6 +802,29 @@ section#comparison h2 {
     border-bottom: 1px solid var(--border);
 }
 
+.partnership-layout {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.partnership-img {
+    width: 100%;
+    max-width: 480px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+}
+
+.partnership-img img {
+    width: 100%;
+    display: block;
+}
+
 .partnership-inner {
     max-width: 720px;
     margin: 0 auto;
@@ -839,27 +862,34 @@ section#comparison h2 {
     margin-bottom: 2rem;
 }
 
-.partnership-highlights {
+.partnership-code {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    margin: 1.8rem 0 2rem;
     align-items: center;
+    gap: 0.3rem;
+    margin: 2rem 0 1.5rem;
+    padding: 1.4rem 2rem;
+    background: var(--card);
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
 }
 
-.partnership-highlight-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    padding: 0.65rem 1.5rem;
-    background: var(--accent-subtle);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    width: 100%;
-    max-width: 360px;
-    justify-content: center;
+.code-label {
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray);
+    font-weight: 500;
+}
+
+.code-value {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 6px;
+    color: var(--accent);
+    text-shadow: 0 0 28px rgba(26, 120, 194, 0.3);
 }
 
 .ph-icon {
@@ -1419,10 +1449,19 @@ footer a:hover { color: #5aaee0; }
         gap: 1.5rem;
     }
 
-    .partnership-highlights {
+    .partnership-layout {
         flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    .partnership-img {
+        flex: 0 0 380px;
+        max-width: 380px;
+    }
+
+    .partnership-inner {
+        text-align: left;
     }
 
     .form-row {
