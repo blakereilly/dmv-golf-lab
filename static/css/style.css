@@ -1481,6 +1481,11 @@ footer a:hover { color: #5aaee0; }
 /* =========================================
    DESKTOP (768px+)
    ========================================= */
+@media (max-width: 767px) {
+    .hero {
+        background-position: 35% 20%;
+    }
+}
 @media (min-width: 768px) {
     .hamburger { display: none; }
     .nav-links  { display: flex; }
