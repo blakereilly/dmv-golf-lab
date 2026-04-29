@@ -21,7 +21,7 @@
         <li><a href="#tech">The Concept</a></li>
         <li><a href="#trackman">Technology</a></li>
         <li><a href="#comparison">Who It's For</a></li>
-        <li><a href="#founder">Our Story</a></li>
+        <li><a href="#" class="founder-trigger">Our Story</a></li>
         <li>
             <a href="#reserve" class="cta-btn">Reserve Your Spot</a>
         </li>
@@ -40,13 +40,14 @@
         <li><a href="#tech" class="mobile-link">The Concept</a></li>
         <li><a href="#trackman" class="mobile-link">Technology</a></li>
         <li><a href="#comparison" class="mobile-link">Who It's For</a></li>
-        <li><a href="#founder" class="mobile-link">Our Story</a></li>
+        <li><a href="#" class="mobile-link founder-trigger">Our Story</a></li>
         <li><a href="#reserve" class="mobile-link mobile-cta">Reserve Your Spot</a></li>
     </ul>
 </div>
 
 <!-- ===================== HERO ===================== -->
 <header class="hero">
+
     <div class="hero-content">
         <div class="hero-eyebrow reveal-up">Northern Virginia &middot; Coming 2026</div>
         <h1 class="reveal-up" style="animation-delay:0.1s">Private, Data-Driven<br>Golf Practice.</h1>
@@ -58,8 +59,62 @@
             <a href="#reserve" class="primary-btn">Reserve Your Spot</a>
         </div>
     </div>
+
+    <div class="scroll-cue" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+
     <div class="hero-fade"></div>
 </header>
+
+<!-- ===================== DATA TICKER ===================== -->
+<div class="data-ticker" aria-hidden="true">
+    <div class="ticker-track">
+        <span class="ticker-item"><span class="ticker-label">Ball Speed</span><span class="ticker-val">182 mph</span></span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item"><span class="ticker-label">Club Speed</span><span class="ticker-val">121 mph</span></span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item"><span class="ticker-label">Spin Rate</span><span class="ticker-val">2,840 rpm</span></span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item"><span class="ticker-label">Launch Angle</span><span class="ticker-val">12.4°</span></span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item"><span class="ticker-label">Carry Distance</span><span class="ticker-val">267 yds</span></span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item"><span class="ticker-label">Smash Factor</span><span class="ticker-val">1.49</span></span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item"><span class="ticker-label">Attack Angle</span><span class="ticker-val">-4.2°</span></span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item"><span class="ticker-label">Face Angle</span><span class="ticker-val">0.8° open</span></span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item"><span class="ticker-label">Club Path</span><span class="ticker-val">1.1° in-out</span></span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item"><span class="ticker-label">Dynamic Loft</span><span class="ticker-val">14.2°</span></span>
+        <span class="ticker-sep">◆</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="ticker-item"><span class="ticker-label">Ball Speed</span><span class="ticker-val">182 mph</span></span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item"><span class="ticker-label">Club Speed</span><span class="ticker-val">121 mph</span></span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item"><span class="ticker-label">Spin Rate</span><span class="ticker-val">2,840 rpm</span></span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item"><span class="ticker-label">Launch Angle</span><span class="ticker-val">12.4°</span></span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item"><span class="ticker-label">Carry Distance</span><span class="ticker-val">267 yds</span></span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item"><span class="ticker-label">Smash Factor</span><span class="ticker-val">1.49</span></span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item"><span class="ticker-label">Attack Angle</span><span class="ticker-val">-4.2°</span></span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item"><span class="ticker-label">Face Angle</span><span class="ticker-val">0.8° open</span></span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item"><span class="ticker-label">Club Path</span><span class="ticker-val">1.1° in-out</span></span>
+        <span class="ticker-sep">◆</span>
+        <span class="ticker-item"><span class="ticker-label">Dynamic Loft</span><span class="ticker-val">14.2°</span></span>
+        <span class="ticker-sep">◆</span>
+    </div>
+</div>
 
 <!-- ===================== CONCEPT SECTION ===================== -->
 <section id="tech" class="features">
@@ -72,7 +127,7 @@
     </div>
 
     <div class="feature-card reveal-up">
-        <div class="feature-icon">◎</div>
+        <div class="feature-number">01</div>
         <h3>Tour-Level Technology</h3>
         <p>
             Powered by <strong>Trackman iO</strong> — the gold standard in launch monitor technology. Trusted by tour professionals worldwide to measure every detail of your game with unmatched precision.
@@ -80,7 +135,7 @@
     </div>
 
     <div class="feature-card reveal-up">
-        <div class="feature-icon">◈</div>
+        <div class="feature-number">02</div>
         <h3>24/7 Private Access</h3>
         <p>
             Train on your schedule. Book from your phone, unlock the studio, and start your session — no staff, no waiting, no distractions.
@@ -88,7 +143,7 @@
     </div>
 
     <div class="feature-card reveal-up">
-        <div class="feature-icon">◆</div>
+        <div class="feature-number">03</div>
         <h3>Member Benefits</h3>
         <p>
             Membership goes beyond bay access. Members receive a personalized Trackman performance profile, exclusive equipment access through our <strong>PXG partnership</strong>, and priority access to founding rates.
@@ -110,12 +165,12 @@
     <div class="trackman-content">
         <div class="trackman-stat-bar reveal-up">
             <div class="stat-item">
-                <span class="stat-number">90<span class="stat-suffix">%</span></span>
+                <span class="stat-number" data-count="90" data-suffix="%">90<span class="stat-suffix">%</span></span>
                 <span class="stat-label">of the Top 100 PGA Tour Players<br>Trust Trackman</span>
             </div>
             <div class="stat-divider"></div>
             <div class="stat-item">
-                <span class="stat-number">26<span class="stat-suffix">+</span></span>
+                <span class="stat-number" data-count="26" data-suffix="+">26<span class="stat-suffix">+</span></span>
                 <span class="stat-label">Ball Flight &amp;<br>Club Data Parameters</span>
             </div>
             <div class="stat-divider"></div>
@@ -206,26 +261,24 @@
     </div>
 </section>
 
-<!-- ===================== FOUNDER SECTION ===================== -->
+<!-- ===================== FOUNDER TEASER ===================== -->
 <section id="founder" class="founder-section">
     <div class="founder-inner">
         <div class="founder-label reveal-up">From the Founder</div>
-        <blockquote class="founder-quote reveal-up">
-            <p>
-                I'm a Virginia Tech Aerospace Engineering grad and Satellite Operations Engineer — I manage complex 24/7 remote systems for a living, and I'm obsessed with golf. I started Capital Golf Labs because the DMV doesn't have enough great places to practice, and nothing quite like this exists.
-            </p>
-            <p>
-                Every golfer would love a state-of-the-art sim in their basement or garage. Most of us don't have that luxury — and even fewer have access to a Trackman iO. So I'm building a private studio you can access like it's your own. Book from your phone, walk in, and start hitting with the same Trackman data tour players rely on. No staff. No waiting. No distractions.
-            </p>
-            <p>
-                Golf is hard enough. The practice part shouldn't be.
-            </p>
-
-            <footer class="founder-attribution">
+        <div class="founder-teaser reveal-up">
+            <p class="founder-pull-quote">"Golf is hard enough.<br>The practice part shouldn't be."</p>
+            <div class="founder-teaser-meta">
                 <span class="founder-name">Blake Reilly</span>
+                <span class="founder-sep">&mdash;</span>
                 <span class="founder-title">Founder, Capital Golf Labs</span>
-            </footer>
-        </blockquote>
+            </div>
+            <button class="founder-story-btn" id="open-founder-modal">
+                Read the Full Story
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
     </div>
 </section>
 
@@ -233,9 +286,14 @@
 <section id="reserve" class="reserve-section">
     <div class="reserve-inner">
         <div class="reserve-header reveal-up">
-            <div class="reserve-eyebrow">Limited Membership</div>
+            <div class="reserve-eyebrow">Founding Membership</div>
             <h2>Reserve Your Spot</h2>
             <p>We're capping membership to keep the experience private. Join the list and be first to know when we open.</p>
+        </div>
+
+        <div class="founding-badge reveal-up">
+            <div class="founding-dot"></div>
+            <span>Founding member pricing available &mdash; limited spots</span>
         </div>
 
         <form id="waitlist-form" class="waitlist-form reveal-up" autocomplete="on">
@@ -324,7 +382,38 @@
     </p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<!-- ===================== FOUNDER MODAL ===================== -->
+<div class="founder-modal" id="founder-modal" aria-hidden="true">
+    <div class="founder-modal-backdrop" id="founder-backdrop"></div>
+    <div class="founder-modal-panel" role="dialog" aria-modal="true" aria-labelledby="founder-modal-heading">
+        <button class="founder-modal-close" id="close-founder-modal" aria-label="Close story">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M4 4l10 10M14 4L4 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+        </button>
+        <div class="founder-modal-content">
+            <div class="founder-modal-eyebrow">From the Founder</div>
+            <blockquote class="founder-modal-quote" id="founder-modal-heading">
+                <p>
+                    I'm a Virginia Tech Aerospace Engineering grad and Satellite Operations Engineer — I manage complex 24/7 remote systems for a living, and I'm obsessed with golf. I started Capital Golf Labs because the DMV doesn't have enough great places to practice, and nothing quite like this exists.
+                </p>
+                <p>
+                    Every golfer would love a state-of-the-art sim in their basement or garage. Most of us don't have that luxury — and even fewer have access to a Trackman iO. So I'm building a private studio you can access like it's your own. Book from your phone, walk in, and start hitting with the same Trackman data tour players rely on. No staff. No waiting. No distractions.
+                </p>
+                <p class="founder-modal-closer">
+                    Golf is hard enough. The practice part shouldn't be.
+                </p>
+                <footer class="founder-modal-attribution">
+                    <span class="founder-modal-name">Blake Reilly</span>
+                    <span class="founder-modal-title">Founder, Capital Golf Labs</span>
+                </footer>
+            </blockquote>
+        </div>
+    </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
 // ── Hamburger menu ─────────────────────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -371,46 +460,115 @@ document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el 
 // ── Smooth scroll ──────────────────────────────────────────────────────────
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(href);
         if (target) {
             target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
 });
 
+// ── Founder Modal ──────────────────────────────────────────────────────────
+const founderModal    = document.getElementById('founder-modal');
+const founderBackdrop = document.getElementById('founder-backdrop');
+const openModalBtn    = document.getElementById('open-founder-modal');
+const closeModalBtn   = document.getElementById('close-founder-modal');
+const founderTriggers = document.querySelectorAll('.founder-trigger');
+
+function openFounderModal() {
+    founderModal.classList.add('is-open');
+    founderModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => closeModalBtn.focus(), 100);
+}
+
+function closeFounderModal() {
+    founderModal.classList.remove('is-open');
+    founderModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+
+founderTriggers.forEach(t => t.addEventListener('click', (e) => {
+    e.preventDefault();
+    hamburger.classList.remove('is-open');
+    mobileMenu.classList.remove('is-open');
+    hamburger.setAttribute('aria-expanded', false);
+    mobileMenu.setAttribute('aria-hidden', true);
+    document.body.style.overflow = '';
+    openFounderModal();
+}));
+
+if (openModalBtn) openModalBtn.addEventListener('click', openFounderModal);
+closeModalBtn.addEventListener('click', closeFounderModal);
+founderBackdrop.addEventListener('click', closeFounderModal);
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && founderModal.classList.contains('is-open')) {
+        closeFounderModal();
+    }
+});
+
+// ── Stat count-up animation ────────────────────────────────────────────────
+function animateCount(el, target, suffix) {
+    const duration = 1600;
+    const start = performance.now();
+    const update = (now) => {
+        const elapsed  = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased    = 1 - Math.pow(1 - progress, 3);
+        const current  = Math.round(eased * target);
+        el.innerHTML = current + '<span class="stat-suffix">' + suffix + '</span>';
+        if (progress < 1) requestAnimationFrame(update);
+    };
+    requestAnimationFrame(update);
+}
+
+const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const el     = entry.target;
+            const target = parseInt(el.dataset.count);
+            const suffix = el.dataset.suffix || '';
+            if (!isNaN(target)) animateCount(el, target, suffix);
+            statObserver.unobserve(el);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.stat-number[data-count]').forEach(el => {
+    statObserver.observe(el);
+});
+
 // ── Waitlist form submission ───────────────────────────────────────────────
-// INSTRUCTIONS: Replace SCRIPT_URL with your Google Apps Script web app URL
-// See the google-apps-script.js file for setup instructions
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwWFbZPyw8rZ-TZcAF8azrT8u9yPUwVEDuTKJPALWZ2Im9M2iHDBeQ4QUgeTxZbvtNyCQ/exec';
 
-const form = document.getElementById('waitlist-form');
-const submitBtn = document.getElementById('form-submit');
-const submitText = submitBtn.querySelector('.submit-text');
+const form        = document.getElementById('waitlist-form');
+const submitBtn   = document.getElementById('form-submit');
+const submitText  = submitBtn.querySelector('.submit-text');
 const submitLoading = submitBtn.querySelector('.submit-loading');
 const submitSuccess = submitBtn.querySelector('.submit-success');
 const formSuccess = document.getElementById('form-success');
 
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
-    // Show loading state
+
     submitText.style.display = 'none';
     submitLoading.style.display = 'inline-flex';
     submitBtn.disabled = true;
     submitBtn.classList.add('is-loading');
 
     const data = {
-        name: form.name.value.trim(),
-        email: form.email.value.trim(),
-        phone: form.phone.value.trim(),
-        source: form.source.value,
+        name:      form.name.value.trim(),
+        email:     form.email.value.trim(),
+        phone:     form.phone.value.trim(),
+        source:    form.source.value,
         timestamp: new Date().toISOString()
     };
 
     try {
         if (SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
-            // Demo mode — simulate success for testing before script is set up
             await new Promise(r => setTimeout(r, 1200));
         } else {
             await fetch(SCRIPT_URL, {
@@ -421,13 +579,11 @@ form.addEventListener('submit', async (e) => {
             });
         }
 
-        // Success — show confirmation
         submitLoading.style.display = 'none';
         submitSuccess.style.display = 'inline-flex';
         submitBtn.classList.remove('is-loading');
         submitBtn.classList.add('is-success');
 
-        // After brief delay, swap form for success message
         setTimeout(() => {
             form.style.display = 'none';
             formSuccess.style.display = 'block';
@@ -435,19 +591,16 @@ form.addEventListener('submit', async (e) => {
         }, 1500);
 
     } catch (err) {
-                // Even with no-cors, fetch won't throw on success
-                // Show success anyway (Google Apps Script with no-cors doesn't return readable response)
-                submitLoading.style.display = 'none';
-                submitSuccess.style.display = 'inline-flex';
-                submitBtn.classList.remove('is-loading');
-                submitBtn.classList.add('is-success');
+        submitLoading.style.display = 'none';
+        submitSuccess.style.display = 'inline-flex';
+        submitBtn.classList.remove('is-loading');
+        submitBtn.classList.add('is-success');
 
-                // After brief delay, swap form for success message
-                setTimeout(() => {
-                    form.style.display = 'none';
-                    formSuccess.style.display = 'block';
-                    formSuccess.classList.add('reveal-up', 'revealed');
-                }, 1500);
+        setTimeout(() => {
+            form.style.display = 'none';
+            formSuccess.style.display = 'block';
+            formSuccess.classList.add('reveal-up', 'revealed');
+        }, 1500);
     }
 });
 </script>
