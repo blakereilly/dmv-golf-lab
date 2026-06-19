@@ -23,7 +23,7 @@
         <li><a href="#comparison">Who It's For</a></li>
         <li><a href="#" class="founder-trigger">Our Story</a></li>
         <li>
-            <a href="#reserve" class="cta-btn">Reserve Your Spot</a>
+            <a href="membership.html" class="cta-btn">Join the Lab</a>
         </li>
     </ul>
 
@@ -41,7 +41,7 @@
         <li><a href="#trackman" class="mobile-link">Technology</a></li>
         <li><a href="#comparison" class="mobile-link">Who It's For</a></li>
         <li><a href="#" class="mobile-link founder-trigger">Our Story</a></li>
-        <li><a href="#reserve" class="mobile-link mobile-cta">Reserve Your Spot</a></li>
+        <li><a href="membership.html" class="mobile-link mobile-cta">Join the Lab</a></li>
     </ul>
 </div>
 
@@ -56,7 +56,7 @@
             Just you, your swing, and tour-level data.
         </p>
         <div class="hero-btns reveal-up" style="animation-delay:0.3s">
-            <a href="#reserve" class="primary-btn">Reserve Your Spot</a>
+            <a href="membership.html" class="primary-btn">Explore Memberships</a>
         </div>
     </div>
 
@@ -136,9 +136,9 @@
 
     <div class="feature-card reveal-up">
         <div class="feature-number">02</div>
-        <h3>24/7 Private Access</h3>
+        <h3>24/7 Smartphone Access</h3>
         <p>
-            Train on your schedule. Book from your phone, unlock the studio, and start your session — no staff, no waiting, no distractions.
+            Train entirely on your schedule. Book from your phone, approach the secure door reader, and unlock the facility using your encrypted digital Bluetooth credential. Full training autonomy with zero staff, zero check-in lines, and zero distractions.
         </p>
     </div>
 
@@ -198,7 +198,7 @@
             </div>
 
             <div class="trackman-product-img reveal-right">
-                <img src="static/img/Trackman_iO_Front.png" alt="Trackman iO unit render" />
+                <img src="static/img/Trackman_iO_Front.jpg" alt="Trackman iO unit render" />
             </div>
         </div>
     </div>
@@ -412,9 +412,8 @@
     </div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
-// ── Hamburger menu ─────────────────────────────────────────────────────────
+// Hamburger menu
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
 const mobileLinks = document.querySelectorAll('.mobile-link');
@@ -437,13 +436,13 @@ mobileLinks.forEach(link => {
     });
 });
 
-// ── Nav scroll shadow ──────────────────────────────────────────────────────
+// Nav scroll shadow
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 20);
 }, { passive: true });
 
-// ── Scroll reveal ──────────────────────────────────────────────────────────
+// Scroll reveal
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -457,7 +456,7 @@ document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el 
     revealObserver.observe(el);
 });
 
-// ── Smooth scroll ──────────────────────────────────────────────────────────
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -470,7 +469,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ── Founder Modal ──────────────────────────────────────────────────────────
+// Founder Modal
 const founderModal    = document.getElementById('founder-modal');
 const founderBackdrop = document.getElementById('founder-backdrop');
 const openModalBtn    = document.getElementById('open-founder-modal');
@@ -510,7 +509,7 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// ── Stat count-up animation ────────────────────────────────────────────────
+// Stat count-up animation
 function animateCount(el, target, suffix) {
     const duration = 1600;
     const start = performance.now();
@@ -541,7 +540,7 @@ document.querySelectorAll('.stat-number[data-count]').forEach(el => {
     statObserver.observe(el);
 });
 
-// ── Waitlist form submission ───────────────────────────────────────────────
+// Waitlist form submission
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwWFbZPyw8rZ-TZcAF8azrT8u9yPUwVEDuTKJPALWZ2Im9M2iHDBeQ4QUgeTxZbvtNyCQ/exec';
 
 const form        = document.getElementById('waitlist-form');
