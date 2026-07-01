@@ -2270,3 +2270,85 @@ footer a:hover { color: #6F97FF; }
     .plan-grid.single { flex-direction: column; }
     .plan-grid.single .plan-card { flex: 0 1 auto; }
 }
+/* =========================================
+   TECH STACK / PARTNER LOGOS
+   ========================================= */
+.tech-strip {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 5.5rem clamp(1.25rem, 5vw, 3rem);
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.tech-strip-header {
+    max-width: 620px;
+    margin: 0 auto 3rem;
+}
+
+.tech-strip-header h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
+
+.tech-strip-header p {
+    color: var(--gray-light);
+    font-size: 0.98rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.tech-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.tech-logo {
+    flex: 1 1 160px;
+    max-width: 210px;
+    min-height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--card);
+    transition: border-color 0.3s var(--ease), background 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.tech-logo span {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.tech-logo:hover {
+    border-color: var(--border-strong);
+    background: var(--card-hover);
+    transform: translateY(-3px);
+}
+
+/* When real logos are dropped in as <img>, they scale to fit the slot */
+.tech-logo img { max-height: 42px; width: auto; opacity: 0.9; }
+
+/* ── Footer address ── */
+.footer-address {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    color: var(--gray);
+    margin-bottom: 0.6rem;
+}
