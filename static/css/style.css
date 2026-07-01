@@ -12,10 +12,10 @@
     --card-hover:      #161f2d;
 
     /* ── Primary Accent (Tech / Data) ── */
-    --accent:          #2585D0;
-    --accent-dark:     #1b6db3;
-    --accent-glow:     rgba(37, 133, 208, 0.18);
-    --accent-subtle:   rgba(37, 133, 208, 0.06);
+    --accent:          #2F6BFF;
+    --accent-dark:     #1E52D6;
+    --accent-glow:     rgba(47, 107, 255, 0.18);
+    --accent-subtle:   rgba(47, 107, 255, 0.06);
 
     /* ── Brand Signal Blue (wordmark period only) ── */
     --signal:          #2F6BFF;
@@ -38,13 +38,13 @@
     --gray-light:      #8fa3b8;
 
     /* ── Borders & Shadows ── */
-    --border:          rgba(37, 133, 208, 0.09);
-    --border-strong:   rgba(37, 133, 208, 0.22);
+    --border:          rgba(47, 107, 255, 0.09);
+    --border-strong:   rgba(47, 107, 255, 0.22);
     --border-warm:     rgba(196, 163, 90, 0.18);
     --shadow-sm:       0 2px 12px rgba(0, 0, 0, 0.45);
     --shadow-md:       0 8px 32px rgba(0, 0, 0, 0.5);
     --shadow-lg:       0 16px 56px rgba(0, 0, 0, 0.55);
-    --shadow-blue:     0 8px 40px rgba(37, 133, 208, 0.12);
+    --shadow-blue:     0 8px 40px rgba(47, 107, 255, 0.12);
     --shadow-gold:     0 4px 24px rgba(196, 163, 90, 0.1);
 
     /* ── Layout ── */
@@ -75,7 +75,7 @@ body {
 }
 
 h1, h2, h3, .trackman-hero-brand, .stat-number {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 img { max-width: 100%; display: block; }
@@ -193,7 +193,7 @@ nav a:not(.logo):not(.cta-btn):hover {
     font-weight: 700;
     white-space: nowrap;
     border-bottom: none !important;
-    box-shadow: 0 4px 18px rgba(37, 133, 208, 0.25);
+    box-shadow: 0 4px 18px rgba(47, 107, 255, 0.25);
     transition: all 0.3s ease;
     letter-spacing: 0.6px;
     font-size: 0.84rem;
@@ -203,7 +203,7 @@ nav a:not(.logo):not(.cta-btn):hover {
 
 .cta-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 26px rgba(37, 133, 208, 0.4);
+    box-shadow: 0 6px 26px rgba(47, 107, 255, 0.4);
 }
 
 /* ── Hamburger ──────────────────────────────────────────────────────────── */
@@ -276,7 +276,7 @@ nav a:not(.logo):not(.cta-btn):hover {
     padding: 1rem 2rem;
     color: var(--text-secondary);
     text-decoration: none;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 3px;
@@ -297,7 +297,7 @@ nav a:not(.logo):not(.cta-btn):hover {
 }
 
 .mobile-cta:hover {
-    box-shadow: 0 6px 24px rgba(37, 133, 208, 0.35);
+    box-shadow: 0 6px 24px rgba(47, 107, 255, 0.35);
     color: #ffffff !important;
 }
 
@@ -350,7 +350,7 @@ nav a:not(.logo):not(.cta-btn):hover {
     inset: 0;
     background: radial-gradient(
         ellipse 55% 45% at 50% 40%,
-        rgba(37, 133, 208, 0.06) 0%,
+        rgba(47, 107, 255, 0.06) 0%,
         transparent 60%
     );
     pointer-events: none;
@@ -452,18 +452,18 @@ nav a:not(.logo):not(.cta-btn):hover {
     transition: all 0.3s var(--ease);
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.05rem;
     text-decoration: none;
     display: inline-block;
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
     color: white;
     border: none;
-    box-shadow: 0 4px 24px rgba(37, 133, 208, 0.35);
+    box-shadow: 0 4px 24px rgba(47, 107, 255, 0.35);
 }
 .primary-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 36px rgba(37, 133, 208, 0.5);
+    box-shadow: 0 8px 36px rgba(47, 107, 255, 0.5);
     color: white;
 }
 
@@ -641,7 +641,7 @@ nav a:not(.logo):not(.cta-btn):hover {
     font-weight: 800;
     letter-spacing: 8px;
     color: #ffffff;
-    text-shadow: 0 4px 40px rgba(0,0,0,0.8), 0 0 60px rgba(37,133,208,0.15);
+    text-shadow: 0 4px 40px rgba(0,0,0,0.8), 0 0 60px rgba(47,107,255,0.15);
 }
 
 .trackman-content { padding: 0 clamp(1.25rem, 5vw, 5%) 6rem; }
@@ -670,7 +670,7 @@ nav a:not(.logo):not(.cta-btn):hover {
     color: var(--accent);
     line-height: 1;
     letter-spacing: -1px;
-    text-shadow: 0 0 32px rgba(37,133,208,0.2);
+    text-shadow: 0 0 32px rgba(47,107,255,0.2);
 }
 
 .stat-suffix {
@@ -744,7 +744,7 @@ nav a:not(.logo):not(.cta-btn):hover {
 }
 
 .trackman-features-list li:hover {
-    background: rgba(37,133,208,0.1);
+    background: rgba(47,107,255,0.1);
     color: var(--text);
 }
 
@@ -767,12 +767,12 @@ nav a:not(.logo):not(.cta-btn):hover {
     height: auto;
     display: block;
     border-radius: 16px;
-    filter: drop-shadow(0 20px 50px rgba(37,133,208,0.12));
+    filter: drop-shadow(0 20px 50px rgba(47,107,255,0.12));
     transition: filter 0.6s var(--ease), transform 0.6s var(--ease);
 }
 
 .trackman-product-img img:hover {
-    filter: drop-shadow(0 28px 64px rgba(37,133,208,0.22));
+    filter: drop-shadow(0 28px 64px rgba(47,107,255,0.22));
     transform: translateY(-6px) scale(1.01);
 }
 
@@ -1009,7 +1009,7 @@ section#comparison h2 {
 }
 
 .code-value {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 2.2rem;
     font-weight: 800;
     letter-spacing: 7px;
@@ -1054,7 +1054,7 @@ section#comparison h2 {
 }
 
 .founder-name {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.12rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -1106,7 +1106,7 @@ section#comparison h2 {
 }
 
 .status-block h3, .social-block h3 {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -1137,7 +1137,7 @@ section#comparison h2 {
     letter-spacing: 0.4px;
     transition: color 0.2s ease;
 }
-.status-link-primary:hover { color: #5aaee0; }
+.status-link-primary:hover { color: #6F97FF; }
 
 .status-link-divider { color: var(--gray); font-size: 0.85rem; }
 
@@ -1161,11 +1161,11 @@ section#comparison h2 {
     text-decoration: none;
     font-weight: 700;
     font-size: 1.15rem;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     letter-spacing: 2px;
     transition: all 0.3s var(--ease);
 }
-.insta-link:hover { color: #5aaee0; letter-spacing: 3px; }
+.insta-link:hover { color: #6F97FF; letter-spacing: 3px; }
 
 /* =========================================
    FOOTER
@@ -1203,7 +1203,7 @@ footer a {
     font-weight: 600;
     transition: color 0.2s ease;
 }
-footer a:hover { color: #5aaee0; }
+footer a:hover { color: #6F97FF; }
 
 /* =========================================
    WAITLIST FORM SECTION
@@ -1225,7 +1225,7 @@ footer a:hover { color: #5aaee0; }
     transform: translateX(-50%);
     width: 500px;
     height: 300px;
-    background: radial-gradient(ellipse, rgba(37,133,208,0.04), transparent 70%);
+    background: radial-gradient(ellipse, rgba(47,107,255,0.04), transparent 70%);
     pointer-events: none;
 }
 
@@ -1351,14 +1351,14 @@ footer a:hover { color: #5aaee0; }
     color: #ffffff;
     border: none;
     border-radius: 10px;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 20px rgba(37, 133, 208, 0.3);
+    box-shadow: 0 4px 20px rgba(47, 107, 255, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1368,7 +1368,7 @@ footer a:hover { color: #5aaee0; }
 
 .form-submit:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(37, 133, 208, 0.4);
+    box-shadow: 0 8px 30px rgba(47, 107, 255, 0.4);
 }
 
 .form-submit:disabled {
@@ -1442,7 +1442,7 @@ footer a:hover { color: #5aaee0; }
 }
 
 .form-success-msg h3 {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.8rem;
     font-weight: 800;
     letter-spacing: 1px;
@@ -1464,13 +1464,13 @@ footer a:hover { color: #5aaee0; }
     text-decoration: none;
     font-weight: 700;
     font-size: 1.1rem;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     letter-spacing: 2px;
     transition: all 0.3s var(--ease);
 }
 
 .success-insta:hover {
-    color: #5aaee0;
+    color: #6F97FF;
     letter-spacing: 3px;
 }
 
@@ -1541,7 +1541,7 @@ footer a:hover { color: #5aaee0; }
 }
 
 .ticker-val {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     color: var(--accent);
@@ -1559,7 +1559,7 @@ footer a:hover { color: #5aaee0; }
    ========================================= */
 .feature-number {
     display: block;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 2.8rem;
     font-weight: 800;
     color: var(--accent);
@@ -1610,7 +1610,7 @@ footer a:hover { color: #5aaee0; }
 }
 
 .founder-pull-quote {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: clamp(1.8rem, 3.5vw, 2.5rem);
     font-weight: 700;
     line-height: 1.15;
@@ -1777,7 +1777,7 @@ footer a:hover { color: #5aaee0; }
 }
 
 .founder-modal-name {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -1992,7 +1992,7 @@ footer a:hover { color: #5aaee0; }
 }
 
 .plan-name {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -2009,7 +2009,7 @@ footer a:hover { color: #5aaee0; }
 }
 
 .plan-price .amount {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 3.2rem;
     font-weight: 800;
     line-height: 1;
@@ -2036,7 +2036,7 @@ footer a:hover { color: #5aaee0; }
 }
 
 .plan-hours {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.15rem;
     font-weight: 700;
     letter-spacing: 1px;
@@ -2074,7 +2074,7 @@ footer a:hover { color: #5aaee0; }
     text-align: center;
     padding: 1.05rem 2rem;
     border-radius: 10px;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -2084,12 +2084,12 @@ footer a:hover { color: #5aaee0; }
     transition: all 0.3s var(--ease);
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
     color: #ffffff;
-    box-shadow: 0 4px 20px rgba(37, 133, 208, 0.3);
+    box-shadow: 0 4px 20px rgba(47, 107, 255, 0.3);
 }
 
 .plan-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(37, 133, 208, 0.45);
+    box-shadow: 0 8px 30px rgba(47, 107, 255, 0.45);
     color: #ffffff;
 }
 
@@ -2145,7 +2145,7 @@ footer a:hover { color: #5aaee0; }
 }
 
 .policy-eyebrow {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -2165,7 +2165,7 @@ footer a:hover { color: #5aaee0; }
 
 /* ── Overage table ── */
 .overage-title {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     letter-spacing: 1.5px;
@@ -2206,7 +2206,7 @@ footer a:hover { color: #5aaee0; }
 
 .overage-table th {
     padding: 1rem 1.25rem;
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.05rem;
     font-weight: 700;
     letter-spacing: 1px;
@@ -2224,7 +2224,7 @@ footer a:hover { color: #5aaee0; }
 .overage-table tbody tr:last-child td { border-bottom: none; }
 
 .overage-table .ot-window { font-weight: 600; color: var(--text); }
-.overage-table .ot-rate { font-family: 'Barlow Condensed', sans-serif; font-size: 1.3rem; font-weight: 700; color: #ffffff; }
+.overage-table .ot-rate { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; font-weight: 700; color: #ffffff; }
 
 /* ── Final CTA ── */
 .plan-final-cta {
@@ -2235,7 +2235,7 @@ footer a:hover { color: #5aaee0; }
 }
 
 .plan-final-cta h2 {
-    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 800;
     letter-spacing: 0.5px;
