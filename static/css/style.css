@@ -17,6 +17,9 @@
     --accent-glow:     rgba(37, 133, 208, 0.18);
     --accent-subtle:   rgba(37, 133, 208, 0.06);
 
+    /* ── Brand Signal Blue (wordmark period only) ── */
+    --signal:          #2F6BFF;
+
     /* ── Warm Accent (Premium / Editorial) ── */
     --gold:            #C4A35A;
     --gold-dim:        rgba(196, 163, 90, 0.55);
@@ -71,7 +74,7 @@ body {
     position: relative; /* Helps contain absolute positioned elements */
 }
 
-h1, h2, h3, .logo, .trackman-hero-brand, .stat-number, .footer-logo {
+h1, h2, h3, .trackman-hero-brand, .stat-number {
     font-family: 'Barlow Condensed', sans-serif;
 }
 
@@ -135,19 +138,27 @@ nav.scrolled {
 }
 
 .logo {
-    font-weight: 800;
-    letter-spacing: 4px;
-    color: var(--accent);
-    font-size: 1.15rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    color: var(--text);
+    font-size: clamp(0.82rem, 3.2vw, 1.05rem);
     text-decoration: none;
-    text-shadow: 0 0 28px var(--accent-glow);
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
     text-transform: uppercase;
     flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .logo:hover {
-    text-shadow: 0 0 40px rgba(37, 133, 208, 0.4);
+    color: #ffffff;
+}
+
+/* The single Signal-Blue period — the only accent on the wordmark */
+.logo-dot {
+    color: var(--signal);
+    font-weight: 700;
+    margin-left: -0.16em; /* pull the period back against the S past the trailing track */
 }
 
 .nav-links {
@@ -1169,13 +1180,19 @@ footer {
 }
 
 .footer-logo {
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1rem;
-    font-weight: 800;
-    letter-spacing: 5px;
-    color: var(--accent);
-    opacity: 0.3;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    color: rgba(238, 242, 247, 0.5);
     margin-bottom: 1.5rem;
     text-transform: uppercase;
+}
+
+.footer-logo-dot {
+    color: var(--signal);
+    font-weight: 700;
+    margin-left: -0.18em;
 }
 
 footer p { margin-bottom: 0.5rem; line-height: 1.8; }
@@ -1905,6 +1922,15 @@ footer a:hover { color: #5aaee0; }
     align-items: stretch;
 }
 
+/* Single-membership layout — one centered card */
+.plan-grid.single {
+    align-items: center;
+}
+.plan-grid.single .plan-card {
+    width: 100%;
+    max-width: 460px;
+}
+
 .plan-card {
     position: relative;
     background: var(--card);
@@ -2239,4 +2265,8 @@ footer a:hover { color: #5aaee0; }
     .plan-card.featured:hover { transform: scale(1.03) translateY(-4px); }
 
     .policy-grid { grid-template-columns: 1fr 1fr; }
+
+    /* keep the single membership card centered, not stretched */
+    .plan-grid.single { flex-direction: column; }
+    .plan-grid.single .plan-card { flex: 0 1 auto; }
 }
