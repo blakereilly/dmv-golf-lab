@@ -2352,3 +2352,6 @@ footer a:hover { color: #6F97FF; }
     color: var(--gray);
     margin-bottom: 0.6rem;
 }
+
+/* Hero headline period — Signal Blue echo of the wordmark */
+.hero-dot { color: var(--signal); }
