@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/jpeg" href="static/img/favicon.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Capital Golf Labs founding waitlist page — join now to be first in when early access opens.">
+    <title>Founding Waitlist | Capital Golf Labs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav id="main-nav">
+    <a href="index.html" class="logo">CAPITAL GOLF LABS<span class="logo-dot">.</span></a>
+
+    <ul class="nav-links">
+        <li><a href="index.html#tech">The Concept</a></li>
+        <li><a href="index.html#trackman">Technology</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <!-- <li><a href="index.html#reserve" class="cta-btn">Join the Lab</a></li> -->
+    </ul>
+
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</nav>
+
+<!-- Mobile menu overlay -->
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <ul>
+        <li><a href="index.html#tech" class="mobile-link">The Concept</a></li>
+        <li><a href="index.html#trackman" class="mobile-link">Technology</a></li>
+        <li><a href="faq.html" class="mobile-link">FAQ</a></li>
+        <!-- <li><a href="index.html#reserve" class="mobile-link mobile-cta">Join the Lab</a></li> -->
+    </ul>
+</div>
+
+<!-- ===================== HEADER ===================== -->
+<header class="section-header" style="margin-top: 7rem; padding: 0 1.5rem;">
+    <div class="section-eyebrow">Founding Waitlist</div>
+    <h2>Membership details are paused.</h2>
+    <p>We are only accepting founding members through the waitlist. Join now to be first when early access opens.</p>
+</header>
+
+<section class="plan-section">
+    <div class="plan-grid single">
+        <div class="plan-card">
+            <h3 class="plan-name">Founding Waitlist</h3>
+            <div class="plan-was">Waitlist-only access for early founding members.</div>
+            <p>Membership pricing and full details are not available yet. Join the list to be first when we open.</p>
+            <a href="index.html#reserve" class="plan-cta">Join the Waitlist</a>
+        </div>
+    </div>
+
+    <p class="plan-foot-note">
+        No membership signups are available outside the founding waitlist at this time.
+    </p>
+</section>
+
+<section class="plan-final-cta">
+    <h2>Want to be first?</h2>
+    <p>Join the founding waitlist and we’ll reach out with early access details.</p>
+    <a href="index.html#reserve" class="primary-btn">Join the Waitlist</a>
+</section>
+
+<!-- ===================== FOOTER -->
+<footer>
+    <div class="footer-logo">CAPITAL GOLF LABS<span class="footer-logo-dot">.</span></div>
+    <p class="footer-address">Fallfax Center &middot; 2830-B Fallfax Drive &middot; Falls Church, VA</p>
+    <p>&copy; 2026 Capital Golf Labs LLC</p>
+    <p class="footer-links">
+        <a href="mailto:blake@capitalgolflabs.com">blake@capitalgolflabs.com</a>
+        &nbsp;|&nbsp;
+        <a href="https://capitalgolflabs.com">capitalgolflabs.com</a>
+        &nbsp;|&nbsp;
+        <a href="https://instagram.com/capitalgolflabs" target="_blank" rel="noopener">@capitalgolflabs</a>
+    </p>
+</footer>
+
+<script>
+// Mobile Hamburger menu logic
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+
+hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('is-open');
+    mobileMenu.classList.toggle('is-open');
+    hamburger.setAttribute('aria-expanded', isOpen);
+    mobileMenu.setAttribute('aria-hidden', !isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+
+document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('is-open');
+        mobileMenu.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', false);
+        mobileMenu.setAttribute('aria-hidden', true);
+        document.body.style.overflow = '';
+    });
+});
+
+// Nav scroll shadow
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+</script>
+
+</body>
+</html>
