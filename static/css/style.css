@@ -663,9 +663,10 @@ nav a:not(.logo):not(.cta-btn):hover {
 }
 
 .trackman-hero-brand {
-    font-size: clamp(3rem, 8vw, 6rem);
+    font-size: clamp(2rem, 8vw, 6rem);
     font-weight: 800;
-    letter-spacing: 8px;
+    letter-spacing: clamp(2px, 1.2vw, 8px);
+    white-space: nowrap;
     color: #ffffff;
     text-shadow: 0 4px 40px rgba(0,0,0,0.8), 0 0 60px rgba(47,107,255,0.15);
 }
