@@ -401,13 +401,35 @@ nav a:not(.logo):not(.cta-btn):hover {
     margin-bottom: 1.6rem;
     font-weight: 800;
     padding: 0.5rem 1.3rem;
-    border-radius: 100px;
-    color: var(--accent); 
-    background: rgba(7, 10, 15, 0.5); 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--border-strong);
+    color: var(--accent);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
     text-shadow: 0 0 15px var(--accent-glow);
+}
+
+@media (max-width: 767px) {
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-eyebrow {
+        order: 1;
+        margin: 0 0 1rem;
+        width: 100%;
+        text-align: center;
+        letter-spacing: 2px;
+        color: #ffffff;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .hero-btns {
+        order: 2;
+    }
 }
 
 .hero h1 {
