@@ -314,6 +314,7 @@ nav a:not(.logo):not(.cta-btn):hover {
     position: relative;
     width: 100%;
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -436,7 +437,7 @@ nav a:not(.logo):not(.cta-btn):hover {
     font-size: clamp(3rem, 8.5vw, 7rem);
     line-height: 0.98;
     margin-bottom: 1.6rem;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -1px;
     color: #ffffff;
     /* Stacked shadows for maximum contrast */
@@ -2575,4 +2576,49 @@ footer a:hover { color: #6F97FF; }
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
     }
+}
+
+/* =========================================
+   STICKY MOBILE CTA
+   ========================================= */
+.mobile-sticky-cta {
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+    z-index: 900;
+    display: none;
+    text-align: center;
+    padding: 1.05rem 1rem;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 8px 30px rgba(47, 107, 255, 0.45);
+    transform: translateY(150%);
+    transition: transform 0.35s var(--ease);
+}
+.mobile-sticky-cta.visible { transform: translateY(0); }
+@media (max-width: 767px) {
+    .mobile-sticky-cta { display: block; }
+}
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal-up, .reveal-left, .reveal-right {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+    .ticker-track, .scroll-cue, .founding-dot,
+    .mobile-sticky-cta { animation: none !important; transition: none !important; }
 }
