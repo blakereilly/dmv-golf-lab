@@ -138,6 +138,9 @@ nav.scrolled {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
     letter-spacing: 0.28em;
@@ -154,11 +157,10 @@ nav.scrolled {
     color: #ffffff;
 }
 
-/* The single Signal-Blue period — the only accent on the wordmark */
-.logo-dot {
-    color: var(--signal);
-    font-weight: 700;
-    margin-left: -0.16em; /* pull the period back against the S past the trailing track */
+.logo-icon {
+    height: clamp(30px, 7.5vw, 38px);
+    width: auto;
+    flex-shrink: 0;
 }
 
 .nav-links {
@@ -953,133 +955,6 @@ section#comparison h2 {
 .x-icon     { color: var(--red); font-weight: 700; font-size: 0.85rem; flex-shrink: 0; width: 20px; text-align: center; }
 
 /* =========================================
-   PXG PARTNERSHIP SECTION
-   ========================================= */
-.partnership-section {
-    background: var(--bg);
-    padding: 8rem clamp(1.25rem, 5vw, 5%);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    position: relative;
-}
-
-/* Subtle warm glow behind the partnership section */
-.partnership-section::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 400px;
-    background: radial-gradient(ellipse, var(--accent-subtle), transparent 70%);
-    pointer-events: none;
-}
-
-.partnership-layout {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-    align-items: center;
-    position: relative;
-}
-
-.partnership-img {
-    width: 100%;
-    max-width: 480px;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    border: 1px solid var(--border-strong);
-}
-
-.partnership-img img {
-    width: 100%;
-    display: block;
-}
-
-.partnership-inner {
-    max-width: 720px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.partnership-badge {
-    display: inline-block;
-    font-size: 0.76rem;
-    letter-spacing: 3.5px;
-    text-transform: uppercase;
-    color: var(--accent);
-    border: 1px solid var(--border-strong);
-    background: var(--accent-subtle);
-    padding: 0.45rem 1.1rem;
-    border-radius: 100px;
-    margin-bottom: 1.5rem;
-    font-weight: 600;
-}
-
-.partnership-inner h2 {
-    font-size: clamp(2.2rem, 4vw, 3rem);
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text);
-    margin-bottom: 1.4rem;
-    line-height: 1.08;
-}
-
-.partnership-inner p {
-    color: var(--text-secondary);
-    line-height: 1.85;
-    font-size: 1.02rem;
-    margin-bottom: 2rem;
-}
-
-.partnership-code {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.3rem;
-    margin: 2rem 0 1.5rem;
-    padding: 1.5rem 2rem;
-    background: var(--card);
-    border: 1px solid var(--border-strong);
-    border-radius: 14px;
-    box-shadow: var(--shadow-sm);
-}
-
-.code-label {
-    font-size: 0.76rem;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--gray);
-    font-weight: 500;
-}
-
-.code-value {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 2.2rem;
-    font-weight: 800;
-    letter-spacing: 7px;
-    color: var(--gold);
-    text-shadow: 0 0 32px var(--gold-glow);
-}
-
-.partnership-note {
-    display: inline-block;
-    font-size: 0.88rem;
-    color: var(--gray);
-    letter-spacing: 0.5px;
-    font-style: italic;
-    border-top: 1px solid var(--border);
-    padding-top: 1.2rem;
-    margin-top: 0.4rem;
-    width: 100%;
-}
-
-/* =========================================
    FOUNDER SECTION
    ========================================= */
 .founder-section {
@@ -1230,6 +1105,10 @@ footer {
 }
 
 .footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1rem;
     font-weight: 600;
@@ -1239,10 +1118,10 @@ footer {
     text-transform: uppercase;
 }
 
-.footer-logo-dot {
-    color: var(--signal);
-    font-weight: 700;
-    margin-left: -0.18em;
+.footer-logo-icon {
+    height: 26px;
+    width: auto;
+    opacity: 0.85;
 }
 
 footer p { margin-bottom: 0.5rem; line-height: 1.8; }
@@ -1361,7 +1240,7 @@ footer a:hover { color: #6F97FF; }
     border: 1px solid var(--border-strong);
     border-radius: 10px;
     padding: 0.9rem 1.1rem;
-    font-size: 0.95rem;
+    font-size: 1rem; /* 16px minimum — anything smaller triggers iOS Safari's auto-zoom on focus */
     color: var(--text);
     font-family: 'Plus Jakarta Sans', sans-serif;
     transition: border-color 0.25s ease, box-shadow 0.25s ease;
@@ -1907,21 +1786,6 @@ footer a:hover { color: #6F97FF; }
         gap: 1.5rem;
     }
 
-    .partnership-layout {
-        flex-direction: row;
-        gap: 4rem;
-        align-items: center;
-    }
-
-    .partnership-img {
-        flex: 0 0 400px;
-        max-width: 400px;
-    }
-
-    .partnership-inner {
-        text-align: left;
-    }
-
     .form-row {
         flex-direction: row;
         gap: 1.2rem;
@@ -1946,11 +1810,6 @@ footer a:hover { color: #6F97FF; }
    ========================================= */
 @media (min-width: 1200px) {
     .trackman-content { padding: 0 8% 7rem; }
-
-    .partnership-img {
-        flex: 0 0 420px;
-        max-width: 420px;
-    }
 }
 
 /* =========================================
@@ -2394,6 +2253,34 @@ footer a:hover { color: #6F97FF; }
 /* When real logos are dropped in as <img>, they scale to fit the slot */
 .tech-logo img { max-height: 42px; width: auto; opacity: 0.9; }
 
+/* Partner logos delivered as dark-ink art sit on a light chip so their
+   brand color reads true against the dark card. */
+.tech-logo--light {
+    background: #f5f6f8;
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+.tech-logo--light:hover {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.tech-logo--light img { opacity: 1; }
+
+.tech-feature-img {
+    max-width: 380px;
+    margin: 2.5rem auto 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-strong);
+}
+
+.tech-feature-img img {
+    width: 100%;
+    display: block;
+}
+
 /* ── Footer address ── */
 .footer-address {
     font-family: 'Space Mono', monospace;
@@ -2606,6 +2493,17 @@ footer a:hover { color: #6F97FF; }
 .mobile-sticky-cta.visible { transform: translateY(0); }
 @media (max-width: 767px) {
     .mobile-sticky-cta { display: block; }
+
+    /* Trim the generous desktop section padding down for mobile's much
+       narrower viewport — cuts a meaningful chunk of scroll length without
+       losing the breathing room between sections. */
+    .features, .comparison { padding-top: 3.5rem; padding-bottom: 4rem; }
+    .how-section            { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+    .trackman-content       { padding-bottom: 3.5rem; }
+    .tech-strip              { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+    .reserve-section        { padding-top: 4.5rem; padding-bottom: 4rem; }
+    .status-social-section  { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+    footer                  { padding-top: 2.5rem; padding-bottom: 2.5rem; }
 }
 
 /* =========================================
