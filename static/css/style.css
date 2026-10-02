@@ -2021,6 +2021,9 @@ footer a:hover { color: #6F97FF; }
     letter-spacing: 0.3px;
 }
 
+.plan-foot-note a { color: var(--accent); text-decoration: none; }
+.plan-foot-note a:hover { color: #6F97FF; }
+
 /* ── Policy section ── */
 .policy-section {
     background: var(--bg-secondary);
