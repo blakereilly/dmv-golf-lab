@@ -2,3 +2,5 @@ venv/
 *.pyc
 __pycache__/
 .env
+# Original bay photos (full-size, contain GPS metadata) — only the cleaned web versions are published
+static/img/bay/CGL_*

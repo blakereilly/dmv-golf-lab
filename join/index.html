@@ -20,13 +20,13 @@
     <meta property="og:title" content="Founding Memberships Are Open | Capital Golf Labs">
     <meta property="og:description" content="Only 20 founding memberships at the DMV's private Trackman iO studio. First come, first served.">
     <meta property="og:url" content="https://capitalgolflabs.com/join/">
-    <meta property="og:image" content="https://capitalgolflabs.com/static/img/og-card.png">
+    <meta property="og:image" content="https://capitalgolflabs.com/static/img/og-join.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Founding Memberships Are Open | Capital Golf Labs">
     <meta name="twitter:description" content="Only 20 founding memberships at the DMV's private Trackman iO studio. First come, first served.">
-    <meta name="twitter:image" content="https://capitalgolflabs.com/static/img/og-card.png">
+    <meta name="twitter:image" content="https://capitalgolflabs.com/static/img/og-join.jpg">
 </head>
 <body>
 
@@ -60,13 +60,20 @@
 
 <!-- ===================== HEADER ===================== -->
 <header class="section-header" style="margin-top: 7rem; padding: 0 1.5rem;">
-    <div class="section-eyebrow">Falls Church, VA &middot; Opening October 13</div>
+    <div class="section-eyebrow">Founding Members Start October 13</div>
     <h2>Founding Memberships Are Open</h2>
     <p>A private, members-only golf simulator studio with a Trackman iO bay. Book online, let yourself in, play.</p>
 </header>
 
 <!-- ===================== FOUNDING PLAN ===================== -->
 <section class="plan-section" style="margin-top: 2.5rem;">
+    <figure class="bay-photo join-photo">
+        <picture>
+            <source srcset="../static/img/bay/bay-face-on-wide.webp" type="image/webp">
+            <img src="../static/img/bay/bay-face-on-wide.jpg" alt="The Capital Golf Labs bay: a Trackman course on the impact screen with a ball teed up on the hitting mat" width="1320" height="1100">
+        </picture>
+    </figure>
+
     <div class="founding-badge">
         <div class="founding-dot"></div>
         <span>Only 20 founding memberships &mdash; first come, first served</span>
@@ -86,10 +93,9 @@
                 <li><span class="check-icon">&#10003;</span>1 free guest per session</li>
                 <li><span class="check-icon">&#10003;</span>Access to leagues and tournaments</li>
                 <li><span class="check-icon">&#10003;</span>Month-to-month, cancel anytime</li>
-                <li><span class="check-icon">&#10003;</span>No charge until we open on October 13</li>
             </ul>
             <!-- FOUNDING CTA: when spots fill, swap this href back to the waitlist: ../index.html#reserve -->
-            <a href="TRACKMAN_LINK_HERE" class="plan-cta">Claim Your Founding Spot</a>
+            <a href="https://booking.trackmangolf.com/venues/falls-church/memberships" class="plan-cta">Claim Your Founding Spot</a>
         </div>
     </div>
 
@@ -111,6 +117,9 @@
         <a href="https://instagram.com/capitalgolflabs" target="_blank" rel="noopener">@capitalgolflabs</a>
     </p>
 </footer>
+
+<!-- Sticky mobile CTA — scrolls to the founding card (keeps the Trackman link in one place) -->
+<a href="#founding" class="mobile-sticky-cta" id="mobileStickyCta">Claim Your Founding Spot</a>
 
 <script>
 // Mobile hamburger menu
@@ -140,6 +149,13 @@ const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 20);
 }, { passive: true });
+
+// Sticky mobile CTA — visible until the real Claim button is on screen or scrolled past
+const stickyCta = document.getElementById('mobileStickyCta');
+new IntersectionObserver(([e]) => {
+    const below = !e.isIntersecting && e.boundingClientRect.top > 0;
+    stickyCta.classList.toggle('visible', below);
+}, { threshold: 0 }).observe(document.querySelector('.plan-cta'));
 </script>
 
 </body>
