@@ -1006,6 +1006,13 @@ section#comparison h2 {
     width: 100%;
 }
 
+/* Instagram block on its own — centered */
+.status-social-inner.social-solo {
+    align-items: center;
+    text-align: center;
+    max-width: 560px;
+}
+
 .status-dot {
     width: 10px; height: 10px;
     border-radius: 50%;
@@ -1956,6 +1963,8 @@ footer a:hover { color: #6F97FF; }
     font-weight: 500;
 }
 
+.plan-price + .plan-hours { margin-top: 1.4rem; }
+
 .plan-was {
     font-size: 0.82rem;
     color: var(--gray);
@@ -1974,6 +1983,15 @@ footer a:hover { color: #6F97FF; }
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     margin-bottom: 1.6rem;
+}
+
+.plan-benefits-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--gray-light);
+    margin-bottom: 0.9rem;
 }
 
 .plan-list {
@@ -2517,12 +2535,6 @@ footer a:hover { color: #6F97FF; }
     width: 100%;
     height: auto;
     display: block;
-}
-
-/* Single photo above the founding card on /join */
-.bay-photo.join-photo {
-    max-width: 560px;
-    margin: 0 auto 2.5rem;
 }
 
 /* /join: land the founding card clear of the fixed nav */
