@@ -208,6 +208,21 @@ nav a:not(.logo):not(.cta-btn):hover {
     box-shadow: 0 6px 26px rgba(47, 107, 255, 0.4);
 }
 
+/* Member Booking: outlined companion to the Join Now button */
+.cta-btn.book-btn {
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+    box-shadow: none;
+    padding: calc(0.6rem - 1.5px) calc(1.4rem - 1.5px);
+}
+
+.cta-btn.book-btn:hover {
+    border-color: var(--accent);
+    border-bottom-color: var(--accent) !important;
+    box-shadow: none;
+}
+
 /* ── Hamburger ──────────────────────────────────────────────────────────── */
 .hamburger {
     display: flex;
@@ -301,6 +316,11 @@ nav a:not(.logo):not(.cta-btn):hover {
 .mobile-cta:hover {
     box-shadow: 0 6px 24px rgba(47, 107, 255, 0.35);
     color: #ffffff !important;
+}
+
+.mobile-cta.mobile-book {
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
 }
 
 .mobile-founding {
