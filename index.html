@@ -7,12 +7,15 @@
     <link rel="icon" type="image/png" sizes="16x16" href="static/img/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="static/img/apple-touch-icon.png">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#04060a">
     <meta name="description" content="A private, 24/7 Trackman golf studio in Falls Church, VA. No crowds, no distractions — just you, your swing, and tour-level data. Now open.">
     <title>Capital Golf Labs | Private 24/7 Trackman Golf Studio — Falls Church, VA</title>
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="static/img/trackman-hero.jpg">
     <link rel="stylesheet" href="static/css/style.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBLS1ZX0RX"></script>
@@ -23,19 +26,20 @@
       gtag('config', 'G-GBLS1ZX0RX');
     </script>
     <script defer src="static/js/analytics.js"></script>
+    <script defer src="static/js/site.js"></script>
     <link rel="canonical" href="https://capitalgolflabs.com/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Capital Golf Labs">
     <meta property="og:title" content="Capital Golf Labs — Your Private Golf Lab">
     <meta property="og:description" content="A private, 24/7 Trackman golf studio in Falls Church, VA. No crowds, no distractions — just you, your swing, and tour-level data. Now open.">
     <meta property="og:url" content="https://capitalgolflabs.com/">
-    <meta property="og:image" content="https://capitalgolflabs.com/static/img/og-card-open.png">
+    <meta property="og:image" content="https://capitalgolflabs.com/static/img/og-card-open.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Capital Golf Labs — Your Private Golf Lab">
     <meta name="twitter:description" content="A private, 24/7 Trackman golf studio in Falls Church, VA. No crowds, no distractions — just you, your swing, and tour-level data. Now open.">
-    <meta name="twitter:image" content="https://capitalgolflabs.com/static/img/og-card-open.png">
+    <meta name="twitter:image" content="https://capitalgolflabs.com/static/img/og-card-open.jpg">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -44,7 +48,8 @@
       "description": "A private, 24/7 Trackman golf studio in Falls Church, VA.",
       "url": "https://capitalgolflabs.com",
       "email": "blake@capitalgolflabs.com",
-      "image": "https://capitalgolflabs.com/static/img/og-card-open.png",
+      "image": "https://capitalgolflabs.com/static/img/og-card-open.jpg",
+      "openingHours": "Mo-Su 00:00-23:59",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "2830-B Fallfax Drive",
@@ -57,542 +62,592 @@
     }
     </script>
 </head>
-<body>
+<body data-page="home">
 
 <!-- ===================== NAV ===================== -->
-<nav id="main-nav">
-    <a href="#" class="logo"><img src="static/img/cgl-icon-white.svg" alt="" class="logo-icon" width="32" height="32">CAPITAL GOLF LABS</a>
+<nav class="nav" id="main-nav" aria-label="Main">
+    <div class="container nav-inner">
+        <a href="#" class="logo" aria-label="Capital Golf Labs home">
+            <img src="static/img/logo/cgl-logo-line.svg" alt="Capital Golf Labs" width="213" height="34">
+        </a>
 
-    <ul class="nav-links">
-        <li><a href="#tech">The Concept</a></li>
-        <li><a href="#trackman">Technology</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" class="cta-btn book-btn" target="_blank" rel="noopener">Member Booking</a></li>
-        <li><a href="join/" class="cta-btn">Join Now</a></li>
-    </ul>
+        <ul class="nav-links">
+            <li><a href="#tech" class="nav-link">The Concept</a></li>
+            <li><a href="#trackman" class="nav-link">Technology</a></li>
+            <li><a href="#visit" class="nav-link">Visit</a></li>
+            <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        </ul>
 
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+        <div class="nav-ctas">
+            <a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">Member Booking</a>
+            <a href="join/" class="btn btn-primary btn-sm">Join Now</a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
 </nav>
 
-<!-- Mobile menu overlay -->
+<!-- Mobile menu -->
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="bg-grid"></div>
     <ul>
-        <li><a href="#tech" class="mobile-link">The Concept</a></li>
-        <li><a href="#trackman" class="mobile-link">Technology</a></li>
-        <li><a href="faq.html" class="mobile-link">FAQ</a></li>
-        <li><a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" class="mobile-link mobile-cta mobile-book" target="_blank" rel="noopener">Member Booking</a></li>
-        <li><a href="join/" class="mobile-link mobile-cta">Join Now</a></li>
+        <li><a href="#tech" class="mobile-link"><span class="mono">01</span>The Concept</a></li>
+        <li><a href="#trackman" class="mobile-link"><span class="mono">02</span>Technology</a></li>
+        <li><a href="#visit" class="mobile-link"><span class="mono">03</span>Visit</a></li>
+        <li><a href="faq.html" class="mobile-link"><span class="mono">04</span>FAQ</a></li>
     </ul>
+    <div class="mobile-menu-ctas">
+        <a href="join/" class="btn btn-primary">Join Now</a>
+        <a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" class="btn btn-ghost" target="_blank" rel="noopener">Member Booking</a>
+    </div>
 </div>
 
 <!-- ===================== HERO ===================== -->
 <header class="hero">
+    <div class="hero-media" role="img" aria-label="A golfer mid-swing in a Trackman simulator bay"></div>
+    <div class="bg-grid"></div>
 
-    <div class="hero-content">
-        <div class="hero-eyebrow reveal-up"><span>Falls Church, VA</span><span class="eyebrow-sep"> &middot; </span><span>Now Open</span></div>
-        <h1 class="reveal-up" style="animation-delay:0.1s">Your Private<br>Golf Lab<span class="hero-dot">.</span></h1>
-        <p class="reveal-up" style="animation-delay:0.2s">
-            Open 24/7, built entirely around your game.<br>
-            Just you, your swing, and tour-level data.
-        </p>
-        <div class="hero-btns reveal-up" style="animation-delay:0.3s">
-            <a href="join/" class="primary-btn">Join Now</a>
-            <a href="#how" class="secondary-btn">See How It Works</a>
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-badge hero-in" style="--d:.1s"><span class="live-dot"></span><strong>Now Open</strong><span class="sep">/</span>Falls Church, VA</div>
+            <h1 class="hero-title hero-in" style="--d:.2s"><span class="line">Your Private</span><span class="line">Golf Lab<span class="dot">.</span></span></h1>
+            <p class="hero-sub hero-in" style="--d:.32s">
+                Open 24/7, built entirely around your game.<br>
+                Just you, your swing, and tour-level data.
+            </p>
+            <div class="hero-ctas hero-in" style="--d:.44s">
+                <a href="join/" class="btn btn-primary">Join Now<svg class="btn-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+                <a href="#how" class="btn btn-ghost">See How It Works</a>
+            </div>
+            <div class="hero-specs hero-in" style="--d:.56s">
+                <span>Trackman iO</span><span>24/7 Access</span><span>Private Bay</span>
+            </div>
         </div>
     </div>
 
-    <div class="scroll-cue" aria-hidden="true">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Sample Trackman readout (desktop) — cycles through clubs -->
+    <aside class="readout hud hud--on hero-in" id="readout" style="--d:.75s" aria-label="Sample Trackman shot data">
+        <div class="readout-head">
+            <span class="left"><span class="live-dot"></span>Trackman Readout</span>
+            <span class="readout-club">Driver</span>
+        </div>
+        <svg class="readout-arc" viewBox="0 0 320 72" aria-hidden="true">
+            <defs>
+                <linearGradient id="ro-grad" x1="0" x2="1">
+                    <stop offset="0" stop-color="#2F6BFF" stop-opacity=".25"/>
+                    <stop offset="1" stop-color="#b9ccff"/>
+                </linearGradient>
+            </defs>
+            <line class="ground" x1="8" x2="312" y1="66" y2="66"/>
+            <path class="flight" d="M8 66"/>
+            <circle class="ball" r="3.5" cx="8" cy="66"/>
         </svg>
-    </div>
+        <div class="readout-grid">
+            <div><span class="rd-label">Ball Speed</span><span class="rd-val" data-k="ball" data-v="167">167</span><span class="rd-unit">mph</span></div>
+            <div><span class="rd-label">Launch</span><span class="rd-val" data-k="launch" data-v="12.1">12.1</span><span class="rd-unit">°</span></div>
+            <div><span class="rd-label">Spin Rate</span><span class="rd-val" data-k="spin" data-v="2480">2,480</span><span class="rd-unit">rpm</span></div>
+            <div><span class="rd-label">Carry</span><span class="rd-val" data-k="carry" data-v="268">268</span><span class="rd-unit">yds</span></div>
+        </div>
+    </aside>
 
-    <div class="hero-fade"></div>
+    <div class="scroll-cue" aria-hidden="true">SCROLL<i></i></div>
 </header>
 
 <!-- ===================== DATA TICKER ===================== -->
-<div class="data-ticker" aria-hidden="true">
-    <div class="ticker-track">
-        <span class="ticker-item"><span class="ticker-label">Ball Speed</span><span class="ticker-val">182 mph</span></span>
-        <span class="ticker-sep">◆</span>
-        <span class="ticker-item"><span class="ticker-label">Club Speed</span><span class="ticker-val">121 mph</span></span>
-        <span class="ticker-sep">◆</span>
-        <span class="ticker-item"><span class="ticker-label">Spin Rate</span><span class="ticker-val">2,840 rpm</span></span>
-        <span class="ticker-sep">◆</span>
-        <span class="ticker-item"><span class="ticker-label">Launch Angle</span><span class="ticker-val">12.4°</span></span>
-        <span class="ticker-sep">◆</span>
-        <span class="ticker-item"><span class="ticker-label">Carry Distance</span><span class="ticker-val">267 yds</span></span>
-        <span class="ticker-sep">◆</span>
-        <span class="ticker-item"><span class="ticker-label">Smash Factor</span><span class="ticker-val">1.49</span></span>
-        <span class="ticker-sep">◆</span>
-        <span class="ticker-item"><span class="ticker-label">Attack Angle</span><span class="ticker-val">-4.2°</span></span>
-        <span class="ticker-sep">◆</span>
-        <span class="ticker-item"><span class="ticker-label">Face Angle</span><span class="ticker-val">0.8° open</span></span>
-        <span class="ticker-sep">◆</span>
-        <span class="ticker-item"><span class="ticker-label">Club Path</span><span class="ticker-val">1.1° in-out</span></span>
-        <span class="ticker-sep">◆</span>
-        <span class="ticker-item"><span class="ticker-label">Dynamic Loft</span><span class="ticker-val">14.2°</span></span>
-        <span class="ticker-sep">◆</span>
-        <!-- Duplicate for seamless loop -->
-        <span class="ticker-item"><span class="ticker-label">Ball Speed</span><span class="ticker-val">182 mph</span></span>
-        <span class="ticker-sep">◆</span>
-        <span class="ticker-item"><span class="ticker-label">Club Speed</span><span class="ticker-val">121 mph</span></span>
-        <span class="ticker-sep">◆</span>
-        <span class="ticker-item"><span class="ticker-label">Spin Rate</span><span class="ticker-val">2,840 rpm</span></span>
-        <span class="ticker-sep">◆</span>
-        <span class="ticker-item"><span class="ticker-label">Launch Angle</span><span class="ticker-val">12.4°</span></span>
-        <span class="ticker-sep">◆</span>
-        <span class="ticker-item"><span class="ticker-label">Carry Distance</span><span class="ticker-val">267 yds</span></span>
-        <span class="ticker-sep">◆</span>
-        <span class="ticker-item"><span class="ticker-label">Smash Factor</span><span class="ticker-val">1.49</span></span>
-        <span class="ticker-sep">◆</span>
-        <span class="ticker-item"><span class="ticker-label">Attack Angle</span><span class="ticker-val">-4.2°</span></span>
-        <span class="ticker-sep">◆</span>
-        <span class="ticker-item"><span class="ticker-label">Face Angle</span><span class="ticker-val">0.8° open</span></span>
-        <span class="ticker-sep">◆</span>
-        <span class="ticker-item"><span class="ticker-label">Club Path</span><span class="ticker-val">1.1° in-out</span></span>
-        <span class="ticker-sep">◆</span>
-        <span class="ticker-item"><span class="ticker-label">Dynamic Loft</span><span class="ticker-val">14.2°</span></span>
-        <span class="ticker-sep">◆</span>
+<div class="ticker" aria-hidden="true">
+    <div class="ticker-tag"><span class="live-dot"></span>Trackman Data</div>
+    <div class="ticker-viewport">
+        <div class="ticker-track">
+            <span class="ticker-item"><span class="ticker-label">Ball Speed</span><span class="ticker-val">182 mph</span></span>
+            <span class="ticker-item"><span class="ticker-label">Club Speed</span><span class="ticker-val">121 mph</span></span>
+            <span class="ticker-item"><span class="ticker-label">Spin Rate</span><span class="ticker-val">2,840 rpm</span></span>
+            <span class="ticker-item"><span class="ticker-label">Launch Angle</span><span class="ticker-val">12.4°</span></span>
+            <span class="ticker-item"><span class="ticker-label">Carry Distance</span><span class="ticker-val">267 yds</span></span>
+            <span class="ticker-item"><span class="ticker-label">Smash Factor</span><span class="ticker-val">1.49</span></span>
+            <span class="ticker-item"><span class="ticker-label">Attack Angle</span><span class="ticker-val">-4.2°</span></span>
+            <span class="ticker-item"><span class="ticker-label">Face Angle</span><span class="ticker-val">0.8° open</span></span>
+            <span class="ticker-item"><span class="ticker-label">Club Path</span><span class="ticker-val">1.1° in-out</span></span>
+            <span class="ticker-item"><span class="ticker-label">Dynamic Loft</span><span class="ticker-val">14.2°</span></span>
+            <!-- Duplicate for seamless loop -->
+            <span class="ticker-item"><span class="ticker-label">Ball Speed</span><span class="ticker-val">182 mph</span></span>
+            <span class="ticker-item"><span class="ticker-label">Club Speed</span><span class="ticker-val">121 mph</span></span>
+            <span class="ticker-item"><span class="ticker-label">Spin Rate</span><span class="ticker-val">2,840 rpm</span></span>
+            <span class="ticker-item"><span class="ticker-label">Launch Angle</span><span class="ticker-val">12.4°</span></span>
+            <span class="ticker-item"><span class="ticker-label">Carry Distance</span><span class="ticker-val">267 yds</span></span>
+            <span class="ticker-item"><span class="ticker-label">Smash Factor</span><span class="ticker-val">1.49</span></span>
+            <span class="ticker-item"><span class="ticker-label">Attack Angle</span><span class="ticker-val">-4.2°</span></span>
+            <span class="ticker-item"><span class="ticker-label">Face Angle</span><span class="ticker-val">0.8° open</span></span>
+            <span class="ticker-item"><span class="ticker-label">Club Path</span><span class="ticker-val">1.1° in-out</span></span>
+            <span class="ticker-item"><span class="ticker-label">Dynamic Loft</span><span class="ticker-val">14.2°</span></span>
+        </div>
     </div>
 </div>
 
-<!-- ===================== CONCEPT SECTION ===================== -->
-<section id="tech" class="features">
-    <div class="section-header reveal-up">
-        <div class="section-eyebrow">Why We're Building This</div>
-        <h2>The Concept</h2>
-        <p>
-            The DMV has great golfers and not enough great places to practice. So we built one: quiet, private, and built around your game.
-        </p>
-    </div>
+<!-- ===================== 01 · CONCEPT ===================== -->
+<section id="tech" class="section section--alt">
+    <div class="container">
+        <header class="section-head reveal">
+            <span class="eyebrow"><b>01</b> Why We're Building This</span>
+            <h2 class="h2">The Concept</h2>
+            <p>The DMV has great golfers and not enough great places to practice. So we built one: quiet, private, and built around your game.</p>
+        </header>
 
-    <div class="feature-card reveal-up">
-        <h3>Tour-Level Technology</h3>
-        <p>
-            <strong>Trackman iO</strong>, the launch monitor trusted by tour pros, captures every detail of every shot.
-        </p>
-    </div>
+        <div class="concept-grid" data-stagger>
+            <article class="concept-card card hud spot reveal">
+                <div class="cc-top">
+                    <span class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg></span>
+                    <span class="cc-idx">01</span>
+                </div>
+                <h3>Tour-Level Technology</h3>
+                <p><strong>Trackman iO</strong>, the launch monitor trusted by tour pros, captures every detail of every shot.</p>
+            </article>
 
-    <div class="feature-card reveal-up">
-        <h3>24/7 Keyless Access</h3>
-        <p>
-            Book from your phone and let yourself in with your door code. No staff, no lines.
-        </p>
-    </div>
+            <article class="concept-card card hud spot reveal">
+                <div class="cc-top">
+                    <span class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="3"/><circle cx="9" cy="8" r=".9" fill="currentColor"/><circle cx="12" cy="8" r=".9" fill="currentColor"/><circle cx="15" cy="8" r=".9" fill="currentColor"/><circle cx="9" cy="11.5" r=".9" fill="currentColor"/><circle cx="12" cy="11.5" r=".9" fill="currentColor"/><circle cx="15" cy="11.5" r=".9" fill="currentColor"/><circle cx="9" cy="15" r=".9" fill="currentColor"/><circle cx="12" cy="15" r=".9" fill="currentColor"/><circle cx="15" cy="15" r=".9" fill="currentColor"/><path d="M10 18.5h4"/></svg></span>
+                    <span class="cc-idx">02</span>
+                </div>
+                <h3>24/7 Keyless Access</h3>
+                <p>Book from your phone and let yourself in with your door code. No staff, no lines.</p>
+            </article>
 
-    <div class="feature-card reveal-up">
-        <h3>Private by Design</h3>
-        <p>
-            The bay and lounge are all yours for your session, just you and your guests. No crowds, no distractions, total privacy.
-        </p>
+            <article class="concept-card card hud spot reveal">
+                <div class="cc-top">
+                    <span class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5l7.5 3v6c0 4.8-3.2 8.3-7.5 10-4.3-1.7-7.5-5.2-7.5-10v-6l7.5-3z"/><path d="M8.8 12.2l2.2 2.2 4.3-4.4"/></svg></span>
+                    <span class="cc-idx">03</span>
+                </div>
+                <h3>Private by Design</h3>
+                <p>The bay and lounge are all yours for your session, just you and your guests. No crowds, no distractions, total privacy.</p>
+            </article>
+        </div>
     </div>
 </section>
 
-<!-- ===================== HOW IT WORKS ===================== -->
-<section id="how" class="how-section">
-    <div class="section-header reveal-up">
-        <div class="section-eyebrow">How It Works</div>
-        <h2>From Your Phone to Your First Shot</h2>
-        <p>No front desk, no check-in, no waiting. Three steps and the bay is yours.</p>
-    </div>
-    <div class="how-grid">
+<!-- ===================== 02 · HOW IT WORKS ===================== -->
+<section id="how" class="section">
+    <div class="container">
+        <header class="section-head section-head--center reveal">
+            <span class="eyebrow"><b>02</b> How It Works</span>
+            <h2 class="h2">From Your Phone to Your First Shot</h2>
+            <p>No front desk, no check-in, no waiting. Three steps and the bay is yours.</p>
+        </header>
 
-        <div class="how-step reveal-up">
-            <div class="how-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
-            </div>
-            <div class="how-num">01</div>
-            <h3>Book From Your Phone</h3>
-            <p>Reserve a bay 24/7 in one-hour blocks. Pick your time — it's yours.</p>
-        </div>
-
-        <div class="how-step reveal-up">
-            <div class="how-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0"/><circle cx="12" cy="15.5" r="1.3"/></svg>
-            </div>
-            <div class="how-num">02</div>
-            <h3>Unlock at the Door</h3>
-            <p>Every booking gets its own door code. Walk up, enter it, and you're in. No keys, no staff, no line.</p>
-        </div>
-
-        <div class="how-step reveal-up">
-            <div class="how-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 2 4-6"/></svg>
-            </div>
-            <div class="how-num">03</div>
-            <h3>Hit &amp; Review Your Data</h3>
-            <p>Warm up, play a course, or grind your numbers — every shot saved to your Trackman profile.</p>
-        </div>
-
+        <ol class="timeline" data-stagger>
+            <li class="tl-step reveal">
+                <span class="tl-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"/><line x1="11" y1="18" x2="13" y2="18"/></svg></span>
+                <span class="tl-num">Step 01</span>
+                <h3>Book From Your Phone</h3>
+                <p>Reserve a bay 24/7 in one-hour blocks. Pick your time — it's yours.</p>
+            </li>
+            <li class="tl-step reveal">
+                <span class="tl-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0"/><circle cx="12" cy="15.5" r="1.3"/></svg></span>
+                <span class="tl-num">Step 02</span>
+                <h3>Unlock at the Door</h3>
+                <p>Every booking gets its own door code. Walk up, enter it, and you're in. No keys, no staff, no line.</p>
+            </li>
+            <li class="tl-step reveal">
+                <span class="tl-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 2 4-6"/></svg></span>
+                <span class="tl-num">Step 03</span>
+                <h3>Hit &amp; Review Your Data</h3>
+                <p>Warm up, play a course, or grind your numbers — every shot saved to your Trackman profile.</p>
+            </li>
+        </ol>
     </div>
 </section>
 
-<!-- ===================== INSIDE THE LAB ===================== -->
-<section id="bay" class="bay-section">
-    <div class="section-header reveal-up">
-        <div class="section-eyebrow">Inside the Lab</div>
-        <h2>Your Bay, Ready When You Are</h2>
-        <p>A dedicated Trackman iO bay with an impact screen, premium turf, and a touchscreen station to pick your practice, course, or game.</p>
-    </div>
-    <div class="bay-grid">
-        <figure class="bay-photo reveal-up">
-            <picture>
-                <source srcset="static/img/bay/bay-face-on.webp" type="image/webp">
-                <img src="static/img/bay/bay-face-on.jpg" alt="The Capital Golf Labs bay: a Trackman course on the impact screen with a ball teed up on the hitting mat" loading="lazy" width="1080" height="1350">
-            </picture>
-        </figure>
-        <figure class="bay-photo reveal-up">
-            <picture>
-                <source srcset="static/img/bay/bay-side.webp" type="image/webp">
-                <img src="static/img/bay/bay-side.jpg" alt="Side view of the bay with the Trackman activity menu on the screen and the touchscreen control station" loading="lazy" width="1080" height="1350">
-            </picture>
-        </figure>
+<!-- ===================== 03 · INSIDE THE LAB ===================== -->
+<section id="bay" class="section section--alt">
+    <div class="container">
+        <header class="section-head reveal">
+            <span class="eyebrow"><b>03</b> Inside the Lab</span>
+            <h2 class="h2">Your Bay, Ready When You Are</h2>
+            <p>A dedicated Trackman iO bay and a private lounge, all yours for your session.</p>
+        </header>
+
+        <div class="gallery" data-stagger>
+            <figure class="g-item reveal">
+                <button type="button" data-full="static/img/bay/bay-room.jpg" aria-label="Enlarge photo: The Bay">
+                    <picture>
+                        <source srcset="static/img/bay/bay-room.webp" type="image/webp">
+                        <img src="static/img/bay/bay-room.jpg" alt="The full Capital Golf Labs bay with the lights on: enclosure, impact screen, hitting mat and touchscreen station" loading="lazy" width="1600" height="1200">
+                    </picture>
+                </button>
+                <figcaption class="g-cap"><b>01</b> The Bay</figcaption>
+                <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></span>
+            </figure>
+            <figure class="g-item reveal">
+                <button type="button" data-full="static/img/bay/lounge.jpg" aria-label="Enlarge photo: The Lounge">
+                    <picture>
+                        <source srcset="static/img/bay/lounge.webp" type="image/webp">
+                        <img src="static/img/bay/lounge.jpg" alt="The private lounge with a sofa, armchair, coffee table and drinks fridge" loading="lazy" width="1600" height="1200">
+                    </picture>
+                </button>
+                <figcaption class="g-cap"><b>02</b> The Lounge</figcaption>
+                <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></span>
+            </figure>
+            <figure class="g-item reveal">
+                <button type="button" data-full="static/img/bay/bay-face-on.jpg" aria-label="Enlarge photo: Tee Box">
+                    <picture>
+                        <source srcset="static/img/bay/bay-face-on.webp" type="image/webp">
+                        <img src="static/img/bay/bay-face-on.jpg" alt="A ball teed up on the hitting mat facing a coastal Trackman course on the impact screen" loading="lazy" width="1080" height="1350" style="object-position:center 62%">
+                    </picture>
+                </button>
+                <figcaption class="g-cap"><b>03</b> Tee Box</figcaption>
+                <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></span>
+            </figure>
+            <figure class="g-item reveal">
+                <button type="button" data-full="static/img/bay/bay-menu.jpg" aria-label="Enlarge photo: Pick Your Game">
+                    <picture>
+                        <source srcset="static/img/bay/bay-menu.webp" type="image/webp">
+                        <img src="static/img/bay/bay-menu.jpg" alt="Trackman's activity menu on the impact screen: range, shot analysis, course play and more" loading="lazy" width="1080" height="1350" style="object-position:center 50%">
+                    </picture>
+                </button>
+                <figcaption class="g-cap"><b>04</b> Pick Your Game</figcaption>
+                <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></span>
+            </figure>
+            <figure class="g-item reveal">
+                <button type="button" data-full="static/img/bay/bay-data.jpg" aria-label="Enlarge photo: Shot Data">
+                    <picture>
+                        <source srcset="static/img/bay/bay-data.webp" type="image/webp">
+                        <img src="static/img/bay/bay-data.jpg" alt="Real Trackman shot data on the bay's screens: carry, ball speed, spin rate, club path and impact video" loading="lazy" width="1080" height="1350" style="object-position:center 30%">
+                    </picture>
+                </button>
+                <figcaption class="g-cap"><b>05</b> Shot Data</figcaption>
+                <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></span>
+            </figure>
+        </div>
     </div>
 </section>
 
-<!-- ===================== TRACKMAN SECTION ===================== -->
-<section id="trackman" class="trackman-section">
+<!-- Photo viewer -->
+<dialog id="lightbox" class="lightbox" aria-label="Photo viewer">
+    <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+    <img alt="">
+</dialog>
 
-    <div class="trackman-hero-img">
-        <img src="static/img/Trackman_iO_Side.jpg" alt="Trackman iO overhead camera detail" loading="lazy" />
-        <div class="trackman-hero-overlay">
-            <div class="trackman-hero-label">Powered By</div>
-            <div class="trackman-hero-brand">TRACKMAN iO</div>
+<!-- ===================== 04 · TECHNOLOGY ===================== -->
+<section id="trackman" class="tech">
+    <div class="tech-banner">
+        <img src="static/img/Trackman_iO_Side.jpg" alt="Trackman iO overhead camera detail" loading="lazy">
+        <div class="tech-banner-overlay">
+            <span class="mono">Powered By</span>
+            <span class="tech-wordmark text-grad">TRACKMAN iO</span>
         </div>
     </div>
 
-    <div class="trackman-content">
-        <div class="trackman-stat-bar reveal-up">
-            <div class="stat-item">
-                <span class="stat-number" data-count="90" data-suffix="%">90<span class="stat-suffix">%</span></span>
-                <span class="stat-label">of the Top 100 PGA Tour Players<br>Trust Trackman</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-number" data-count="26" data-suffix="+">26<span class="stat-suffix">+</span></span>
-                <span class="stat-label">Ball Flight &amp;<br>Club Data Parameters</span>
-            </div>
-            <div class="stat-divider"></div>
-            <div class="stat-item">
-                <span class="stat-number">#1</span>
-                <span class="stat-label">Overhead Launch Monitor<br>on the Market</span>
-            </div>
-        </div>
-
-        <div class="trackman-body">
-            <div class="trackman-text reveal-left">
-                <h2>Tour-Level Technology.<br>Available to You.</h2>
-                <p>
-                    Mounted overhead, the Trackman iO captures every shot with radar and high-speed impact video. Ball speed, spin, launch, carry, all of it. This is how tour players practice. Now it's yours.
-                </p>
-                <ul class="trackman-features-list">
-                    <li>Overhead radar + radar-synchronized impact camera</li>
-                    <li>Full swing, short game, and putting data</li>
-                    <li>Shot dispersion mapping across every club</li>
-                    <li>Session history saved to your Trackman profile</li>
-                </ul>
+    <div class="section tech-section">
+        <div class="container">
+            <div class="stats reveal">
+                <div class="stat">
+                    <span class="stat-number" data-count="90" data-suffix="%">90<span class="stat-suffix">%</span></span>
+                    <span class="stat-label">of the Top 100 PGA Tour Players <br>Trust Trackman</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-count="26" data-suffix="+">26<span class="stat-suffix">+</span></span>
+                    <span class="stat-label">Ball Flight &amp; <br>Club Data Parameters</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">#1</span>
+                    <span class="stat-label">Overhead Launch Monitor <br>on the Market</span>
+                </div>
             </div>
 
-            <div class="trackman-product-img reveal-right">
-                <picture>
-                    <source srcset="static/img/Trackman_iO_Front.webp" type="image/webp">
-                    <img src="static/img/Trackman_iO_Front.png" alt="Trackman iO unit render" loading="lazy" width="1400" height="985" />
-                </picture>
+            <div class="tech-grid">
+                <div class="tech-copy reveal">
+                    <span class="eyebrow"><b>04</b> Technology</span>
+                    <h2 class="h2">Tour-Level Technology.<br>Available to You.</h2>
+                    <p class="lead">Mounted overhead, the Trackman iO captures every shot with radar and high-speed impact video. Ball speed, spin, launch, carry, all of it. This is how tour players practice. Now it's yours.</p>
+                    <ul class="spec-list">
+                        <li><span class="mono">01</span>Overhead radar + radar-synchronized impact camera</li>
+                        <li><span class="mono">02</span>Full swing, short game, and putting data</li>
+                        <li><span class="mono">03</span>Shot dispersion mapping across every club</li>
+                        <li><span class="mono">04</span>Session history saved to your Trackman profile</li>
+                    </ul>
+                </div>
+
+                <!-- Shot Lab: pick a club and watch the flight -->
+                <div class="shotlab card hud hud--on reveal" id="shotlab">
+                    <div class="sl-head">
+                        <span class="sl-title"><span class="live-dot"></span>Shot Lab</span>
+                        <span class="sl-note">Sample data · Pick a club</span>
+                    </div>
+                    <div class="sl-tabs" role="tablist" aria-label="Choose a club">
+                        <button type="button" class="sl-tab" role="tab" data-club="driver" aria-selected="true">Driver</button>
+                        <button type="button" class="sl-tab" role="tab" data-club="wood" aria-selected="false">3 Wood</button>
+                        <button type="button" class="sl-tab" role="tab" data-club="iron" aria-selected="false">7 Iron</button>
+                        <button type="button" class="sl-tab" role="tab" data-club="wedge" aria-selected="false">Wedge</button>
+                    </div>
+                    <div class="sl-chart">
+                        <svg viewBox="0 0 600 240" role="img" aria-label="Side view of the ball flight for the selected club">
+                            <defs>
+                                <linearGradient id="sl-line" x1="0" x2="1">
+                                    <stop offset="0" stop-color="#2F6BFF"/>
+                                    <stop offset="1" stop-color="#c2d3ff"/>
+                                </linearGradient>
+                                <linearGradient id="sl-area" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0" stop-color="#2F6BFF" stop-opacity=".28"/>
+                                    <stop offset="1" stop-color="#2F6BFF" stop-opacity="0"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <div class="sl-data" aria-live="polite">
+                        <div class="sl-metric"><span class="rd-label">Club Speed</span><span class="rd-val" data-k="club" data-v="112">112</span><span class="rd-unit">mph</span></div>
+                        <div class="sl-metric"><span class="rd-label">Ball Speed</span><span class="rd-val" data-k="ball" data-v="167">167</span><span class="rd-unit">mph</span></div>
+                        <div class="sl-metric"><span class="rd-label">Smash</span><span class="rd-val" data-k="smash" data-v="1.49">1.49</span></div>
+                        <div class="sl-metric"><span class="rd-label">Launch</span><span class="rd-val" data-k="launch" data-v="12.1">12.1</span><span class="rd-unit">°</span></div>
+                        <div class="sl-metric"><span class="rd-label">Spin Rate</span><span class="rd-val" data-k="spin" data-v="2480">2,480</span><span class="rd-unit">rpm</span></div>
+                        <div class="sl-metric"><span class="rd-label">Apex</span><span class="rd-val" data-k="apex" data-v="98">98</span><span class="rd-unit">ft</span></div>
+                        <div class="sl-metric sl-metric--key"><span class="rd-label">Carry</span><span class="rd-val" data-k="carry" data-v="268">268</span><span class="rd-unit">yds</span></div>
+                        <div class="sl-metric sl-metric--key"><span class="rd-label">Total</span><span class="rd-val" data-k="total" data-v="291">291</span><span class="rd-unit">yds</span></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
 </section>
 
-<!-- ===================== WAITLIST FORM SECTION ===================== -->
-<section id="reserve" class="reserve-section">
-    <div class="reserve-inner">
-        <div class="reserve-header reveal-up">
-            <div class="reserve-eyebrow">Membership</div>
-            <h2>Memberships Are Open</h2>
+<!-- ===================== 05 · REVIEWS (filled from Google via the cgl-hooks Worker; hidden until it loads) ===================== -->
+<section id="reviews" class="section section--line" hidden>
+    <div class="container">
+        <div class="section-head section-head--row reveal">
+            <div>
+                <span class="eyebrow"><b>05</b> Reviews</span>
+                <h2 class="h2">What Golfers Are Saying</h2>
+            </div>
+            <div class="rv-nav" aria-label="Scroll reviews">
+                <button type="button" class="rv-btn" data-dir="-1" aria-label="Previous reviews"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button>
+                <button type="button" class="rv-btn" data-dir="1" aria-label="Next reviews"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg></button>
+            </div>
+        </div>
+
+        <div class="rv-summary card reveal">
+            <div class="rv-score">
+                <span class="rv-num" data-rv="rating">5.0</span>
+                <div>
+                    <span class="stars" data-rv="stars" aria-hidden="true"></span>
+                    <span class="rv-meta"><svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg><span data-rv="count">Google reviews</span></span>
+                </div>
+            </div>
+            <div class="rv-actions">
+                <a class="btn btn-ghost btn-sm" data-rv="url" href="#" target="_blank" rel="noopener">Read All on Google</a>
+                <a class="btn btn-primary btn-sm" data-rv="write" href="#" target="_blank" rel="noopener">Leave a Review</a>
+            </div>
+        </div>
+
+        <div class="rv-track" data-rv="track" tabindex="0" aria-label="Google reviews"></div>
+    </div>
+</section>
+
+<!-- ===================== 06 · MEMBERSHIP ===================== -->
+<section id="reserve" class="section section--alt">
+    <div class="bg-grid"></div>
+    <div class="container">
+        <header class="section-head section-head--center reveal">
+            <span class="eyebrow"><b>06</b> Membership</span>
+            <h2 class="h2">Memberships Are Open</h2>
             <p>$225/month with 5 hours of bay time included. Month-to-month, cancel anytime.</p>
-        </div>
+        </header>
 
-        <div class="reserve-join reveal-up">
-            <a href="join/" class="primary-btn">Join Now</a>
-        </div>
-
-        <div class="reserve-alt reveal-up">
-            <h3>Not ready yet?</h3>
-            <p>Stay in the loop and we'll keep you posted on leagues, events, and what's new.</p>
-        </div>
-
-        <form id="waitlist-form" class="waitlist-form reveal-up" autocomplete="on">
-            <div class="form-row">
-                <div class="form-field">
-                    <label for="wl-name">Full Name</label>
-                    <input type="text" id="wl-name" name="name" required autocomplete="name" placeholder="Your name">
+        <div class="member-grid" data-stagger>
+            <article class="plan reveal">
+                <div class="plan-top">
+                    <span class="plan-name">Membership</span>
+                    <span class="plan-status"><span class="live-dot"></span>Now Open</span>
                 </div>
-                <div class="form-field">
-                    <label for="wl-email">Email</label>
-                    <input type="email" id="wl-email" name="email" required autocomplete="email" placeholder="you@email.com">
+                <div class="plan-price"><span class="cur">$</span><span class="amount">225</span><span class="per">/ month</span></div>
+                <div class="plan-hours">5 Hours per Month</div>
+                <div class="plan-benefits-label">Member Benefits</div>
+                <ul class="plan-list">
+                    <li><span class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.2 2.2 4.8-4.9"/></svg></span>5 Included Hours Per Month</li>
+                    <li><span class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.2 2.2 4.8-4.9"/></svg></span>Private 24/7 Access to Premium Trackman iO Facility</li>
+                    <li><span class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.2 2.2 4.8-4.9"/></svg></span>One Free Guest Per Session</li>
+                    <li><span class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.2 2.2 4.8-4.9"/></svg></span>Additional Hours $40/hr</li>
+                    <li><span class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.2 2.2 4.8-4.9"/></svg></span>Access to Leagues and Tournaments</li>
+                </ul>
+                <a href="join/" class="btn btn-primary btn-block">Join Now<svg class="btn-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+                <a class="plan-proof" data-rv-inline hidden href="#" target="_blank" rel="noopener"></a>
+            </article>
+
+            <div class="updates card reveal">
+                <h3>Not ready yet?</h3>
+                <p>Stay in the loop and we'll keep you posted on leagues, events, and what's new.</p>
+                <div class="soon">
+                    <span class="soon-label">Coming soon</span>
+                    <ul class="soon-list">
+                        <li>Trial Sessions</li>
+                        <li>Private Events</li>
+                        <li>Gift Cards</li>
+                        <li>Lessons</li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-ghost btn-block updates-toggle" aria-expanded="false" aria-controls="waitlist-form">Get Updates</button>
+
+                <form id="waitlist-form" class="waitlist-form" autocomplete="on">
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="wl-name">Full Name</label>
+                            <input type="text" id="wl-name" name="name" required autocomplete="name" placeholder="Your name">
+                        </div>
+                        <div class="form-field">
+                            <label for="wl-email">Email</label>
+                            <input type="email" id="wl-email" name="email" required autocomplete="email" placeholder="you@email.com">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label for="wl-phone">Phone <span class="field-optional">(optional)</span></label>
+                            <input type="tel" id="wl-phone" name="phone" autocomplete="tel" placeholder="(555) 555-5555">
+                        </div>
+                        <div class="form-field">
+                            <label for="wl-source">How did you hear about us?</label>
+                            <select id="wl-source" name="source">
+                                <option value="" disabled selected>Select one</option>
+                                <option value="Friend or referral">Friend or referral</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="Facebook">Facebook</option>
+                                <option value="PXG">PXG</option>
+                                <option value="Google search">Google search</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block form-submit" id="form-submit">
+                        <span class="submit-text">Keep Me Posted</span>
+                        <span class="submit-loading" style="display:none"><span class="spinner"></span> Submitting...</span>
+                        <span class="submit-success" style="display:none">&#10003; You're on the list!</span>
+                    </button>
+                    <p class="form-note">No commitment. Just updates, never spam.</p>
+                </form>
+
+                <div id="form-success" class="form-success-msg" style="display:none">
+                    <div class="success-icon">&#10003;</div>
+                    <h3>You're on the list.</h3>
+                    <p>We'll keep you posted on leagues, events, and what's new. In the meantime, follow along on Instagram.</p>
+                    <a href="https://instagram.com/capitalgolflabs" target="_blank" rel="noopener" class="success-insta">@capitalgolflabs</a>
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-field">
-                    <label for="wl-phone">Phone <span class="field-optional">(optional)</span></label>
-                    <input type="tel" id="wl-phone" name="phone" autocomplete="tel" placeholder="(555) 555-5555">
-                </div>
-                <div class="form-field">
-                    <label for="wl-source">How did you hear about us?</label>
-                    <select id="wl-source" name="source">
-                        <option value="" disabled selected>Select one</option>
-                        <option value="Friend or referral">Friend or referral</option>
-                        <option value="Instagram">Instagram</option>
-                        <option value="Facebook">Facebook</option>
-                        <option value="PXG">PXG</option>
-                        <option value="Google search">Google search</option>
-                        <option value="Other">Other</option>
-                    </select>
-                </div>
-            </div>
-            <button type="submit" class="form-submit" id="form-submit">
-                <span class="submit-text">Keep Me Posted</span>
-                <span class="submit-loading" style="display:none">
-                    <span class="spinner"></span> Submitting...
-                </span>
-                <span class="submit-success" style="display:none">&#10003; You're on the list!</span>
-            </button>
-            <p class="form-note">No commitment. Just updates, never spam.</p>
-        </form>
-
-        <!-- Success state (replaces form) -->
-        <div id="form-success" class="form-success-msg" style="display:none">
-            <div class="success-icon">&#10003;</div>
-            <h3>You're on the list.</h3>
-            <p>We'll keep you posted on leagues, events, and what's new. In the meantime, follow along on Instagram.</p>
-            <a href="https://instagram.com/capitalgolflabs" target="_blank" rel="noopener" class="success-insta">@capitalgolflabs</a>
         </div>
     </div>
 </section>
 
-<!-- ===================== SOCIAL ===================== -->
-<section class="status-social-section">
-    <div class="status-social-inner social-solo">
-
-        <div class="social-block reveal-up">
-            <h3>Follow Along</h3>
-            <p>Behind-the-scenes updates, member events, and what's new at the lab.</p>
-            <a href="https://instagram.com/capitalgolflabs" target="_blank" rel="noopener" class="insta-link">@capitalgolflabs</a>
+<!-- ===================== 07 · PARTNERS ===================== -->
+<section class="section section--line">
+    <div class="container">
+        <header class="section-head section-head--center reveal">
+            <span class="eyebrow"><b>07</b> Preferred Partners</span>
+            <h2 class="h2">Built With Trusted&nbsp;Gear</h2>
+            <p>From the technology in every bay to the clubs in your hands, we only use equipment we trust.</p>
+        </header>
+        <div class="partner-row reveal">
+            <div class="partner-cell" aria-label="Trackman">
+                <img src="static/img/trackman-logo.png" alt="Trackman" loading="lazy" width="405" height="43">
+            </div>
+            <a class="partner-cell partner-cell--carls" href="https://www.carlsplace.com" target="_blank" rel="noopener" aria-label="Carl's Place">
+                <img src="static/img/CarlsPlace_Logo_RichBlack.png" alt="Carl's Place" loading="lazy" width="1049" height="543">
+            </a>
         </div>
-
+        <figure class="partner-feature reveal">
+            <picture>
+                <source srcset="static/img/pxg-cgl.webp" type="image/webp">
+                <img src="static/img/pxg-cgl.jpg" alt="PXG X Capital Golf Labs — Lightning Woods and Gen 8 Irons" loading="lazy" width="1040" height="1040">
+            </picture>
+        </figure>
     </div>
 </section>
 
-<!-- ===================== PARTNER LOGOS ===================== -->
-<section class="tech-strip">
-    <div class="tech-strip-header reveal-up">
-        <div class="section-eyebrow">Preferred Partners</div>
-        <h2>Built With Trusted&nbsp;Gear</h2>
-        <p>From the technology in every bay to the clubs in your hands, we only use equipment we trust.</p>
-    </div>
-    <div class="tech-logos reveal-up">
-        <div class="tech-logo" aria-label="Trackman">
-            <img src="static/img/trackman-logo.png" alt="Trackman" loading="lazy">
+<!-- ===================== 08 · VISIT ===================== -->
+<section id="visit" class="section section--alt">
+    <div class="container">
+        <header class="section-head reveal">
+            <span class="eyebrow"><b>08</b> Visit</span>
+            <h2 class="h2">Find the Lab</h2>
+        </header>
+        <div class="visit-grid" data-stagger>
+            <div class="visit-card card hud spot reveal">
+                <span class="mono visit-label">Address</span>
+                <address>Fallfax Center<br>2830-B Fallfax Drive<br>Falls Church, VA 22042</address>
+                <ul class="visit-list">
+                    <li><span class="k">Hours</span><span class="v"><span class="live-dot"></span>Open 24/7</span></li>
+                    <li><span class="k">Access</span><span class="v">Door code with every booking</span></li>
+                    <li><span class="k">Booking</span><span class="v">Online, through Trackman</span></li>
+                </ul>
+                <div class="visit-actions">
+                    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Capital%20Golf%20Labs%2C%202830-B%20Fallfax%20Dr%2C%20Falls%20Church%2C%20VA%2022042" class="btn btn-primary" target="_blank" rel="noopener">Get Directions<svg class="btn-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+                    <a href="https://maps.apple.com/?daddr=2830-B+Fallfax+Dr,+Falls+Church,+VA+22042&amp;q=Capital+Golf+Labs" class="btn btn-ghost" target="_blank" rel="noopener">Apple Maps</a>
+                </div>
+            </div>
+            <div class="map-frame hud hud--on reveal">
+                <iframe src="https://maps.google.com/maps?q=Capital%20Golf%20Labs%2C%202830-B%20Fallfax%20Dr%2C%20Falls%20Church%2C%20VA%2022042&amp;z=15&amp;output=embed" title="Map showing Capital Golf Labs at 2830-B Fallfax Drive, Falls Church, VA" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+                <span class="map-badge"><span class="live-dot"></span>Fallfax Center &middot; Falls Church</span>
+            </div>
         </div>
-        <a class="tech-logo tech-logo--light" href="https://www.carlsplace.com" target="_blank" rel="noopener" aria-label="Carl's Place">
-            <img src="static/img/CarlsPlace_Logo_RichBlack.png" alt="Carl's Place" loading="lazy">
-        </a>
     </div>
-    <div class="tech-feature-img reveal-up">
-        <img src="static/img/pxg-cgl.jpg" alt="PXG X Capital Golf Labs — Lightning Woods and Gen 8 Irons" loading="lazy">
+</section>
+
+<!-- ===================== CLOSING CTA ===================== -->
+<section class="cta-band">
+    <div class="bg-grid"></div>
+    <div class="cta-glow" aria-hidden="true"></div>
+    <div class="container reveal">
+        <span class="eyebrow">Falls Church, VA &middot; Open 24/7</span>
+        <h2 class="cta-title">Your bay is ready<span class="accent">.</span></h2>
+        <p>Memberships are open. Book online, let yourself in, play.</p>
+        <div class="cta-actions">
+            <a href="join/" class="btn btn-primary">Join Now<svg class="btn-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            <a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" class="btn btn-ghost" target="_blank" rel="noopener">Member Booking</a>
+        </div>
     </div>
 </section>
 
 <!-- ===================== FOOTER ===================== -->
-<footer>
-    <div class="footer-logo"><img src="static/img/cgl-icon-white.svg" alt="" class="footer-logo-icon">CAPITAL GOLF LABS</div>
-    <p class="footer-address">Fallfax Center &middot; 2830-B Fallfax Drive &middot; Falls Church, VA 22042</p>
-    <p>&copy; 2026 Capital Golf Labs LLC</p>
-    <p class="footer-links">
-        <a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" target="_blank" rel="noopener">Member booking</a>
-        &nbsp;|&nbsp;
-        <a href="mailto:blake@capitalgolflabs.com">blake@capitalgolflabs.com</a>
-        &nbsp;|&nbsp;
-        <a href="https://capitalgolflabs.com">capitalgolflabs.com</a>
-        &nbsp;|&nbsp;
-        <a href="https://instagram.com/capitalgolflabs" target="_blank" rel="noopener">@capitalgolflabs</a>
-    </p>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="static/img/logo/cgl-logo-horizontal.svg" alt="Capital Golf Labs" width="237" height="72" loading="lazy">
+                <address>Fallfax Center<br>2830-B Fallfax Drive<br>Falls Church, VA 22042</address>
+                <span class="open-pill"><span class="live-dot"></span>Open 24/7</span>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#tech">The Concept</a></li>
+                    <li><a href="#how">How It Works</a></li>
+                    <li><a href="#trackman">Technology</a></li>
+                    <li><a href="#visit">Visit</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Members</h4>
+                <ul>
+                    <li><a href="join/">Join Now</a></li>
+                    <li><a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" target="_blank" rel="noopener">Member Booking</a></li>
+                    <li><a href="mailto:blake@capitalgolflabs.com">blake@capitalgolflabs.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Along</h4>
+                <p>Behind-the-scenes updates, member events, and what's new at the lab.</p>
+                <a href="https://instagram.com/capitalgolflabs" target="_blank" rel="noopener" class="footer-insta">@capitalgolflabs</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Capital Golf Labs LLC</span>
+            <span>Falls Church, VA &middot; capitalgolflabs.com</span>
+        </div>
+    </div>
 </footer>
 
 <!-- Sticky mobile CTA -->
-<a href="join/" class="mobile-sticky-cta" id="mobileStickyCta">Join Now</a>
+<div class="mobile-sticky-cta" id="mobileStickyCta">
+    <a href="join/" class="btn btn-primary">Join Now</a>
+</div>
 
-<script>
-// Hamburger menu
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobile-menu');
-const mobileLinks = document.querySelectorAll('.mobile-link');
-
-hamburger.addEventListener('click', () => {
-    const isOpen = hamburger.classList.toggle('is-open');
-    mobileMenu.classList.toggle('is-open');
-    hamburger.setAttribute('aria-expanded', isOpen);
-    mobileMenu.setAttribute('aria-hidden', !isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-});
-
-mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('is-open');
-        mobileMenu.classList.remove('is-open');
-        hamburger.setAttribute('aria-expanded', false);
-        mobileMenu.setAttribute('aria-hidden', true);
-        document.body.style.overflow = '';
-    });
-});
-
-// Nav scroll shadow
-const nav = document.getElementById('main-nav');
-window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 20);
-}, { passive: true });
-
-// Scroll reveal
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            revealObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el => {
-    revealObserver.observe(el);
-});
-
-// Smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const href = this.getAttribute('href');
-        if (href === '#') return;
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    });
-});
-
-// Sticky mobile CTA — show after hero, hide at the form and for the rest of the page
-const stickyCta = document.getElementById('mobileStickyCta');
-if (stickyCta) {
-    let heroGone = false, reservePast = false;
-    const updateSticky = () => stickyCta.classList.toggle('visible', heroGone && !reservePast);
-    new IntersectionObserver(([e]) => { heroGone = !e.isIntersecting; updateSticky(); }, { threshold: 0.05 })
-        .observe(document.querySelector('.hero'));
-    new IntersectionObserver(([e]) => {
-        // Stays hidden once the form has scrolled by; only reappears if the user scrolls back above it.
-        if (e.isIntersecting) reservePast = false;
-        else if (e.boundingClientRect.top < 0) reservePast = true;
-        updateSticky();
-    }, { threshold: 0 }).observe(document.getElementById('reserve'));
-}
-
-// Stat count-up animation
-function animateCount(el, target, suffix) {
-    const duration = 1600;
-    const start = performance.now();
-    const update = (now) => {
-        const elapsed  = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased    = 1 - Math.pow(1 - progress, 3);
-        const current  = Math.round(eased * target);
-        el.innerHTML = current + '<span class="stat-suffix">' + suffix + '</span>';
-        if (progress < 1) requestAnimationFrame(update);
-    };
-    requestAnimationFrame(update);
-}
-
-const statObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const el     = entry.target;
-            const target = parseInt(el.dataset.count);
-            const suffix = el.dataset.suffix || '';
-            if (!isNaN(target)) animateCount(el, target, suffix);
-            statObserver.unobserve(el);
-        }
-    });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.stat-number[data-count]').forEach(el => {
-    statObserver.observe(el);
-});
-
-// Waitlist form submission
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwWFbZPyw8rZ-TZcAF8azrT8u9yPUwVEDuTKJPALWZ2Im9M2iHDBeQ4QUgeTxZbvtNyCQ/exec';
-
-const form        = document.getElementById('waitlist-form');
-const submitBtn   = document.getElementById('form-submit');
-const submitText  = submitBtn.querySelector('.submit-text');
-const submitLoading = submitBtn.querySelector('.submit-loading');
-const submitSuccess = submitBtn.querySelector('.submit-success');
-const formSuccess = document.getElementById('form-success');
-
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    submitText.style.display = 'none';
-    submitLoading.style.display = 'inline-flex';
-    submitBtn.disabled = true;
-    submitBtn.classList.add('is-loading');
-
-    const data = {
-        name:      form.name.value.trim(),
-        email:     form.email.value.trim(),
-        phone:     form.phone.value.trim(),
-        source:    form.source.value,
-        timestamp: new Date().toISOString()
-    };
-
-    try {
-        if (SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
-            await new Promise(r => setTimeout(r, 1200));
-        } else {
-            await fetch(SCRIPT_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-        }
-
-        submitLoading.style.display = 'none';
-        submitSuccess.style.display = 'inline-flex';
-        submitBtn.classList.remove('is-loading');
-        submitBtn.classList.add('is-success');
-
-        setTimeout(() => {
-            form.style.display = 'none';
-            formSuccess.style.display = 'block';
-            formSuccess.classList.add('reveal-up', 'revealed');
-        }, 1500);
-
-    } catch (err) {
-        submitLoading.style.display = 'none';
-        submitSuccess.style.display = 'inline-flex';
-        submitBtn.classList.remove('is-loading');
-        submitBtn.classList.add('is-success');
-
-        setTimeout(() => {
-            form.style.display = 'none';
-            formSuccess.style.display = 'block';
-            formSuccess.classList.add('reveal-up', 'revealed');
-        }, 1500);
-    }
-});
-</script>
 </body>
 </html>
