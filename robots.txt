@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /membership.html
+
+Sitemap: https://capitalgolflabs.com/sitemap.xml

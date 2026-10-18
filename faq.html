@@ -7,180 +7,203 @@
     <link rel="icon" type="image/png" sizes="16x16" href="static/img/favicon-16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="static/img/apple-touch-icon.png">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#04060a">
     <meta name="description" content="Frequently asked questions about Capital Golf Labs — a private, 24/7 Trackman golf studio in Falls Church, VA. Access, guests, clubs, and more.">
     <title>FAQ | Capital Golf Labs</title>
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="static/css/style.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBLS1ZX0RX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GBLS1ZX0RX');
+    </script>
+    <script defer src="static/js/analytics.js"></script>
+    <script defer src="static/js/site.js"></script>
     <link rel="canonical" href="https://capitalgolflabs.com/faq.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Capital Golf Labs">
     <meta property="og:title" content="FAQ | Capital Golf Labs">
     <meta property="og:description" content="Access, guests, clubs, and everything worth knowing about the DMV's private 24/7 Trackman studio.">
     <meta property="og:url" content="https://capitalgolflabs.com/faq.html">
-    <meta property="og:image" content="https://capitalgolflabs.com/static/img/og-card-open.png">
+    <meta property="og:image" content="https://capitalgolflabs.com/static/img/og-card-open.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="FAQ | Capital Golf Labs">
     <meta name="twitter:description" content="Access, guests, clubs, and everything worth knowing about the DMV's private 24/7 Trackman studio.">
-    <meta name="twitter:image" content="https://capitalgolflabs.com/static/img/og-card-open.png">
+    <meta name="twitter:image" content="https://capitalgolflabs.com/static/img/og-card-open.jpg">
 </head>
-<body>
+<body data-page="faq">
 
 <!-- ===================== NAV ===================== -->
-<nav id="main-nav">
-    <a href="index.html" class="logo"><img src="static/img/cgl-icon-white.svg" alt="" class="logo-icon" width="32" height="32">CAPITAL GOLF LABS</a>
+<nav class="nav" id="main-nav" aria-label="Main">
+    <div class="container nav-inner">
+        <a href="index.html" class="logo" aria-label="Capital Golf Labs home">
+            <img src="static/img/logo/cgl-logo-line.svg" alt="Capital Golf Labs" width="213" height="34">
+        </a>
 
-    <ul class="nav-links">
-        <li><a href="index.html#tech">The Concept</a></li>
-        <li><a href="index.html#trackman">Technology</a></li>
-        <li><a href="faq.html" aria-current="page">FAQ</a></li>
-        <li><a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" class="cta-btn book-btn" target="_blank" rel="noopener">Member Booking</a></li>
-        <li><a href="join/" class="cta-btn">Join Now</a></li>
-    </ul>
+        <ul class="nav-links">
+            <li><a href="index.html#tech" class="nav-link">The Concept</a></li>
+            <li><a href="index.html#trackman" class="nav-link">Technology</a></li>
+            <li><a href="index.html#visit" class="nav-link">Visit</a></li>
+            <li><a href="faq.html" class="nav-link" aria-current="page">FAQ</a></li>
+        </ul>
 
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+        <div class="nav-ctas">
+            <a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">Member Booking</a>
+            <a href="join/" class="btn btn-primary btn-sm">Join Now</a>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"></div>
 </nav>
 
-<!-- Mobile menu overlay -->
+<!-- Mobile menu -->
 <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="bg-grid"></div>
     <ul>
-        <li><a href="index.html#tech" class="mobile-link">The Concept</a></li>
-        <li><a href="index.html#trackman" class="mobile-link">Technology</a></li>
-        <li><a href="faq.html" class="mobile-link">FAQ</a></li>
-        <li><a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" class="mobile-link mobile-cta mobile-book" target="_blank" rel="noopener">Member Booking</a></li>
-        <li><a href="join/" class="mobile-link mobile-cta">Join Now</a></li>
+        <li><a href="index.html#tech" class="mobile-link"><span class="mono">01</span>The Concept</a></li>
+        <li><a href="index.html#trackman" class="mobile-link"><span class="mono">02</span>Technology</a></li>
+        <li><a href="index.html#visit" class="mobile-link"><span class="mono">03</span>Visit</a></li>
+        <li><a href="faq.html" class="mobile-link"><span class="mono">04</span>FAQ</a></li>
     </ul>
+    <div class="mobile-menu-ctas">
+        <a href="join/" class="btn btn-primary">Join Now</a>
+        <a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" class="btn btn-ghost" target="_blank" rel="noopener">Member Booking</a>
+    </div>
 </div>
 
 <!-- ===================== HEADER ===================== -->
-<header class="section-header" style="margin-top: 7rem; padding: 0 1.5rem;">
-    <div class="section-eyebrow">Good to Know</div>
-    <h2>Frequently Asked</h2>
-    <p>Everything worth knowing before your first session. Still have a question? <a href="mailto:blake@capitalgolflabs.com">Email us</a> and we'll get right back to you.</p>
+<header class="page-hero">
+    <div class="bg-grid"></div>
+    <div class="container">
+        <span class="eyebrow hero-in" style="--d:.1s">Good to Know</span>
+        <h1 class="page-title hero-in" style="--d:.2s">Frequently Asked<span class="accent">.</span></h1>
+        <p class="hero-in" style="--d:.3s">Everything worth knowing before your first session. Still have a question? <a href="mailto:blake@capitalgolflabs.com">Email us</a> and we'll get right back to you.</p>
+    </div>
 </header>
 
 <!-- ===================== FAQ ===================== -->
-<section class="faq-section" style="border-top:none; padding-top:3rem;">
-    <div class="faq-inner">
-        <div class="faq-list">
+<section class="faq-section">
+    <div class="container faq-layout">
+        <div class="faq-list reveal">
 
             <details class="faq-item">
-                <summary>Where are you located?<span class="faq-marker" aria-hidden="true"></span></summary>
+                <summary><span class="faq-idx">01</span><span class="faq-q">Where are you located?</span><span class="faq-marker" aria-hidden="true"></span></summary>
                 <div class="faq-answer"><p>We're open now, 24/7, at Fallfax Center — 2830-B Fallfax Drive, Falls Church, VA.</p></div>
             </details>
 
             <details class="faq-item">
-                <summary>How do I get in if there's no staff?<span class="faq-marker" aria-hidden="true"></span></summary>
+                <summary><span class="faq-idx">02</span><span class="faq-q">How do I get in if there's no staff?</span><span class="faq-marker" aria-hidden="true"></span></summary>
                 <div class="faq-answer"><p>Every booking comes with its own unique door code. Book from your phone, walk up, enter your code, and you're in. No keys, no front desk, no waiting — for your session, the bay is yours.</p></div>
             </details>
 
             <details class="faq-item">
-                <summary>Is it safe to practice alone, late at night?<span class="faq-marker" aria-hidden="true"></span></summary>
+                <summary><span class="faq-idx">03</span><span class="faq-q">Is it safe to practice alone, late at night?</span><span class="faq-marker" aria-hidden="true"></span></summary>
                 <div class="faq-answer"><p>Yes. The studio is monitored by security cameras throughout, every door code is tied to a specific booking, and support is reachable by phone or text if anything ever comes up.</p></div>
             </details>
 
             <details class="faq-item">
-                <summary>Do I bring my own clubs?<span class="faq-marker" aria-hidden="true"></span></summary>
+                <summary><span class="faq-idx">04</span><span class="faq-q">Do I bring my own clubs?</span><span class="faq-marker" aria-hidden="true"></span></summary>
                 <div class="faq-answer"><p>Bring your own — this is your practice, dialed to your gear. If you're between sets, our PXG Fairfax partnership is a great place to get fit and build one.</p></div>
             </details>
 
             <details class="faq-item">
-                <summary>What should I wear?<span class="faq-marker" aria-hidden="true"></span></summary>
+                <summary><span class="faq-idx">05</span><span class="faq-q">What should I wear?</span><span class="faq-marker" aria-hidden="true"></span></summary>
                 <div class="faq-answer"><p>Athletic clothes and clean, non-marking athletic or golf shoes. Metal spikes aren't allowed on the turf.</p></div>
             </details>
 
             <details class="faq-item">
-                <summary>Can I bring a guest?<span class="faq-marker" aria-hidden="true"></span></summary>
+                <summary><span class="faq-idx">06</span><span class="faq-q">Can I bring a guest?</span><span class="faq-marker" aria-hidden="true"></span></summary>
                 <div class="faq-answer"><p>Every session includes one guest, free. Want to make it a foursome? Add up to two more for an additional fee — four players max per bay.</p></div>
             </details>
 
             <details class="faq-item">
-                <summary>What can I work on?<span class="faq-marker" aria-hidden="true"></span></summary>
+                <summary><span class="faq-idx">07</span><span class="faq-q">What can I work on?</span><span class="faq-marker" aria-hidden="true"></span></summary>
                 <div class="faq-answer"><p>Everything. Full swing, short game, and putting, plus Trackman's course library, driving ranges, and skills challenges. Every shot is captured to your personal Trackman profile.</p></div>
             </details>
 
             <details class="faq-item">
-                <summary>How do I join?<span class="faq-marker" aria-hidden="true"></span></summary>
+                <summary><span class="faq-idx">08</span><span class="faq-q">How do I join?</span><span class="faq-marker" aria-hidden="true"></span></summary>
                 <div class="faq-answer"><p>Memberships are open now. <a href="join/">See memberships →</a></p></div>
             </details>
 
             <details class="faq-item">
-                <summary>How does booking work once I join?<span class="faq-marker" aria-hidden="true"></span></summary>
+                <summary><span class="faq-idx">09</span><span class="faq-q">How does booking work once I join?</span><span class="faq-marker" aria-hidden="true"></span></summary>
                 <div class="faq-answer"><p>All bookings and payments run through the <a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" target="_blank" rel="noopener">Trackman booking portal</a>. After you sign up, we'll send you everything you need to get set up and book your first session.</p></div>
             </details>
 
             <details class="faq-item">
-                <summary>Do unused hours roll over?<span class="faq-marker" aria-hidden="true"></span></summary>
+                <summary><span class="faq-idx">10</span><span class="faq-q">Do unused hours roll over?</span><span class="faq-marker" aria-hidden="true"></span></summary>
                 <div class="faq-answer"><p>No — your 5 included hours are use-them-or-lose-them each month. Need more time? Additional hours are $40/hr.</p></div>
             </details>
 
             <details class="faq-item">
-                <summary>Can I pause my membership?<span class="faq-marker" aria-hidden="true"></span></summary>
+                <summary><span class="faq-idx">11</span><span class="faq-q">Can I pause my membership?</span><span class="faq-marker" aria-hidden="true"></span></summary>
                 <div class="faq-answer"><p>Yes. You can pause for one month for a $50 fee, and your spot is held for you while you're away.</p></div>
             </details>
 
         </div>
 
-        <div class="faq-cta">
-            <p>Ready to lock in your spot?</p>
-            <a href="join/" class="primary-btn">Join Now</a>
-        </div>
+        <aside class="faq-aside card hud hud--on reveal">
+            <h3>Ready to lock in your spot?</h3>
+            <p>Memberships are open. Questions first? <a class="inline-link" href="mailto:blake@capitalgolflabs.com">Email us</a>.</p>
+            <a href="join/" class="btn btn-primary btn-block">Join Now</a>
+            <a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" class="btn btn-ghost btn-block" target="_blank" rel="noopener">Member Booking</a>
+        </aside>
     </div>
 </section>
 
 <!-- ===================== FOOTER ===================== -->
-<footer>
-    <div class="footer-logo"><img src="static/img/cgl-icon-white.svg" alt="" class="footer-logo-icon">CAPITAL GOLF LABS</div>
-    <p class="footer-address">Fallfax Center &middot; 2830-B Fallfax Drive &middot; Falls Church, VA 22042</p>
-    <p>&copy; 2026 Capital Golf Labs LLC</p>
-    <p class="footer-links">
-        <a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" target="_blank" rel="noopener">Member booking</a>
-        &nbsp;|&nbsp;
-        <a href="mailto:blake@capitalgolflabs.com">blake@capitalgolflabs.com</a>
-        &nbsp;|&nbsp;
-        <a href="https://capitalgolflabs.com">capitalgolflabs.com</a>
-        &nbsp;|&nbsp;
-        <a href="https://instagram.com/capitalgolflabs" target="_blank" rel="noopener">@capitalgolflabs</a>
-    </p>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <img src="static/img/logo/cgl-logo-horizontal.svg" alt="Capital Golf Labs" width="237" height="72" loading="lazy">
+                <address>Fallfax Center<br>2830-B Fallfax Drive<br>Falls Church, VA 22042</address>
+                <span class="open-pill"><span class="live-dot"></span>Open 24/7</span>
+            </div>
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html#tech">The Concept</a></li>
+                    <li><a href="index.html#how">How It Works</a></li>
+                    <li><a href="index.html#trackman">Technology</a></li>
+                    <li><a href="index.html#visit">Visit</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Members</h4>
+                <ul>
+                    <li><a href="join/">Join Now</a></li>
+                    <li><a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" target="_blank" rel="noopener">Member Booking</a></li>
+                    <li><a href="mailto:blake@capitalgolflabs.com">blake@capitalgolflabs.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Along</h4>
+                <p>Behind-the-scenes updates, member events, and what's new at the lab.</p>
+                <a href="https://instagram.com/capitalgolflabs" target="_blank" rel="noopener" class="footer-insta">@capitalgolflabs</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 Capital Golf Labs LLC</span>
+            <span>Falls Church, VA &middot; capitalgolflabs.com</span>
+        </div>
+    </div>
 </footer>
-
-<script>
-// Mobile hamburger menu
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobile-menu');
-
-hamburger.addEventListener('click', () => {
-    const isOpen = hamburger.classList.toggle('is-open');
-    mobileMenu.classList.toggle('is-open');
-    hamburger.setAttribute('aria-expanded', isOpen);
-    mobileMenu.setAttribute('aria-hidden', !isOpen);
-    document.body.style.overflow = isOpen ? 'hidden' : '';
-});
-
-document.querySelectorAll('.mobile-link').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('is-open');
-        mobileMenu.classList.remove('is-open');
-        hamburger.setAttribute('aria-expanded', false);
-        mobileMenu.setAttribute('aria-hidden', true);
-        document.body.style.overflow = '';
-    });
-});
-
-// Nav scroll shadow
-const nav = document.getElementById('main-nav');
-window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 20);
-}, { passive: true });
-</script>
 
 </body>
 </html>
