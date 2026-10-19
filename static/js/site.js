@@ -212,7 +212,7 @@
             const x = box.x0 + (yd / 300) * (box.x1 - box.x0);
             el('line', { x1: x, x2: x, y1: box.ground, y2: box.ground + 5 }, grid);
             const t = el('text', { x, y: box.ground + 19, 'text-anchor': yd === 0 ? 'start' : yd === 300 ? 'end' : 'middle' }, grid);
-            t.textContent = yd === 300 ? '300 YDS' : yd;
+            t.textContent = yd;
         }
 
         const area = el('path', { class: 'area' });
@@ -357,21 +357,6 @@
                 if (joinProof) renderJoinProof(d);
             })
             .catch(() => { /* no reviews yet — everything stays hidden */ });
-    }
-
-    /* ---------- Photo lightbox ---------- */
-    const lightbox = $('#lightbox');
-    if (lightbox && lightbox.showModal) {
-        const lbImg = $('img', lightbox);
-        $$('[data-full]').forEach((btn) => {
-            btn.addEventListener('click', () => {
-                lbImg.src = btn.dataset.full;
-                lbImg.alt = $('img', btn).alt;
-                lightbox.showModal();
-            });
-        });
-        // Close on the X, a tap anywhere, or Escape (built in).
-        lightbox.addEventListener('click', () => lightbox.close());
     }
 
     /* ---------- Sticky mobile CTA ---------- */
