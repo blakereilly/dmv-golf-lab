@@ -15,8 +15,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="static/img/trackman-hero.jpg">
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="preload" as="image" href="static/img/hero-trackman.jpg">
+    <link rel="stylesheet" href="static/css/style.css?v=202610182249">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBLS1ZX0RX"></script>
     <script>
@@ -25,8 +25,8 @@
       gtag('js', new Date());
       gtag('config', 'G-GBLS1ZX0RX');
     </script>
-    <script defer src="static/js/analytics.js"></script>
-    <script defer src="static/js/site.js"></script>
+    <script defer src="static/js/analytics.js?v=202610182249"></script>
+    <script defer src="static/js/site.js?v=202610182249"></script>
     <link rel="canonical" href="https://capitalgolflabs.com/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Capital Golf Labs">
@@ -108,7 +108,7 @@
 
 <!-- ===================== HERO ===================== -->
 <header class="hero">
-    <div class="hero-media" role="img" aria-label="A golfer mid-swing in a Trackman simulator bay"></div>
+    <div class="hero-media" role="img" aria-label="A golfer swinging in a Trackman simulator bay overlooking a seaside golf course"></div>
     <div class="bg-grid"></div>
 
     <div class="container">
@@ -123,36 +123,8 @@
                 <a href="join/" class="btn btn-primary">Join Now<svg class="btn-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
                 <a href="#how" class="btn btn-ghost">See How It Works</a>
             </div>
-            <div class="hero-specs hero-in" style="--d:.56s">
-                <span>Trackman iO</span><span>24/7 Access</span><span>Private Bay</span>
-            </div>
         </div>
     </div>
-
-    <!-- Sample Trackman readout (desktop) — cycles through clubs -->
-    <aside class="readout hud hud--on hero-in" id="readout" style="--d:.75s" aria-label="Sample Trackman shot data">
-        <div class="readout-head">
-            <span class="left"><span class="live-dot"></span>Trackman Readout</span>
-            <span class="readout-club">Driver</span>
-        </div>
-        <svg class="readout-arc" viewBox="0 0 320 72" aria-hidden="true">
-            <defs>
-                <linearGradient id="ro-grad" x1="0" x2="1">
-                    <stop offset="0" stop-color="#2F6BFF" stop-opacity=".25"/>
-                    <stop offset="1" stop-color="#b9ccff"/>
-                </linearGradient>
-            </defs>
-            <line class="ground" x1="8" x2="312" y1="66" y2="66"/>
-            <path class="flight" d="M8 66"/>
-            <circle class="ball" r="3.5" cx="8" cy="66"/>
-        </svg>
-        <div class="readout-grid">
-            <div><span class="rd-label">Ball Speed</span><span class="rd-val" data-k="ball" data-v="167">167</span><span class="rd-unit">mph</span></div>
-            <div><span class="rd-label">Launch</span><span class="rd-val" data-k="launch" data-v="12.1">12.1</span><span class="rd-unit">°</span></div>
-            <div><span class="rd-label">Spin Rate</span><span class="rd-val" data-k="spin" data-v="2480">2,480</span><span class="rd-unit">rpm</span></div>
-            <div><span class="rd-label">Carry</span><span class="rd-val" data-k="carry" data-v="268">268</span><span class="rd-unit">yds</span></div>
-        </div>
-    </aside>
 
     <div class="scroll-cue" aria-hidden="true">SCROLL<i></i></div>
 </header>
@@ -191,9 +163,9 @@
 <section id="tech" class="section section--alt">
     <div class="container">
         <header class="section-head reveal">
-            <span class="eyebrow"><b>01</b> Why We're Building This</span>
-            <h2 class="h2">The Concept</h2>
-            <p>The DMV has great golfers and not enough great places to practice. So we built one: quiet, private, and built around your game.</p>
+            <span class="eyebrow"><b>01</b> The Concept</span>
+            <h2 class="h2">A New Way to Practice and Play</h2>
+            <p>A private Trackman studio that's yours whenever you want it. Book online, let yourself in, and spend the session dialing in your numbers or playing a round with a friend.</p>
         </header>
 
         <div class="concept-grid" data-stagger>
@@ -221,7 +193,7 @@
                     <span class="cc-idx">03</span>
                 </div>
                 <h3>Private by Design</h3>
-                <p>The bay and lounge are all yours for your session, just you and your guests. No crowds, no distractions, total privacy.</p>
+                <p>The bay and lounge are all yours for your session, just you and your guest. No crowds, no distractions, total privacy.</p>
             </article>
         </div>
     </div>
@@ -259,77 +231,7 @@
     </div>
 </section>
 
-<!-- ===================== 03 · INSIDE THE LAB ===================== -->
-<section id="bay" class="section section--alt">
-    <div class="container">
-        <header class="section-head reveal">
-            <span class="eyebrow"><b>03</b> Inside the Lab</span>
-            <h2 class="h2">Your Bay, Ready When You Are</h2>
-            <p>A dedicated Trackman iO bay and a private lounge, all yours for your session.</p>
-        </header>
-
-        <div class="gallery" data-stagger>
-            <figure class="g-item reveal">
-                <button type="button" data-full="static/img/bay/bay-room.jpg" aria-label="Enlarge photo: The Bay">
-                    <picture>
-                        <source srcset="static/img/bay/bay-room.webp" type="image/webp">
-                        <img src="static/img/bay/bay-room.jpg" alt="The full Capital Golf Labs bay with the lights on: enclosure, impact screen, hitting mat and touchscreen station" loading="lazy" width="1600" height="1200">
-                    </picture>
-                </button>
-                <figcaption class="g-cap"><b>01</b> The Bay</figcaption>
-                <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></span>
-            </figure>
-            <figure class="g-item reveal">
-                <button type="button" data-full="static/img/bay/lounge.jpg" aria-label="Enlarge photo: The Lounge">
-                    <picture>
-                        <source srcset="static/img/bay/lounge.webp" type="image/webp">
-                        <img src="static/img/bay/lounge.jpg" alt="The private lounge with a sofa, armchair, coffee table and drinks fridge" loading="lazy" width="1600" height="1200">
-                    </picture>
-                </button>
-                <figcaption class="g-cap"><b>02</b> The Lounge</figcaption>
-                <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></span>
-            </figure>
-            <figure class="g-item reveal">
-                <button type="button" data-full="static/img/bay/bay-face-on.jpg" aria-label="Enlarge photo: Tee Box">
-                    <picture>
-                        <source srcset="static/img/bay/bay-face-on.webp" type="image/webp">
-                        <img src="static/img/bay/bay-face-on.jpg" alt="A ball teed up on the hitting mat facing a coastal Trackman course on the impact screen" loading="lazy" width="1080" height="1350" style="object-position:center 62%">
-                    </picture>
-                </button>
-                <figcaption class="g-cap"><b>03</b> Tee Box</figcaption>
-                <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></span>
-            </figure>
-            <figure class="g-item reveal">
-                <button type="button" data-full="static/img/bay/bay-menu.jpg" aria-label="Enlarge photo: Pick Your Game">
-                    <picture>
-                        <source srcset="static/img/bay/bay-menu.webp" type="image/webp">
-                        <img src="static/img/bay/bay-menu.jpg" alt="Trackman's activity menu on the impact screen: range, shot analysis, course play and more" loading="lazy" width="1080" height="1350" style="object-position:center 50%">
-                    </picture>
-                </button>
-                <figcaption class="g-cap"><b>04</b> Pick Your Game</figcaption>
-                <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></span>
-            </figure>
-            <figure class="g-item reveal">
-                <button type="button" data-full="static/img/bay/bay-data.jpg" aria-label="Enlarge photo: Shot Data">
-                    <picture>
-                        <source srcset="static/img/bay/bay-data.webp" type="image/webp">
-                        <img src="static/img/bay/bay-data.jpg" alt="Real Trackman shot data on the bay's screens: carry, ball speed, spin rate, club path and impact video" loading="lazy" width="1080" height="1350" style="object-position:center 30%">
-                    </picture>
-                </button>
-                <figcaption class="g-cap"><b>05</b> Shot Data</figcaption>
-                <span class="g-zoom" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></span>
-            </figure>
-        </div>
-    </div>
-</section>
-
-<!-- Photo viewer -->
-<dialog id="lightbox" class="lightbox" aria-label="Photo viewer">
-    <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
-    <img alt="">
-</dialog>
-
-<!-- ===================== 04 · TECHNOLOGY ===================== -->
+<!-- ===================== 03 · TECHNOLOGY ===================== -->
 <section id="trackman" class="tech">
     <div class="tech-banner">
         <img src="static/img/Trackman_iO_Side.jpg" alt="Trackman iO overhead camera detail" loading="lazy">
@@ -358,7 +260,7 @@
 
             <div class="tech-grid">
                 <div class="tech-copy reveal">
-                    <span class="eyebrow"><b>04</b> Technology</span>
+                    <span class="eyebrow"><b>03</b> Technology</span>
                     <h2 class="h2">Tour-Level Technology.<br>Available to You.</h2>
                     <p class="lead">Mounted overhead, the Trackman iO captures every shot with radar and high-speed impact video. Ball speed, spin, launch, carry, all of it. This is how tour players practice. Now it's yours.</p>
                     <ul class="spec-list">
@@ -411,12 +313,12 @@
     </div>
 </section>
 
-<!-- ===================== 05 · REVIEWS (filled from Google via the cgl-hooks Worker; hidden until it loads) ===================== -->
+<!-- ===================== 04 · REVIEWS (filled from Google via the cgl-hooks Worker; hidden until it loads) ===================== -->
 <section id="reviews" class="section section--line" hidden>
     <div class="container">
         <div class="section-head section-head--row reveal">
             <div>
-                <span class="eyebrow"><b>05</b> Reviews</span>
+                <span class="eyebrow"><b>04</b> Reviews</span>
                 <h2 class="h2">What Golfers Are Saying</h2>
             </div>
             <div class="rv-nav" aria-label="Scroll reviews">
@@ -443,12 +345,12 @@
     </div>
 </section>
 
-<!-- ===================== 06 · MEMBERSHIP ===================== -->
+<!-- ===================== 05 · MEMBERSHIP ===================== -->
 <section id="reserve" class="section section--alt">
     <div class="bg-grid"></div>
     <div class="container">
         <header class="section-head section-head--center reveal">
-            <span class="eyebrow"><b>06</b> Membership</span>
+            <span class="eyebrow"><b>05</b> Membership</span>
             <h2 class="h2">Memberships Are Open</h2>
             <p>$225/month with 5 hours of bay time included. Month-to-month, cancel anytime.</p>
         </header>
@@ -535,11 +437,11 @@
     </div>
 </section>
 
-<!-- ===================== 07 · PARTNERS ===================== -->
+<!-- ===================== 06 · PARTNERS ===================== -->
 <section class="section section--line">
     <div class="container">
         <header class="section-head section-head--center reveal">
-            <span class="eyebrow"><b>07</b> Preferred Partners</span>
+            <span class="eyebrow"><b>06</b> Preferred Partners</span>
             <h2 class="h2">Built With Trusted&nbsp;Gear</h2>
             <p>From the technology in every bay to the clubs in your hands, we only use equipment we trust.</p>
         </header>
@@ -560,15 +462,22 @@
     </div>
 </section>
 
-<!-- ===================== 08 · VISIT ===================== -->
+<!-- ===================== 07 · VISIT ===================== -->
 <section id="visit" class="section section--alt">
     <div class="container">
         <header class="section-head reveal">
-            <span class="eyebrow"><b>08</b> Visit</span>
+            <span class="eyebrow"><b>07</b> Visit</span>
             <h2 class="h2">Find the Lab</h2>
         </header>
         <div class="visit-grid" data-stagger>
             <div class="visit-card card hud spot reveal">
+                <figure class="visit-photo">
+                    <picture>
+                        <source srcset="static/img/bay/door.webp" type="image/webp">
+                        <img src="static/img/bay/door.jpg" alt="The Capital Golf Labs entrance: a glass door marked Members Only, with the door-code keypad to its right" loading="lazy" width="1600" height="1200">
+                    </picture>
+                    <figcaption>Look for the <b>Members Only</b> door. The keypad is on the right.</figcaption>
+                </figure>
                 <span class="mono visit-label">Address</span>
                 <address>Fallfax Center<br>2830-B Fallfax Drive<br>Falls Church, VA 22042</address>
                 <ul class="visit-list">
@@ -578,7 +487,7 @@
                 </ul>
                 <div class="visit-actions">
                     <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Capital%20Golf%20Labs%2C%202830-B%20Fallfax%20Dr%2C%20Falls%20Church%2C%20VA%2022042" class="btn btn-primary" target="_blank" rel="noopener">Get Directions<svg class="btn-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-                    <a href="https://maps.apple.com/?daddr=2830-B+Fallfax+Dr,+Falls+Church,+VA+22042&amp;q=Capital+Golf+Labs" class="btn btn-ghost" target="_blank" rel="noopener">Apple Maps</a>
+                    <a href="https://maps.apple.com/?ll=38.875828,-77.2090625&amp;q=Capital%20Golf%20Labs" class="btn btn-ghost" target="_blank" rel="noopener">Apple Maps</a>
                 </div>
             </div>
             <div class="map-frame hud hud--on reveal">
