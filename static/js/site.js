@@ -359,6 +359,30 @@
             .catch(() => { /* no reviews yet — everything stays hidden */ });
     }
 
+    /* ---------- Inside the Lab: arrows page the strip, dots follow the scroll ---------- */
+    const inTrack = $('#inside-track');
+    if (inTrack) {
+        const cards = $$('.in-card', inTrack);
+        const dots = $$('.in-dots i');
+        const step = () => cards[0].getBoundingClientRect().width + parseFloat(getComputedStyle(inTrack).columnGap || 0);
+        $$('[data-in]').forEach((b) => b.addEventListener('click', () => {
+            const dir = Number(b.dataset.in);
+            const atEnd = inTrack.scrollLeft + inTrack.clientWidth >= inTrack.scrollWidth - 4;
+            if (dir > 0 && atEnd) inTrack.scrollTo({ left: 0, behavior: 'smooth' });
+            else inTrack.scrollBy({ left: dir * step(), behavior: 'smooth' });
+        }));
+        const sync = () => {
+            const i = Math.round(inTrack.scrollLeft / step());
+            dots.forEach((d, k) => d.classList.toggle('on', k === Math.min(i, dots.length - 1)));
+        };
+        inTrack.addEventListener('scroll', sync, { passive: true });
+        // Arrows only when there's more to scroll (on wide screens all photos fit).
+        const nav = $('.in-nav');
+        const fit = () => { if (nav) nav.hidden = inTrack.scrollWidth <= inTrack.clientWidth + 4; };
+        window.addEventListener('resize', fit, { passive: true });
+        fit();
+    }
+
     /* ---------- Sticky mobile CTA ---------- */
     const sticky = $('#mobileStickyCta');
     if (sticky && page === 'home') {
