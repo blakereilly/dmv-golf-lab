@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preload" as="image" href="static/img/hero-trackman.jpg">
-    <link rel="stylesheet" href="static/css/style.css?v=202610231816">
+    <link rel="stylesheet" href="static/css/style.css?v=202610292111">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBLS1ZX0RX"></script>
     <script>
@@ -26,8 +26,8 @@
       gtag('js', new Date());
       gtag('config', 'G-GBLS1ZX0RX');
     </script>
-    <script defer src="static/js/analytics.js?v=202610231816"></script>
-    <script defer src="static/js/site.js?v=202610231816"></script>
+    <script defer src="static/js/analytics.js?v=202610292111"></script>
+    <script defer src="static/js/site.js?v=202610292111"></script>
     <link rel="canonical" href="https://capitalgolflabs.com/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Capital Golf Labs">
@@ -354,13 +354,14 @@
         <header class="section-head section-head--center reveal">
             <span class="eyebrow">Membership</span>
             <h2 class="h2">Memberships Are Open</h2>
-            <p>$225/month with 5 hours of bay time included. Month-to-month, cancel anytime.</p>
+            <p>Two ways to play: go monthly with Signature, or grab a Session Pack and play on your own schedule.</p>
         </header>
 
         <div class="member-grid" data-stagger>
             <article class="plan reveal">
                 <div class="plan-top">
-                    <span class="plan-name">Membership</span>
+                    <span class="plan-name">Signature</span>
+                    <span class="plan-status">Month-to-Month</span>
                 </div>
                 <div class="plan-price"><span class="cur">$</span><span class="amount">225</span><span class="per">/ month</span></div>
                 <div class="plan-hours">5 Hours per Month</div>
@@ -373,8 +374,29 @@
                     <li><span class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.2 2.2 4.8-4.9"/></svg></span>Access to Leagues and Tournaments</li>
                 </ul>
                 <a href="join/" class="btn btn-primary btn-block">Join Now<svg class="btn-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-                <a class="plan-proof" data-rv-inline hidden href="#" target="_blank" rel="noopener"></a>
             </article>
+
+            <!-- Session Pack: benefits match the Trackman tile word for word, same order -->
+            <article class="plan plan--alt reveal" id="session-pack">
+                <div class="plan-top">
+                    <span class="plan-name">Session Pack</span>
+                    <span class="plan-status">No Commitment</span>
+                </div>
+                <div class="plan-price"><span class="cur">$</span><span class="amount">165</span><span class="per">one-time</span></div>
+                <div class="plan-hours">3 Hours &middot; Valid for 3 Months</div>
+                <div class="plan-benefits-label">Member Benefits</div>
+                <ul class="plan-list">
+                    <li><span class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.2 2.2 4.8-4.9"/></svg></span>3 One Hour Bookings</li>
+                    <li><span class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.2 2.2 4.8-4.9"/></svg></span>Private 24/7 Access to Premium Trackman iO Facility</li>
+                    <li><span class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.2 2.2 4.8-4.9"/></svg></span>One Free Guest Per Session</li>
+                    <li><span class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.2 2.2 4.8-4.9"/></svg></span>Use Anytime Within 3 Months</li>
+                    <li><span class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.2 2.2 4.8-4.9"/></svg></span>One-Time Purchase</li>
+                </ul>
+                <a href="join/#session-pack" class="btn btn-ghost btn-block">Buy Session Pack<svg class="btn-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+            </article>
+
+            <!-- Google rating under both plans (filled by the reviews feed; hidden until it loads) -->
+            <a class="plan-proof plan-proof--row" data-rv-inline hidden href="#" target="_blank" rel="noopener"></a>
 
             <aside class="try-card reveal" id="try">
                 <span class="eyebrow">Try It First</span>
