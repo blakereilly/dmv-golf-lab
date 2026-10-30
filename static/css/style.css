@@ -881,8 +881,12 @@ h1, h2, h3, h4 {
 }
 @keyframes orbit { to { --ang: 360deg; } }
 .plan > * { position: relative; }
+/* Second plan: same layout, quieter (no travelling edge light) */
+.plan--alt { background: linear-gradient(180deg, #10161f 0%, #0b1017 100%); box-shadow: inset 0 0 0 1px var(--line-2); }
+.plan--alt::before { display: none; }
 
 .plan-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.plan-status { white-space: nowrap; flex: none; }
 .plan-name {
     font-family: var(--f-display);
     font-size: 1.15rem;
@@ -964,6 +968,8 @@ h1, h2, h3, h4 {
 }
 .plan-proof .stars svg { width: 13px; height: 13px; }
 .plan-proof b { color: var(--text); font-weight: 600; }
+/* Rating line spanning both plan cards */
+.plan-proof--row { grid-column: 1 / -1; margin-top: 0.4rem; }
 .plan-proof:hover { color: var(--text); }
 
 /* Updates form card */
@@ -973,6 +979,7 @@ h1, h2, h3, h4 {
 
 .waitlist-form { display: grid; gap: 1rem; margin-top: 1.8rem; }
 /* Free-visit card beside the plan */
+.member-grid .try-card { grid-column: 1 / -1; }
 .try-card {
     display: flex;
     flex-direction: column;
@@ -1482,10 +1489,16 @@ a.review-name:hover { color: var(--blue-hi); }
     .tl-step p { margin-inline: auto; }
 
     .member-grid { grid-template-columns: 1fr 1fr; }
+    .member-grid .try-card { display: grid; grid-template-columns: 1.3fr 1fr; column-gap: 3rem; align-items: center; }
+    .member-grid .try-card .eyebrow, .member-grid .try-card h3, .member-grid .try-card p { grid-column: 1; }
+    .member-grid .try-card .eyebrow { justify-self: start; }
+    .member-grid .try-card .try-actions { grid-column: 2; grid-row: 1 / span 3; margin-top: 0; }
     .visit-grid { grid-template-columns: 0.85fr 1.15fr; }
     .partner-row { gap: 1rem; }
     .footer-top { grid-template-columns: 1.4fr 1fr 1fr 1.4fr; gap: 2rem; }
-    .join-grid { grid-template-columns: 1.1fr 1fr; }
+    .join-grid { grid-template-columns: 1fr 1fr; align-items: stretch; }
+    .join-next { grid-column: 1 / -1; }
+    .join-next .steps { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .join-proof-cards { grid-template-columns: 1fr 1fr; }
 }
 
@@ -1546,6 +1559,8 @@ a.review-name:hover { color: var(--blue-hi); }
     .sl-tab { font-size: 0.68rem; letter-spacing: 0.02em; }
     .faq-answer { padding: 0 0.2rem 1.5rem 3.2rem; }
     .partner-cell { height: 96px; padding: 1rem; }
+    .plan-name { font-size: 1rem; letter-spacing: 0.12em; }
+    .plan-status { padding: 0.28rem 0.55rem; font-size: 0.55rem; letter-spacing: 0.12em; }
     .in-nav { display: none; }
     .in-track { grid-auto-columns: 86%; gap: 0.7rem; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); }
     .in-dots { display: flex; }
