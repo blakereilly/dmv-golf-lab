@@ -1330,6 +1330,11 @@ a.review-name:hover { color: var(--blue-hi); }
 .page-hero p a, .inline-link { color: var(--blue-hi); font-weight: 600; transition: color 0.2s; }
 .page-hero p a:hover, .inline-link:hover { color: #9db8ff; }
 .page-hero--center { text-align: center; }
+/* /join: short header so the plans are on the first screen */
+.page-hero--compact { padding: calc(var(--nav-h) + clamp(1.5rem, 3.5vw, 2.6rem)) 0 clamp(1.6rem, 3vw, 2.2rem); }
+.page-hero--compact .page-title { margin-top: 0.8rem; font-size: clamp(2.2rem, 5vw, 3.6rem); }
+.page-hero--compact p { margin-top: 0.8rem; font-size: clamp(0.95rem, 1.2vw, 1.05rem); }
+#plans { scroll-margin-top: calc(var(--nav-h) + 2.2rem); }
 .page-hero--center .eyebrow { justify-content: center; }
 .page-hero--center p { margin-inline: auto; }
 .page-404 { min-height: calc(100vh - 110px); min-height: calc(100svh - 110px); display: flex; align-items: center; }
@@ -1412,16 +1417,8 @@ a.review-name:hover { color: var(--blue-hi); }
 }
 .steps h4 { font-size: 1.02rem; letter-spacing: -0.01em; }
 .steps p { margin-top: 0.25rem; color: var(--text-2); font-size: 0.92rem; line-height: 1.6; }
-.join-notes {
-    margin-top: 1.8rem;
-    padding-top: 1.4rem;
-    border-top: 1px solid var(--line);
-    display: grid;
-    gap: 0.6rem;
-    font-size: 0.92rem;
-    color: var(--text-2);
-}
-.join-notes a { color: var(--blue-hi); font-weight: 600; }
+.join-note { margin-top: 1.6rem; padding-top: 1.3rem; border-top: 1px solid var(--line); font-size: 0.92rem; color: var(--text-2); }
+.join-note a { color: var(--blue-hi); font-weight: 600; }
 
 .join-proof { max-width: 1000px; margin-top: 2.5rem; }
 .join-proof-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.8rem 1.5rem; margin-bottom: 1rem; }
@@ -1559,6 +1556,7 @@ a.review-name:hover { color: var(--blue-hi); }
     .sl-tab { font-size: 0.68rem; letter-spacing: 0.02em; }
     .faq-answer { padding: 0 0.2rem 1.5rem 3.2rem; }
     .partner-cell { height: 96px; padding: 1rem; }
+    #plans { scroll-margin-top: calc(var(--nav-h) + 0.4rem); }
     .plan-name { font-size: 1rem; letter-spacing: 0.12em; }
     .plan-status { padding: 0.28rem 0.55rem; font-size: 0.55rem; letter-spacing: 0.12em; }
     .in-nav { display: none; }
