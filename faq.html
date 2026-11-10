@@ -12,21 +12,26 @@
     <meta name="theme-color" content="#04060a">
     <meta name="description" content="Frequently asked questions about Capital Golf Labs — a private, 24/7 Trackman golf studio in Falls Church, VA. Access, guests, clubs, and more.">
     <title>FAQ | Capital Golf Labs</title>
-    <script>document.documentElement.classList.add('js');</script>
+    <script>document.documentElement.classList.add('js'); if (location.hash) document.documentElement.classList.add('landing');</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="static/css/style.css?v=202611061523">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap"></noscript>
+    <link rel="stylesheet" href="static/css/style.css?v=202611101200">
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBLS1ZX0RX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-GBLS1ZX0RX');
+      // Load the GA library shortly after the page has loaded, once the browser is idle (keeps it off the critical path).
+      addEventListener('load', function () {
+        var go = function () { var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-GBLS1ZX0RX'; document.head.appendChild(s); };
+        setTimeout(function () { (window.requestIdleCallback || setTimeout)(go, { timeout: 2000 }); }, 1500);
+      });
     </script>
-    <script defer src="static/js/analytics.js?v=202611061523"></script>
-    <script defer src="static/js/site.js?v=202611061523"></script>
+    <script defer src="static/js/analytics.js?v=202611101200"></script>
+    <script defer src="static/js/site.js?v=202611101200"></script>
     <link rel="canonical" href="https://capitalgolflabs.com/faq.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Capital Golf Labs">
@@ -40,6 +45,102 @@
     <meta name="twitter:title" content="FAQ | Capital Golf Labs">
     <meta name="twitter:description" content="Access, guests, clubs, and everything worth knowing about the DMV's private 24/7 Trackman studio.">
     <meta name="twitter:image" content="https://capitalgolflabs.com/static/img/og-home.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Where are you located?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We're open now, 24/7, at Fallfax Center — 2830-B Fallfax Drive, Falls Church, VA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I get in if there's no staff?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every booking comes with its own unique door code. Book from your phone, walk up, enter your code, and you're in. No keys, no front desk, no waiting — for your session, the bay is yours."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to practice alone, late at night?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The studio is monitored by security cameras throughout, every door code is tied to a specific booking, and support is reachable by phone or text if anything ever comes up."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I bring my own clubs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For the best experience, bring the clubs you play with. We also keep a few house clubs on hand. Reach out for more information."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I wear?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Athletic clothes and clean, non-marking athletic or golf shoes. Metal spikes aren't allowed on the turf."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I bring a guest?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every session includes one guest, free."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What can I work on?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Everything. Full swing, short game, and putting, plus Trackman's course library, driving ranges, and skills challenges. Every shot is captured to your personal Trackman profile."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I join?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Two options: the Signature membership is $225/month with 5 hours included, month-to-month. The Session Pack is a one-time $165 for 3 one-hour bookings you can use anytime within 3 months. See both →"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I try it before I join?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Come check out the studio with a free session first. Text us at (301) 580-6496 or email us and we'll get you set up."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does booking work once I join?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Book anytime through the TrackMan Golf app or the TrackMan Booking web portal. After you sign up, we'll send you everything you need to get set up and book your first session."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do unused hours roll over?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No — your 5 included hours are use-them-or-lose-them each month. Need more time? Additional hours are $40/hr."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body data-page="faq">
 
@@ -84,6 +185,8 @@
         <a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" class="btn btn-ghost" target="_blank" rel="noopener">Member Booking</a>
     </div>
 </div>
+
+<main id="main">
 
 <!-- ===================== HEADER ===================== -->
 <header class="page-hero">
@@ -166,6 +269,8 @@
     </div>
 </section>
 
+</main>
+
 <!-- ===================== FOOTER ===================== -->
 <footer class="footer">
     <div class="container">
@@ -176,17 +281,16 @@
                 <span class="footer-hours">Open 24/7</span>
             </div>
             <div class="footer-col">
-                <h4>Explore</h4>
+                <h3>Explore</h3>
                 <ul>
                     <li><a href="index.html#tech">The Concept</a></li>
-                    <li><a href="index.html#how">How It Works</a></li>
                     <li><a href="index.html#trackman">Technology</a></li>
                     <li><a href="index.html#visit">Visit</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Members</h4>
+                <h3>Members</h3>
                 <ul>
                     <li><a href="join/#plans">Join Now</a></li>
                     <li><a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" target="_blank" rel="noopener">Member Booking</a></li>
@@ -194,7 +298,7 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Follow Along</h4>
+                <h3>Follow Along</h3>
                 <p>Behind-the-scenes updates, member events, and what's new at the lab.</p>
                 <a href="https://instagram.com/capitalgolflabs" target="_blank" rel="noopener" class="footer-insta">@capitalgolflabs</a>
             </div>

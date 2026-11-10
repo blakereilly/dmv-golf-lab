@@ -47,6 +47,36 @@
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     $$('.reveal, .tech-banner').forEach((el) => revealIO.observe(el));
 
+    /* ---------- Arriving on a #hash link: land on the target instantly ---------- */
+    // The page <head> adds .landing (no smooth scroll) when the URL has a hash.
+    const root = document.documentElement;
+    if (root.classList.contains('landing')) {
+        const userEvents = ['wheel', 'touchstart', 'keydown', 'mousedown'];
+        let target = null;
+        try { target = document.getElementById(decodeURIComponent(location.hash.slice(1))); } catch (e) { /* malformed hash */ }
+        let done = false;
+        let settle = null;
+        const finish = () => {
+            if (done) return;
+            done = true;
+            root.classList.remove('landing');
+            if (settle) settle.disconnect();
+            userEvents.forEach((t) => window.removeEventListener(t, finish));
+        };
+        const align = () => { if (!done && target) target.scrollIntoView(); };
+        if (target) {
+            // Show the target right away instead of waiting on its fade-in.
+            [target, ...$$('.reveal', target)].filter((el) => el.classList.contains('reveal')).forEach((el) => el.classList.add('landed', 'in'));
+            align();
+            // Content above the target loads late (reviews, images), so keep it aligned until the page settles.
+            if ('ResizeObserver' in window) { settle = new ResizeObserver(align); settle.observe(document.body); }
+        }
+        // Stop as soon as the visitor scrolls themselves, or shortly after everything has loaded.
+        userEvents.forEach((t) => window.addEventListener(t, finish, { passive: true }));
+        const afterLoad = () => { align(); setTimeout(finish, 2500); };
+        if (document.readyState === 'complete') afterLoad(); else window.addEventListener('load', afterLoad);
+    }
+
     /* ---------- Cursor spotlight on cards ---------- */
     $$('.spot').forEach((el) => {
         el.addEventListener('pointermove', (e) => {
@@ -281,6 +311,7 @@
         const reviewCard = (r) => {
             const card = make('article', 'review card');
             const st = make('span', 'stars');
+            st.setAttribute('role', 'img');
             st.setAttribute('aria-label', `${r.rating} out of 5 stars`);
             st.innerHTML = stars(r.rating);
             card.append(st, make('p', 'review-text', r.text));
