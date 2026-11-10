@@ -12,21 +12,26 @@
     <meta name="theme-color" content="#04060a">
     <meta name="robots" content="noindex">
     <title>Page Not Found | Capital Golf Labs</title>
-    <script>document.documentElement.classList.add('js');</script>
+    <script>document.documentElement.classList.add('js'); if (location.hash) document.documentElement.classList.add('landing');</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css?v=202611061523">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap"></noscript>
+    <link rel="stylesheet" href="/static/css/style.css?v=202611101200">
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBLS1ZX0RX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-GBLS1ZX0RX');
+      // Load the GA library shortly after the page has loaded, once the browser is idle (keeps it off the critical path).
+      addEventListener('load', function () {
+        var go = function () { var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-GBLS1ZX0RX'; document.head.appendChild(s); };
+        setTimeout(function () { (window.requestIdleCallback || setTimeout)(go, { timeout: 2000 }); }, 1500);
+      });
     </script>
-    <script defer src="/static/js/analytics.js?v=202611061523"></script>
-    <script defer src="/static/js/site.js?v=202611061523"></script>
+    <script defer src="/static/js/analytics.js?v=202611101200"></script>
+    <script defer src="/static/js/site.js?v=202611101200"></script>
 </head>
 <body data-page="404">
 

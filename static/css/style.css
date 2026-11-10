@@ -3,12 +3,6 @@
    v3 "Lab" — precision-instrument look: ink, signal blue, hairlines, data.
    ========================================================= */
 
-@property --ang {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
-}
-
 :root {
     /* Ink (backgrounds, darkest → lightest) */
     --ink-0: #04060a;
@@ -268,10 +262,8 @@ h1, h2, h3, h4 {
 
 .btn-ghost {
     color: var(--text);
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(12, 17, 25, 0.55);
     box-shadow: inset 0 0 0 1px var(--line-2);
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
 }
 .btn-ghost:hover {
     background: rgba(111, 151, 255, 0.08);
@@ -461,10 +453,7 @@ h1, h2, h3, h4 {
     z-index: -3;
     background: url('../img/hero-trackman.jpg') 70% center / cover no-repeat;
     background-image: image-set(url('../img/hero-trackman.webp') type('image/webp'), url('../img/hero-trackman.jpg') type('image/jpeg'));
-    transform: scale(1.08);
-    animation: hero-settle 2.6s var(--ease) forwards;
 }
-@keyframes hero-settle { to { transform: scale(1); } }
 
 .hero::before {
     content: '';
@@ -526,72 +515,41 @@ h1, h2, h3, h4 {
 /* Load-in for hero content */
 .js .hero-in {
     opacity: 0;
-    transform: translateY(22px);
-    filter: blur(6px);
-    animation: hero-in 1s var(--ease) forwards;
+    transform: translateY(16px);
+    animation: hero-in 0.7s var(--ease) forwards;
     animation-delay: var(--d, 0s);
 }
-@keyframes hero-in { to { opacity: 1; transform: none; filter: none; } }
+@keyframes hero-in { to { opacity: 1; transform: none; } }
 
 /* Scroll cue */
 
 /* =========================================================
    CONCEPT
    ========================================================= */
-.concept-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
-.concept-card {
-    display: flex;
-    flex-direction: column;
-    padding: 1.9rem 1.8rem 2rem;
-}
-.cc-top { display: flex; align-items: center; justify-content: space-between; }
-.cc-icon {
-    width: 50px;
-    height: 50px;
-    display: grid;
-    place-items: center;
-    border-radius: 13px;
-    background: var(--blue-soft);
-    border: 1px solid rgba(47, 107, 255, 0.28);
-    color: var(--blue-hi);
-}
-.cc-icon svg { width: 22px; height: 22px; }
-.concept-card h3 { margin-top: 1.6rem; font-size: 1.4rem; letter-spacing: -0.02em; }
-.concept-card p { margin-top: 0.7rem; color: var(--text-2); font-size: 0.98rem; }
-.concept-card strong { color: var(--text); font-weight: 600; }
-
-/* =========================================================
-   HOW IT WORKS — timeline
-   ========================================================= */
-.timeline { position: relative; display: grid; gap: 2.6rem; }
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 27px;
-    top: 10px;
-    bottom: 10px;
-    width: 1px;
-    background: linear-gradient(180deg, var(--line-2), var(--blue), var(--line-2));
-}
-.tl-step { position: relative; padding-left: 84px; }
-.tl-node {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 56px;
-    height: 56px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
+/* Photo of the bay beside the pitch and the three steps */
+.concept { display: grid; gap: 2.2rem; }
+.concept-photo {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
     border: 1px solid var(--line-2);
-    background: var(--ink-3);
-    color: var(--blue-hi);
-    box-shadow: 0 0 0 7px var(--sec-bg, var(--ink-1)), 0 0 24px -6px var(--blue-glow);
+    background: var(--ink-0);
+    box-shadow: 0 50px 110px -50px rgba(47, 107, 255, 0.4);
 }
-.tl-node svg { width: 22px; height: 22px; }
-.tl-num { font-family: var(--f-mono); font-size: 0.66rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue-hi); }
-.tl-step h3 { margin: 0.55rem 0 0.6rem; font-size: 1.3rem; letter-spacing: -0.02em; }
-.tl-step p { color: var(--text-2); font-size: 0.97rem; max-width: 340px; }
+.concept-photo img { width: 100%; }
+.concept-body .section-head { margin-bottom: 1.6rem; }
+.concept-steps { list-style: none; }
+.concept-steps li { display: grid; grid-template-columns: 2.6rem 1fr; padding: 1.15rem 0; border-top: 1px solid var(--line); }
+.concept-steps li:last-child { border-bottom: 1px solid var(--line); }
+.concept-steps .mono { padding-top: 0.32rem; font-size: 0.72rem; letter-spacing: 0.1em; color: var(--blue-hi); }
+.concept-steps h3 { font-size: 1.2rem; letter-spacing: -0.02em; }
+.concept-steps p { margin-top: 0.3rem; font-size: 0.97rem; color: var(--text-2); }
+@media (min-width: 960px) {
+    .concept { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(2.5rem, 5vw, 4.5rem); align-items: center; }
+    .concept-body .section-head { margin-bottom: 2.2rem; }
+    .concept-steps li { grid-template-columns: 3.4rem 1fr; padding: 1.4rem 0; }
+    .concept-steps h3 { font-size: 1.35rem; }
+}
 
 /* =========================================================
    INSIDE THE LAB — compact photo carousel
@@ -642,25 +600,17 @@ h1, h2, h3, h4 {
 .in-dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--line-3); transition: background 0.3s, width 0.3s; }
 .in-dots i.on { width: 18px; border-radius: 3px; background: var(--blue); }
 
-.hero-try {
+.hero-more {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    margin-top: 1.4rem;
-    padding: 0.8rem 1.25rem;
-    border-radius: 999px;
-    border: 1px solid rgba(111, 151, 255, 0.4);
-    background: rgba(47, 107, 255, 0.12);
-    -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-    font-size: 1.05rem;
+    gap: 0.5rem;
+    margin-top: 1.3rem;
+    font-size: 0.95rem;
     color: var(--text-2);
-    transition: background 0.25s, border-color 0.25s, color 0.25s;
+    transition: color 0.25s;
 }
-.hero-try b { color: var(--text); font-weight: 600; }
-.hero-try-arrow { color: var(--blue-hi); transition: transform 0.25s var(--ease); }
-.hero-try:hover { background: rgba(47, 107, 255, 0.2); border-color: var(--blue-hi); color: var(--text); }
-.hero-try:hover .hero-try-arrow { transform: translateX(3px); }
+.hero-more span { color: var(--blue-hi); }
+.hero-more:hover { color: var(--text); }
 .mobile-try { display: block; text-align: center; padding-top: 0.4rem; color: var(--blue-hi); font-weight: 600; }
 .join-try a { font-weight: 700; }
 
@@ -865,7 +815,7 @@ h1, h2, h3, h4 {
     background: linear-gradient(180deg, #131b28 0%, #0c121b 100%);
     box-shadow: inset 0 0 0 1px var(--line-2), 0 40px 100px -40px rgba(47, 107, 255, 0.35);
 }
-/* Light that travels around the card's edge */
+/* Highlighted edge on the featured card */
 .plan::before {
     content: '';
     position: absolute;
@@ -873,13 +823,11 @@ h1, h2, h3, h4 {
     z-index: -1;
     padding: 1px;
     border-radius: inherit;
-    background: conic-gradient(from var(--ang), transparent 0deg, transparent 220deg, rgba(111, 151, 255, 0.95) 300deg, transparent 360deg);
+    background: linear-gradient(160deg, rgba(111, 151, 255, 0.85), rgba(111, 151, 255, 0) 38%, rgba(111, 151, 255, 0) 70%, rgba(111, 151, 255, 0.35));
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
             mask-composite: exclude;
-    animation: orbit 7s linear infinite;
 }
-@keyframes orbit { to { --ang: 360deg; } }
 .plan > * { position: relative; }
 /* Second plan: same layout, quieter (no travelling edge light) */
 .plan--alt { background: linear-gradient(180deg, #10161f 0%, #0b1017 100%); box-shadow: inset 0 0 0 1px var(--line-2); }
@@ -1103,6 +1051,15 @@ h1, h2, h3, h4 {
     box-shadow: 0 40px 90px -40px rgba(47, 107, 255, 0.35);
 }
 .partner-feature img { width: 100%; transition: transform 1s var(--ease); }
+/* Partners is a supporting section: keep it compact */
+.partners { padding-block: clamp(2.75rem, 5vw, 4rem); }
+.partners .section-head { margin-bottom: 1.6rem; }
+.partners .h2 { font-size: clamp(1.45rem, 2.4vw, 1.9rem); }
+.partners .container { max-width: 760px; }
+.partners .partner-cell { height: 88px; padding: 1rem; }
+.partners .partner-cell img { max-height: 28px; }
+.partners .partner-cell--carls img { max-height: 46px; }
+.partners .partner-feature { width: min(300px, 100%); margin-top: 1rem; }
 .partner-feature:hover img { transform: scale(1.02); }
 
 /* =========================================================
@@ -1275,7 +1232,7 @@ a.review-name:hover { color: var(--blue-hi); }
 .footer-brand address { margin-top: 1.4rem; font-style: normal; line-height: 1.75; color: var(--text-2); }
 .footer-hours { display: block; margin-top: 1rem; font-family: var(--f-mono); font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text); }
 
-.footer-col h4 {
+.footer-col h3 {
     margin-bottom: 1.1rem;
     font-family: var(--f-mono);
     font-size: 0.64rem;
@@ -1447,19 +1404,21 @@ a.review-name:hover { color: var(--blue-hi); }
     transition: transform 0.45s var(--ease);
 }
 .mobile-sticky-cta.visible { transform: none; }
-.mobile-sticky-cta .btn { width: 100%; }
+.mobile-sticky-cta .btn { flex: 1 1 0; padding: 0 0.6rem; }
 
 /* =========================================================
    SCROLL REVEAL
    ========================================================= */
 .js .reveal {
     opacity: 0;
-    transform: translateY(26px);
-    filter: blur(5px);
-    transition: opacity 0.9s var(--ease), transform 0.9s var(--ease), filter 0.9s var(--ease);
+    transform: translateY(20px);
+    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
     transition-delay: var(--d, 0s);
 }
-.js .reveal.in { opacity: 1; transform: none; filter: none; }
+.js .reveal.in { opacity: 1; transform: none; }
+/* Arriving on a #hash link: jump straight to the target, and show it without the fade-in */
+html.landing { scroll-behavior: auto; }
+.js .reveal.landed { transition: none; }
 
 /* =========================================================
    RESPONSIVE
@@ -1469,22 +1428,6 @@ a.review-name:hover { color: var(--blue-hi); }
 }
 
 @media (min-width: 860px) {
-    .concept-grid { grid-template-columns: repeat(3, 1fr); }
-
-    .timeline { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-    .timeline::before {
-        left: 16.66%;
-        right: 16.66%;
-        top: 27px;
-        bottom: auto;
-        width: auto;
-        height: 1px;
-        background: linear-gradient(90deg, var(--line-2), var(--blue), var(--line-2));
-    }
-    .tl-step { padding-left: 0; text-align: center; }
-    .tl-node { position: relative; margin: 0 auto 1.7rem; }
-    .tl-step p { margin-inline: auto; }
-
     .member-grid { grid-template-columns: 1fr 1fr; }
     .member-grid .try-card { display: grid; grid-template-columns: 1.3fr 1fr; column-gap: 3rem; align-items: center; }
     .member-grid .try-card .eyebrow, .member-grid .try-card h3, .member-grid .try-card p { grid-column: 1; }
@@ -1497,23 +1440,6 @@ a.review-name:hover { color: var(--blue-hi); }
     .join-next { grid-column: 1 / -1; }
     .join-next .steps { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .join-proof-cards { grid-template-columns: 1fr 1fr; }
-}
-
-/* Phones & small tablets: concept cards become a swipe row instead of a tall stack */
-@media (max-width: 859px) {
-    .concept-grid {
-        grid-template-columns: none;
-        grid-auto-flow: column;
-        grid-auto-columns: 82%;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: none;
-        margin-inline: calc(-1 * var(--gutter));
-        padding: 0 var(--gutter) 0.3rem;
-        scroll-padding-inline: var(--gutter);
-    }
-    .concept-grid::-webkit-scrollbar { display: none; }
-    .concept-card { scroll-snap-align: start; }
 }
 
 @media (min-width: 960px) {
@@ -1534,7 +1460,9 @@ a.review-name:hover { color: var(--blue-hi); }
 }
 
 @media (max-width: 959px) {
-    .mobile-sticky-cta { display: block; }
+    .hero-media { background-image: image-set(url('../img/hero-trackman-1600.webp') type('image/webp'), url('../img/hero-trackman.jpg') type('image/jpeg')); }
+
+    .mobile-sticky-cta { display: flex; gap: 0.5rem; }
     .footer { padding-bottom: 6.5rem; }
 }
 
@@ -1558,13 +1486,18 @@ a.review-name:hover { color: var(--blue-hi); }
     .partner-cell { height: 96px; padding: 1rem; }
     #plans { scroll-margin-top: calc(var(--nav-h) + 0.4rem); }
     .plan-name { font-size: 1rem; letter-spacing: 0.12em; }
+    /* homepage plans, phones: tighter cards; the Session Pack lists only what differs (full list is on /join) */
+    #reserve .plan-shared { display: none; }
+    #reserve .plan-price { margin-top: 1.2rem; }
+    #reserve .plan-list { gap: 0.6rem; margin: 0.9rem 0 1.5rem; }
+    #reserve .try-card h3 { font-size: 1.35rem; }
+    #reserve .updates { margin-top: 1.4rem; padding: 1.2rem 0 0; }
     .plan-status { padding: 0.28rem 0.55rem; font-size: 0.55rem; letter-spacing: 0.12em; }
     .in-nav { display: none; }
     .in-track { grid-auto-columns: 86%; gap: 0.7rem; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); scroll-padding-inline: var(--gutter); }
     .in-dots { display: flex; }
-    .hero-try { display: flex; width: 100%; margin-top: 0.75rem; font-size: 0.98rem; }
-    .hero-try-arrow { margin-left: auto; }
-    .map-frame { min-height: 260px; }
+    .hero-more { display: flex; justify-content: center; margin-top: 1rem; }
+    .map-frame { display: none; }
     .visit-card { padding: 1.5rem; }
     .visit-list { margin: 1.3rem 0 1.5rem; }
     .visit-list li { padding: 0.75rem 0; }
@@ -1575,9 +1508,10 @@ a.review-name:hover { color: var(--blue-hi); }
     .rv-summary { padding: 1.2rem; }
     .rv-actions { width: 100%; flex-wrap: nowrap; }
     .rv-actions .btn { flex: 1 1 0; padding: 0 0.6rem; font-size: 0.66rem; letter-spacing: 0.05em; }
-    .concept-card { min-height: 0; padding: 1.6rem 1.5rem 1.7rem; }
-    .concept-card h3 { margin-top: 1.8rem; }
-    .section { padding-block: 3.75rem; }
+    .section { padding-block: 3.1rem; }
+    .partners { padding-block: 2.4rem; }
+    .partners .partner-cell { height: 68px; }
+    .partners .partner-feature { width: min(260px, 100%); }
     .tech-section { padding-top: 0; }
     .section-head { margin-bottom: 2rem; }
     .tech-banner { height: 220px; }
@@ -1587,14 +1521,17 @@ a.review-name:hover { color: var(--blue-hi); }
     .stat-label { margin-top: 0.55rem; font-size: 0.56rem; letter-spacing: 0.06em; line-height: 1.55; }
     .stat-label br { display: none; }
     .tech-grid { margin-top: 3rem; gap: 2.2rem; }
-    .timeline { gap: 2rem; }
     .partner-feature { width: min(300px, 100%); }
-    .footer { padding-top: 3rem; }
+    .footer { padding-top: 2.4rem; }
+    .footer-brand img { height: 52px; }
+    .footer-brand address { margin-top: 1rem; }
+    .footer-col:last-child p { display: none; }
+    .footer-col .footer-insta { margin-top: 0; }
     /* Bigger chart labels so they stay legible when the chart shrinks */
     .sl-chart .grid text { font-size: 17px; }
     .sl-chart .marker text { font-size: 19px; }
     .shotlab { padding: 1.1rem; }
-    .footer-top { grid-template-columns: 1fr 1fr; gap: 2.2rem 1.5rem; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 1.6rem 1.5rem; }
     .footer-brand, .footer-col:last-child { grid-column: 1 / -1; }
 }
 

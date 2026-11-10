@@ -12,22 +12,28 @@
     <meta name="theme-color" content="#04060a">
     <meta name="description" content="A private, 24/7 Trackman golf studio in Falls Church, VA. No crowds, no distractions — just you, your swing, and tour-level data. Now open.">
     <title>Capital Golf Labs | Private 24/7 Trackman Golf Studio — Falls Church, VA</title>
-    <script>document.documentElement.classList.add('js');</script>
+    <script>document.documentElement.classList.add('js'); if (location.hash) document.documentElement.classList.add('landing');</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="preload" as="image" href="static/img/hero-trackman.jpg">
-    <link rel="stylesheet" href="static/css/style.css?v=202611061523">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap"></noscript>
+    <link rel="preload" as="image" href="static/img/hero-trackman-1600.webp" type="image/webp" fetchpriority="high" media="(max-width: 959px)">
+    <link rel="preload" as="image" href="static/img/hero-trackman.webp" type="image/webp" fetchpriority="high" media="(min-width: 960px)">
+    <link rel="stylesheet" href="static/css/style.css?v=202611101200">
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GBLS1ZX0RX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-GBLS1ZX0RX');
+      // Load the GA library shortly after the page has loaded, once the browser is idle (keeps it off the critical path).
+      addEventListener('load', function () {
+        var go = function () { var s = document.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-GBLS1ZX0RX'; document.head.appendChild(s); };
+        setTimeout(function () { (window.requestIdleCallback || setTimeout)(go, { timeout: 2000 }); }, 1500);
+      });
     </script>
-    <script defer src="static/js/analytics.js?v=202611061523"></script>
-    <script defer src="static/js/site.js?v=202611061523"></script>
+    <script defer src="static/js/analytics.js?v=202611101200"></script>
+    <script defer src="static/js/site.js?v=202611101200"></script>
     <link rel="canonical" href="https://capitalgolflabs.com/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Capital Golf Labs">
@@ -42,7 +48,7 @@
     <meta name="twitter:description" content="A private, 24/7 Trackman golf studio in Falls Church, VA. No crowds, no distractions — just you, your swing, and tour-level data. Now open.">
     <meta name="twitter:image" content="https://capitalgolflabs.com/static/img/og-home.jpg">
     <script type="application/ld+json">
-    {
+{
       "@context": "https://schema.org",
       "@type": "SportsActivityLocation",
       "name": "Capital Golf Labs",
@@ -59,7 +65,18 @@
         "postalCode": "22042",
         "addressCountry": "US"
       },
-      "sameAs": ["https://www.instagram.com/capitalgolflabs"]
+      "sameAs": [
+        "https://www.instagram.com/capitalgolflabs",
+        "https://maps.google.com/?cid=12121307016776813387"
+      ],
+      "telephone": "+1-301-580-6496",
+      "priceRange": "$165–$225",
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.875828,
+        "longitude": -77.2090625
+      },
+      "hasMap": "https://maps.google.com/?cid=12121307016776813387"
     }
     </script>
 </head>
@@ -108,6 +125,8 @@
     </div>
 </div>
 
+<main id="main">
+
 <!-- ===================== HERO ===================== -->
 <header class="hero">
     <div class="hero-media" role="img" aria-label="A golfer swinging in a Trackman simulator bay overlooking a seaside golf course"></div>
@@ -123,80 +142,46 @@
             </p>
             <div class="hero-ctas hero-in" style="--d:.44s">
                 <a href="join/#plans" class="btn btn-primary">Join Now<svg class="btn-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-                <a href="#how" class="btn btn-ghost">See How It Works</a>
+                <a href="#try" class="btn btn-ghost">Try It Free</a>
             </div>
-            <a href="#try" class="hero-try hero-in" style="--d:.52s"><span>Not sure yet? <b>Try it free first</b></span><span class="hero-try-arrow" aria-hidden="true">&rarr;</span></a>
+            <a href="#how" class="hero-more hero-in" style="--d:.52s">See How It Works<span aria-hidden="true">&darr;</span></a>
         </div>
     </div>
 
 </header>
 
-<!-- ===================== CONCEPT ===================== -->
+<!-- ===================== CONCEPT + HOW IT WORKS ===================== -->
 <section id="tech" class="section section--alt">
-    <div class="container">
-        <header class="section-head reveal">
-            <span class="eyebrow">The Concept</span>
-            <h2 class="h2">A New Way to Practice and Play</h2>
-            <p>A private Trackman studio that's yours whenever you want it. Book online, let yourself in, and spend the session dialing in your numbers or playing a round with a friend.</p>
-        </header>
+    <div class="container concept">
+        <figure class="concept-photo reveal">
+            <picture>
+                <source type="image/webp" srcset="static/img/inside/studio-800.webp 800w, static/img/inside/studio.webp 1200w" sizes="(max-width: 959px) 92vw, 620px">
+                <img src="static/img/inside/studio.jpg" alt="The studio: the hitting mat and impact screen on the left, the touchscreen station, and the lounge seating and TV on the right" loading="lazy" width="1200" height="800">
+            </picture>
+        </figure>
 
-        <div class="concept-grid" data-stagger>
-            <article class="concept-card card reveal">
-                <div class="cc-top">
-                    <span class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3"/></svg></span>
-                </div>
-                <h3>Tour-Level Technology</h3>
-                <p><strong>Trackman iO</strong>, the launch monitor trusted by tour pros, captures every detail of every shot.</p>
-            </article>
+        <div class="concept-body" id="how">
+            <header class="section-head reveal">
+                <span class="eyebrow">The Concept</span>
+                <h2 class="h2">A New Way to Practice and Play</h2>
+                <p>A private Trackman studio that's yours whenever you want it. No front desk, no crowds, no waiting on a bay.</p>
+            </header>
 
-            <article class="concept-card card reveal">
-                <div class="cc-top">
-                    <span class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="3"/><circle cx="9" cy="8" r=".9" fill="currentColor"/><circle cx="12" cy="8" r=".9" fill="currentColor"/><circle cx="15" cy="8" r=".9" fill="currentColor"/><circle cx="9" cy="11.5" r=".9" fill="currentColor"/><circle cx="12" cy="11.5" r=".9" fill="currentColor"/><circle cx="15" cy="11.5" r=".9" fill="currentColor"/><circle cx="9" cy="15" r=".9" fill="currentColor"/><circle cx="12" cy="15" r=".9" fill="currentColor"/><circle cx="15" cy="15" r=".9" fill="currentColor"/><path d="M10 18.5h4"/></svg></span>
-                </div>
-                <h3>24/7 Keyless Access</h3>
-                <p>Book from your phone and let yourself in with your door code. No staff, no lines.</p>
-            </article>
-
-            <article class="concept-card card reveal">
-                <div class="cc-top">
-                    <span class="cc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5l7.5 3v6c0 4.8-3.2 8.3-7.5 10-4.3-1.7-7.5-5.2-7.5-10v-6l7.5-3z"/><path d="M8.8 12.2l2.2 2.2 4.3-4.4"/></svg></span>
-                </div>
-                <h3>Private by Design</h3>
-                <p>The bay and lounge are all yours for your session, just you and your guest. No crowds, no distractions, total privacy.</p>
-            </article>
+            <ol class="concept-steps" data-stagger>
+                <li class="reveal">
+                    <span class="mono">01</span>
+                    <div><h3>Book</h3><p>Reserve an hour from your phone, any time of day or night.</p></div>
+                </li>
+                <li class="reveal">
+                    <span class="mono">02</span>
+                    <div><h3>Let yourself in</h3><p>Every booking comes with its own door code.</p></div>
+                </li>
+                <li class="reveal">
+                    <span class="mono">03</span>
+                    <div><h3>Play</h3><p>The bay and lounge are yours and your guest's. Every shot is saved to your Trackman profile.</p></div>
+                </li>
+            </ol>
         </div>
-    </div>
-</section>
-
-<!-- ===================== HOW IT WORKS ===================== -->
-<section id="how" class="section">
-    <div class="container">
-        <header class="section-head section-head--center reveal">
-            <span class="eyebrow">How It Works</span>
-            <h2 class="h2">From Your Phone to Your First Shot</h2>
-            <p>No front desk, no check-in, no waiting. Three steps and the bay is yours.</p>
-        </header>
-
-        <ol class="timeline" data-stagger>
-            <li class="tl-step reveal">
-                <span class="tl-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2.5"/><line x1="11" y1="18" x2="13" y2="18"/></svg></span>
-                <span class="tl-num">Step 01</span>
-                <h3>Book From Your Phone</h3>
-                <p>Reserve a bay 24/7 in one-hour blocks. Pick your time — it's yours.</p>
-            </li>
-            <li class="tl-step reveal">
-                <span class="tl-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0"/><circle cx="12" cy="15.5" r="1.3"/></svg></span>
-                <span class="tl-num">Step 02</span>
-                <h3>Unlock at the Door</h3>
-                <p>Every booking gets its own door code. Walk up, enter it, and you're in. No keys, no staff, no line.</p>
-            </li>
-            <li class="tl-step reveal">
-                <span class="tl-node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M7 15l3-4 3 2 4-6"/></svg></span>
-                <span class="tl-num">Step 03</span>
-                <h3>Hit &amp; Review Your Data</h3>
-                <p>Warm up, play a course, or grind your numbers — every shot saved to your Trackman profile.</p>
-            </li>
-        </ol>
     </div>
 </section>
 
@@ -216,21 +201,21 @@
         <div class="in-track reveal" id="inside-track" tabindex="0" aria-label="Photos of the studio">
             <figure class="in-card">
                 <picture>
-                    <source srcset="static/img/inside/studio.webp" type="image/webp">
-                    <img src="static/img/inside/studio.jpg" alt="The Trackman bay with the hitting mat, impact screen, touchscreen station and lounge seating" loading="lazy" width="1200" height="800">
+                    <source type="image/webp" srcset="static/img/inside/screen-800.webp 800w, static/img/inside/screen.webp 1200w" sizes="(max-width: 859px) 86vw, 390px">
+                    <img src="static/img/inside/screen.jpg" alt="Standing on the hitting mat, facing the impact screen with a Trackman course on it" loading="lazy" width="1200" height="800">
                 </picture>
                 <figcaption><span class="mono">01</span>The Bay</figcaption>
             </figure>
             <figure class="in-card">
                 <picture>
-                    <source srcset="static/img/inside/lounge.webp" type="image/webp">
+                    <source type="image/webp" srcset="static/img/inside/lounge-800.webp 800w, static/img/inside/lounge.webp 1200w" sizes="(max-width: 859px) 86vw, 390px">
                     <img src="static/img/inside/lounge.jpg" alt="The lounge: sofa, armchair, coffee table and a TV" loading="lazy" width="1200" height="800">
                 </picture>
                 <figcaption><span class="mono">02</span>The Lounge</figcaption>
             </figure>
             <figure class="in-card">
                 <picture>
-                    <source srcset="static/img/inside/lobby.webp" type="image/webp">
+                    <source type="image/webp" srcset="static/img/inside/lobby-800.webp 800w, static/img/inside/lobby.webp 1200w" sizes="(max-width: 859px) 86vw, 390px">
                     <img src="static/img/inside/lobby.jpg" alt="The lobby with the Capital Golf Labs logo wall and the scoreboard TV" loading="lazy" width="1200" height="800">
                 </picture>
                 <figcaption><span class="mono">03</span>The Lobby</figcaption>
@@ -243,7 +228,10 @@
 <!-- ===================== TECHNOLOGY ===================== -->
 <section id="trackman" class="tech">
     <div class="tech-banner">
-        <img src="static/img/Trackman_iO_Side.jpg" alt="Trackman iO overhead camera detail" loading="lazy">
+        <picture>
+            <source type="image/webp" srcset="static/img/Trackman_iO_Side-800.webp 800w, static/img/Trackman_iO_Side.webp 1600w" sizes="100vw">
+            <img src="static/img/Trackman_iO_Side.jpg" alt="Trackman iO overhead camera detail" loading="lazy" width="1920" height="1080">
+        </picture>
         <div class="tech-banner-overlay">
             <span class="mono">Powered By</span>
             <span class="tech-wordmark text-grad">TRACKMAN iO</span>
@@ -387,8 +375,8 @@
                 <div class="plan-benefits-label">Member Benefits</div>
                 <ul class="plan-list">
                     <li><span class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.2 2.2 4.8-4.9"/></svg></span>3 One Hour Bookings</li>
-                    <li><span class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.2 2.2 4.8-4.9"/></svg></span>Private 24/7 Access to Premium Trackman iO Facility</li>
-                    <li><span class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.2 2.2 4.8-4.9"/></svg></span>One Free Guest Per Session</li>
+                    <li class="plan-shared"><span class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.2 2.2 4.8-4.9"/></svg></span>Private 24/7 Access to Premium Trackman iO Facility</li>
+                    <li class="plan-shared"><span class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.2 2.2 4.8-4.9"/></svg></span>One Free Guest Per Session</li>
                     <li><span class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.2 2.2 4.8-4.9"/></svg></span>Use Anytime Within 3 Months</li>
                     <li><span class="check"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 6.2l2.2 2.2 4.8-4.9"/></svg></span>One-Time Purchase</li>
                 </ul>
@@ -462,12 +450,11 @@
 </section>
 
 <!-- ===================== PARTNERS ===================== -->
-<section class="section section--line">
+<section class="section section--line partners">
     <div class="container">
         <header class="section-head section-head--center reveal">
             <span class="eyebrow">Preferred Partners</span>
             <h2 class="h2">Built With Trusted&nbsp;Gear</h2>
-            <p>From the technology in every bay to the clubs in your hands, we only use equipment we trust.</p>
         </header>
         <div class="partner-row reveal">
             <div class="partner-cell" aria-label="Trackman">
@@ -522,6 +509,8 @@
     </div>
 </section>
 
+</main>
+
 <!-- ===================== FOOTER ===================== -->
 <footer class="footer">
     <div class="container">
@@ -532,17 +521,16 @@
                 <span class="footer-hours">Open 24/7</span>
             </div>
             <div class="footer-col">
-                <h4>Explore</h4>
+                <h3>Explore</h3>
                 <ul>
                     <li><a href="#tech">The Concept</a></li>
-                    <li><a href="#how">How It Works</a></li>
                     <li><a href="#trackman">Technology</a></li>
                     <li><a href="#visit">Visit</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Members</h4>
+                <h3>Members</h3>
                 <ul>
                     <li><a href="join/#plans">Join Now</a></li>
                     <li><a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" target="_blank" rel="noopener">Member Booking</a></li>
@@ -551,7 +539,7 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Follow Along</h4>
+                <h3>Follow Along</h3>
                 <p>Behind-the-scenes updates, member events, and what's new at the lab.</p>
                 <a href="https://instagram.com/capitalgolflabs" target="_blank" rel="noopener" class="footer-insta">@capitalgolflabs</a>
             </div>
@@ -565,6 +553,7 @@
 
 <!-- Sticky mobile CTA -->
 <div class="mobile-sticky-cta" id="mobileStickyCta">
+    <a href="#try" class="btn btn-ghost">Try It Free</a>
     <a href="join/#plans" class="btn btn-primary">Join Now</a>
 </div>
 
