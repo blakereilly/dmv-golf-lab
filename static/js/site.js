@@ -4,7 +4,6 @@
     const $  = (s, r = document) => r.querySelector(s);
     const $$ = (s, r = document) => [...r.querySelectorAll(s)];
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const page = document.body.dataset.page || '';
 
     /* ---------- Nav: glass on scroll + reading progress ---------- */
     const nav = $('#main-nav');
@@ -77,13 +76,21 @@
         if (document.readyState === 'complete') afterLoad(); else window.addEventListener('load', afterLoad);
     }
 
-    /* ---------- Cursor spotlight on cards ---------- */
-    $$('.spot').forEach((el) => {
-        el.addEventListener('pointermove', (e) => {
-            const r = el.getBoundingClientRect();
-            el.style.setProperty('--mx', `${e.clientX - r.left}px`);
-            el.style.setProperty('--my', `${e.clientY - r.top}px`);
-        });
+    /* ---------- In-page links to a far-away section: skip most of the way, then glide the last bit ---------- */
+    document.addEventListener('click', (e) => {
+        const a = e.target.closest('a[href^="#"]');
+        if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
+        const id = a.getAttribute('href').slice(1);
+        const target = id && document.getElementById(id);
+        if (!target) return;
+        const gap = target.getBoundingClientRect().top;
+        if (Math.abs(gap) < window.innerHeight * 1.5) return;   // close by: the normal smooth scroll is fine
+        e.preventDefault();
+        // Show the target right away instead of waiting on its fade-in.
+        [target, ...$$('.reveal', target)].filter((el) => el.classList.contains('reveal')).forEach((el) => el.classList.add('landed', 'in'));
+        window.scrollTo({ top: window.scrollY + gap - Math.sign(gap) * 260, behavior: 'instant' });
+        target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+        history.pushState(null, '', '#' + id);
     });
 
     /* ---------- Nav scroll-spy (home) ---------- */
@@ -142,7 +149,7 @@
     }, { threshold: 0.5 });
     $$('.stat-number[data-count]').forEach((el) => statIO.observe(el));
 
-    /* ---------- Shot data (sample numbers, shared by the hero readout and Shot Lab) ---------- */
+    /* ---------- Shot data (sample numbers for the Shot Lab) ---------- */
     const CLUBS = {
         driver: { name: 'Driver', club: 112, ball: 167, smash: 1.49, launch: 12.1, spin: 2480, apex: 98, carry: 268, total: 291, peak: 0.60 },
         wood:   { name: '3 Wood', club: 106, ball: 156, smash: 1.47, launch: 10.9, spin: 3450, apex: 90, carry: 243, total: 259, peak: 0.58 },
@@ -193,32 +200,6 @@
             if (p < 1) requestAnimationFrame(step); else if (done) done();
         };
         requestAnimationFrame(step);
-    }
-
-    /* ---------- Hero readout: cycles through clubs ---------- */
-    const readout = $('#readout');
-    if (readout) {
-        const order = ['driver', 'iron', 'wedge', 'wood'];
-        const clubEl = $('.readout-club', readout);
-        const path = $('.flight', readout);
-        const ball = $('.ball', readout);
-        const vals = $$('[data-k]', readout);
-        const box = { x0: 8, x1: 312, ground: 66, top: 6, yds: 300, apexMax: 36 };
-        let i = 0;
-        let timer = null;
-        const show = () => {
-            const c = CLUBS[order[i % order.length]];
-            clubEl.textContent = c.name;
-            path.setAttribute('d', flight(c, box).d);
-            drawFlight(path, ball, 1400);
-            vals.forEach((el) => tweenNumber(el, c[el.dataset.k], DEC[el.dataset.k] || 0));
-            i++;
-        };
-        const start = () => { if (!timer) { show(); if (!reduceMotion) timer = setInterval(show, 4200); } };
-        const stop = () => { clearInterval(timer); timer = null; };
-        // Only run while the readout is visible on a desktop-sized screen.
-        new IntersectionObserver(([e]) => (e.isIntersecting && readout.offsetParent ? start() : stop()), { threshold: 0.2 }).observe(readout);
-        document.addEventListener('visibilitychange', () => (document.hidden ? stop() : readout.offsetParent && start()));
     }
 
     /* ---------- Shot Lab: pick a club, watch the flight ---------- */
@@ -416,7 +397,7 @@
 
     /* ---------- Sticky mobile CTA ---------- */
     const sticky = $('#mobileStickyCta');
-    if (sticky && page === 'home') {
+    if (sticky) {
         // Visible after the hero, hidden once the membership section is reached or passed.
         let heroGone = false;
         let memberSeen = false;
@@ -427,11 +408,6 @@
             else if (e.boundingClientRect.top > 0) memberSeen = false;
             update();
         }, { threshold: 0 }).observe($('#reserve'));
-    } else if (sticky && page === 'join') {
-        // Visible until the real Join button is on screen or scrolled past.
-        new IntersectionObserver(([e]) => {
-            sticky.classList.toggle('visible', !e.isIntersecting && e.boundingClientRect.top > 0);
-        }, { threshold: 0 }).observe($('.plan .btn'));
     }
 
     /* ---------- Phones: the updates form opens from a "Get Updates" button ---------- */
@@ -458,6 +434,8 @@
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
+            const error = $('.form-error', form);
+            if (error) error.hidden = true;
             txt.style.display = 'none';
             loading.style.display = 'inline-flex';
             btn.disabled = true;
@@ -470,14 +448,24 @@
                 timestamp: new Date().toISOString(),
             };
             try {
-                await fetch(SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data),
-                });
+                // The hidden "company" field is a spam trap: real visitors never fill it in.
+                if (!form.company || !form.company.value) {
+                    // no-cors responses are opaque, but a failed request still rejects.
+                    await fetch(SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(data),
+                    });
+                    if (typeof gtag === 'function') gtag('event', 'updates_signup', { source: data.source || '(not set)' });
+                }
             } catch (err) {
-                // no-cors responses are opaque; the row still lands in the Sheet.
+                // Couldn't reach the server: let them try again instead of claiming success.
+                loading.style.display = 'none';
+                txt.style.display = '';
+                btn.disabled = false;
+                if (error) error.hidden = false;
+                return;
             }
             loading.style.display = 'none';
             success.style.display = 'inline-flex';
