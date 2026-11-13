@@ -526,6 +526,7 @@ h1, h2, h3, h4 {
    CONCEPT
    ========================================================= */
 /* Heading + pitch, the three steps as one divided panel, then the capped-membership band */
+#tech .bg-grid { opacity: 0.22; }
 .concept { display: grid; gap: 1rem; }
 .concept-head { display: grid; gap: 1.1rem; margin-bottom: 1rem; }
 .concept-head p { max-width: 46ch; font-size: clamp(1rem, 1.25vw, 1.12rem); line-height: 1.7; color: var(--text-2); }
