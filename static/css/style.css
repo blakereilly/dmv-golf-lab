@@ -290,9 +290,31 @@ h1, h2, h3, h4 {
 /* =========================================================
    NAV
    ========================================================= */
+/* Seasonal banner above the nav. The nav sits just below it and slides up as it scrolls away (site.js sets --nav-top). */
+.has-promo { --promo-h: 36px; }
+.promo-bar {
+    position: relative;
+    z-index: 101;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--promo-h);
+    padding: 0 var(--gutter);
+    overflow: hidden;
+    background: linear-gradient(90deg, #102352, var(--blue-2) 50%, #102352);
+    color: #fff;
+    font-size: 0.86rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.promo-bar b { font-weight: 600; }
+.promo-bar:hover b { text-decoration: underline; text-underline-offset: 3px; }
+.promo-short { display: none; }
+
 .nav {
     position: fixed;
     inset: 0 0 auto;
+    top: var(--nav-top, var(--promo-h, 0px));
     z-index: 100;
     height: var(--nav-h);
     border-bottom: 1px solid transparent;
@@ -400,7 +422,7 @@ h1, h2, h3, h4 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: calc(var(--nav-h) + 2rem) var(--gutter) calc(2rem + env(safe-area-inset-bottom));
+    padding: calc(var(--nav-h) + var(--nav-top, var(--promo-h, 0px)) + 2rem) var(--gutter) calc(2rem + env(safe-area-inset-bottom));
     background: rgba(4, 6, 10, 0.97);
     opacity: 0;
     visibility: hidden;
@@ -516,7 +538,7 @@ h1, h2, h3, h4 {
 .js .hero-in {
     opacity: 0;
     transform: translateY(16px);
-    animation: hero-in 0.7s var(--ease) forwards;
+    animation: hero-in 0.55s var(--ease) forwards;
     animation-delay: var(--d, 0s);
 }
 @keyframes hero-in { to { opacity: 1; transform: none; } }
@@ -960,6 +982,9 @@ h1, h2, h3, h4 {
 .try-actions .btn { --h: 54px; }
 .try-number { margin-top: 0.2rem; text-align: center; font-size: 0.9rem; color: var(--text-3); }
 .try-number a { color: var(--text); font-weight: 600; }
+/* Gift card: same layout as the free-session card, with a blue tint */
+.gift-card { border-color: rgba(111, 151, 255, 0.38); background: linear-gradient(120deg, rgba(47, 107, 255, 0.16), rgba(47, 107, 255, 0.03) 65%); }
+.gift-card .eyebrow { color: var(--blue-hi); }
 
 /* Updates: one quiet line + button; the form opens on demand */
 .updates { max-width: 640px; margin: 2.5rem auto 0; text-align: center; }
@@ -1395,6 +1420,7 @@ a.review-name:hover { color: var(--blue-hi); }
 .steps p { margin-top: 0.25rem; color: var(--text-2); font-size: 0.92rem; line-height: 1.6; }
 .join-note { margin-top: 1.6rem; padding-top: 1.3rem; border-top: 1px solid var(--line); font-size: 0.92rem; color: var(--text-2); }
 .join-note a { color: var(--blue-hi); font-weight: 600; }
+.join-note + .join-note { margin-top: 0.7rem; padding-top: 0; border-top: 0; }
 
 .join-proof { max-width: 1000px; margin-top: 2.5rem; }
 .join-proof-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.8rem 1.5rem; margin-bottom: 1rem; }
@@ -1430,8 +1456,8 @@ a.review-name:hover { color: var(--blue-hi); }
    ========================================================= */
 .js .reveal {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+    transform: translateY(16px);
+    transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
     transition-delay: var(--d, 0s);
 }
 .js .reveal.in { opacity: 1; transform: none; }
@@ -1504,6 +1530,9 @@ html.landing { scroll-behavior: auto; }
     .partner-cell { height: 96px; padding: 1rem; }
     #plans { scroll-margin-top: calc(var(--nav-h) + 0.4rem); }
     .plan-name { font-size: 1rem; letter-spacing: 0.12em; }
+    .promo-long { display: none; }
+    .promo-short { display: inline; }
+    .promo-bar { font-size: 0.84rem; }
     /* homepage plans, phones: tighter cards; the Session Pack lists only what differs (full list is on /join) */
     #reserve .plan-shared { display: none; }
     #reserve .plan-price { margin-top: 1.2rem; }

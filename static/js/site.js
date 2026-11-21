@@ -7,9 +7,14 @@
 
     /* ---------- Nav: glass on scroll + reading progress ---------- */
     const nav = $('#main-nav');
+    const promo = $('.promo-bar');
+    let promoH = promo ? promo.offsetHeight : 0;
+    window.addEventListener('resize', () => { promoH = promo ? promo.offsetHeight : 0; onScroll(); }, { passive: true });
     const onScroll = () => {
         const y = window.scrollY;
-        if (nav) nav.classList.toggle('scrolled', y > 24);
+        if (nav) nav.classList.toggle('scrolled', y > Math.max(24, promoH));
+        // The nav rides just below the seasonal banner until it scrolls away.
+        if (promo) document.documentElement.style.setProperty('--nav-top', `${Math.max(0, promoH - y)}px`);
         const max = document.documentElement.scrollHeight - window.innerHeight;
         document.documentElement.style.setProperty('--progress', max > 0 ? Math.min(y / max, 1).toFixed(4) : 0);
     };
