@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap"></noscript>
-    <link rel="stylesheet" href="static/css/style.css?v=202611131315">
+    <link rel="stylesheet" href="static/css/style.css?v=202611211130">
     <!-- Google tag (gtag.js) -->
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -30,8 +30,8 @@
         setTimeout(function () { (window.requestIdleCallback || setTimeout)(go, { timeout: 2000 }); }, 1500);
       });
     </script>
-    <script defer src="static/js/analytics.js?v=202611131315"></script>
-    <script defer src="static/js/site.js?v=202611131315"></script>
+    <script defer src="static/js/analytics.js?v=202611211130"></script>
+    <script defer src="static/js/site.js?v=202611211130"></script>
     <link rel="canonical" href="https://capitalgolflabs.com/faq.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Capital Golf Labs">
@@ -135,7 +135,7 @@
           "name": "How do I join?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Two options: the Signature membership is $225/month with 5 hours included, month-to-month. The Session Pack is a one-time $165 for 3 one-hour bookings you can use anytime within 3 months. See both →"
+            "text": "Two options: the Signature membership is $225/month with 5 hours included, month-to-month. The Session Pack is a one-time $165 for 3 one-hour bookings you can use anytime within 3 months. See both"
           }
         },
         {
@@ -144,6 +144,14 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Yes. Come check out the studio with a free session first. Text us at (301) 580-6496 or email us and we'll get you set up."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you sell gift cards?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A $165 gift card covers three 1-hour sessions in the bay (a full Session Pack), or it can go toward a Signature membership. Buy a gift card"
           }
         },
         {
@@ -182,7 +190,13 @@
     }
     </script>
 </head>
-<body data-page="faq">
+<body data-page="faq" class="has-promo">
+
+<!-- Holiday gift card banner. Remove in January: delete this link and the "has-promo" class on <body>. -->
+<a class="promo-bar" href="https://booking.trackmangolf.com/venues/falls-church/topups" target="_blank" rel="noopener">
+    <span class="promo-long">The gift every golfer wants: three sessions in a private Trackman bay. <b>Gift cards, $165 &rarr;</b></span>
+    <span class="promo-short">The gift every golfer wants. <b>3 sessions, $165 &rarr;</b></span>
+</a>
 
 <!-- ===================== NAV ===================== -->
 <nav class="nav" id="main-nav" aria-label="Main">
@@ -223,6 +237,7 @@
     <div class="mobile-menu-ctas">
         <a href="join/#plans" class="btn btn-primary">Join Now</a>
         <a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" class="btn btn-ghost" target="_blank" rel="noopener">Member Booking</a>
+        <a href="https://booking.trackmangolf.com/venues/falls-church/topups" class="mobile-try" target="_blank" rel="noopener">Buy a gift card</a>
     </div>
 </div>
 
@@ -304,21 +319,26 @@
             </details>
 
             <details class="faq-item">
-                <summary><span class="faq-idx">13</span><span class="faq-q">How does booking work once I join?</span><span class="faq-marker" aria-hidden="true"></span></summary>
+                <summary><span class="faq-idx">13</span><span class="faq-q">Do you sell gift cards?</span><span class="faq-marker" aria-hidden="true"></span></summary>
+                <div class="faq-answer"><p>Yes. A $165 gift card covers three 1-hour sessions in the bay (a full Session Pack), or it can go toward a Signature membership. <a href="https://booking.trackmangolf.com/venues/falls-church/topups" target="_blank" rel="noopener">Buy a gift card →</a></p></div>
+            </details>
+
+            <details class="faq-item">
+                <summary><span class="faq-idx">14</span><span class="faq-q">How does booking work once I join?</span><span class="faq-marker" aria-hidden="true"></span></summary>
                 <div class="faq-answer"><p>Book anytime through the Trackman Golf app or the <a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" target="_blank" rel="noopener">Trackman Booking web portal</a>. After you sign up, we'll send you everything you need to get set up and book your first session.</p></div>
             </details>
 
             <details class="faq-item">
-                <summary><span class="faq-idx">14</span><span class="faq-q">How far ahead can I book, and for how long?</span><span class="faq-marker" aria-hidden="true"></span></summary>
+                <summary><span class="faq-idx">15</span><span class="faq-q">How far ahead can I book, and for how long?</span><span class="faq-marker" aria-hidden="true"></span></summary>
                 <div class="faq-answer"><p><b>Signature</b> members can book up to 14 days ahead, hold up to 2 hours of upcoming bookings at a time, and book sessions of up to 2 hours. <b>Session Pack</b> holders can book up to 7 days ahead, hold 1 hour at a time, and book 1-hour sessions.</p></div>
             </details>
 
             <details class="faq-item">
-                <summary><span class="faq-idx">15</span><span class="faq-q">Will I be able to get a time with only one bay?</span><span class="faq-marker" aria-hidden="true"></span></summary>
+                <summary><span class="faq-idx">16</span><span class="faq-q">Will I be able to get a time with only one bay?</span><span class="faq-marker" aria-hidden="true"></span></summary>
                 <div class="faq-answer"><p>Yes. Membership is capped on purpose. We limit the number of members so the bay isn't overbooked and you can get a time when you want to play.</p></div>
             </details>
             <details class="faq-item">
-                <summary><span class="faq-idx">16</span><span class="faq-q">Do unused hours roll over?</span><span class="faq-marker" aria-hidden="true"></span></summary>
+                <summary><span class="faq-idx">17</span><span class="faq-q">Do unused hours roll over?</span><span class="faq-marker" aria-hidden="true"></span></summary>
                 <div class="faq-answer"><p>No — your 5 included hours are use-them-or-lose-them each month. Need more time? Additional hours are $40/hr.</p></div>
             </details>
 
@@ -358,6 +378,7 @@
                 <ul>
                     <li><a href="join/#plans">Join Now</a></li>
                     <li><a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" target="_blank" rel="noopener">Member Booking</a></li>
+                    <li><a href="https://booking.trackmangolf.com/venues/falls-church/topups" target="_blank" rel="noopener">Gift Cards</a></li>
                     <li><a href="sms:+13015806496">Text (301) 580-6496</a></li>
                     <li><a href="mailto:blake@capitalgolflabs.com">blake@capitalgolflabs.com</a></li>
                 </ul>

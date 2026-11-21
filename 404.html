@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap"></noscript>
-    <link rel="stylesheet" href="/static/css/style.css?v=202611131315">
+    <link rel="stylesheet" href="/static/css/style.css?v=202611211130">
     <!-- Google tag (gtag.js) -->
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -30,10 +30,16 @@
         setTimeout(function () { (window.requestIdleCallback || setTimeout)(go, { timeout: 2000 }); }, 1500);
       });
     </script>
-    <script defer src="/static/js/analytics.js?v=202611131315"></script>
-    <script defer src="/static/js/site.js?v=202611131315"></script>
+    <script defer src="/static/js/analytics.js?v=202611211130"></script>
+    <script defer src="/static/js/site.js?v=202611211130"></script>
 </head>
-<body data-page="404">
+<body data-page="404" class="has-promo">
+
+<!-- Holiday gift card banner. Remove in January: delete this link and the "has-promo" class on <body>. -->
+<a class="promo-bar" href="https://booking.trackmangolf.com/venues/falls-church/topups" target="_blank" rel="noopener">
+    <span class="promo-long">The gift every golfer wants: three sessions in a private Trackman bay. <b>Gift cards, $165 &rarr;</b></span>
+    <span class="promo-short">The gift every golfer wants. <b>3 sessions, $165 &rarr;</b></span>
+</a>
 
 <!-- ===================== NAV ===================== -->
 <nav class="nav" id="main-nav" aria-label="Main">
@@ -74,6 +80,7 @@
     <div class="mobile-menu-ctas">
         <a href="/join/#plans" class="btn btn-primary">Join Now</a>
         <a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" class="btn btn-ghost" target="_blank" rel="noopener">Member Booking</a>
+        <a href="https://booking.trackmangolf.com/venues/falls-church/topups" class="mobile-try" target="_blank" rel="noopener">Buy a gift card</a>
     </div>
 </div>
 

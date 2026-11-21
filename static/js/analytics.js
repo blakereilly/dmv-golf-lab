@@ -6,6 +6,7 @@
 //   google_reviews_click       Read All on Google / Leave a Review
 //   free_visit_text_click      Text Us for a free session (sms: links)
 //   free_visit_email_click     Email about a free session
+//   gift_card_click            any link to the Trackman gift card page
 //   try_it_free_click          Try It Free buttons (hero and the phone sticky bar)
 //   updates_signup             the Get Updates form was sent (fired from site.js)
 document.addEventListener('click', (e) => {
@@ -20,6 +21,8 @@ document.addEventListener('click', (e) => {
         name = 'free_visit_email_click';
     } else if (url.hostname === location.hostname && url.hash === '#try') {
         name = 'try_it_free_click';
+    } else if (url.hostname === 'booking.trackmangolf.com' && url.pathname.includes('/topups')) {
+        name = 'gift_card_click';
     } else if (url.hostname === 'booking.trackmangolf.com') {
         name = url.pathname.includes('/memberships') ? 'membership_checkout_click' : 'member_booking_click';
     } else if (url.hostname === location.hostname && /^\/join\/?$/.test(url.pathname)) {

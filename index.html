@@ -19,7 +19,7 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap"></noscript>
     <link rel="preload" as="image" href="static/img/hero-trackman-1600.webp" type="image/webp" fetchpriority="high" media="(max-width: 959px)">
     <link rel="preload" as="image" href="static/img/hero-trackman.webp" type="image/webp" fetchpriority="high" media="(min-width: 960px)">
-    <link rel="stylesheet" href="static/css/style.css?v=202611131315">
+    <link rel="stylesheet" href="static/css/style.css?v=202611211130">
     <!-- Google tag (gtag.js) -->
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -32,8 +32,8 @@
         setTimeout(function () { (window.requestIdleCallback || setTimeout)(go, { timeout: 2000 }); }, 1500);
       });
     </script>
-    <script defer src="static/js/analytics.js?v=202611131315"></script>
-    <script defer src="static/js/site.js?v=202611131315"></script>
+    <script defer src="static/js/analytics.js?v=202611211130"></script>
+    <script defer src="static/js/site.js?v=202611211130"></script>
     <link rel="canonical" href="https://capitalgolflabs.com/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Capital Golf Labs">
@@ -80,7 +80,13 @@
     }
     </script>
 </head>
-<body data-page="home">
+<body data-page="home" class="has-promo">
+
+<!-- Holiday gift card banner. Remove in January: delete this link and the "has-promo" class on <body>. -->
+<a class="promo-bar" href="https://booking.trackmangolf.com/venues/falls-church/topups" target="_blank" rel="noopener">
+    <span class="promo-long">The gift every golfer wants: three sessions in a private Trackman bay. <b>Gift cards, $165 &rarr;</b></span>
+    <span class="promo-short">The gift every golfer wants. <b>3 sessions, $165 &rarr;</b></span>
+</a>
 
 <!-- ===================== NAV ===================== -->
 <nav class="nav" id="main-nav" aria-label="Main">
@@ -122,6 +128,7 @@
         <a href="join/#plans" class="btn btn-primary">Join Now</a>
         <a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" class="btn btn-ghost" target="_blank" rel="noopener">Member Booking</a>
         <a href="sms:+13015806496?&amp;body=Hi%21%20I%27d%20like%20to%20come%20check%20out%20Capital%20Golf%20Labs%20with%20a%20free%20session." class="mobile-try">Text us for a free session</a>
+        <a href="https://booking.trackmangolf.com/venues/falls-church/topups" class="mobile-try" target="_blank" rel="noopener">Buy a gift card</a>
     </div>
 </div>
 
@@ -134,17 +141,17 @@
 
     <div class="container">
         <div class="hero-content">
-            <div class="hero-badge hero-in" style="--d:.1s"><span class="live-dot"></span><strong>Now Open</strong><span class="sep">/</span>Falls Church, VA</div>
-            <h1 class="hero-title hero-in" style="--d:.2s"><span class="line">Your Private</span><span class="line">Golf Lab<span class="dot">.</span></span></h1>
-            <p class="hero-sub hero-in" style="--d:.32s">
+            <div class="hero-badge hero-in" style="--d:.05s"><span class="live-dot"></span><strong>Now Open</strong><span class="sep">/</span>Falls Church, VA</div>
+            <h1 class="hero-title hero-in" style="--d:.1s"><span class="line">Your Private</span><span class="line">Golf Lab<span class="dot">.</span></span></h1>
+            <p class="hero-sub hero-in" style="--d:.16s">
                 Open 24/7, built entirely around your game.<br>
                 Just you, your swing, and tour-level data.
             </p>
-            <div class="hero-ctas hero-in" style="--d:.44s">
+            <div class="hero-ctas hero-in" style="--d:.22s">
                 <a href="join/#plans" class="btn btn-primary">Join Now<svg class="btn-arrow" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
                 <a href="#try" class="btn btn-ghost">Try It Free</a>
             </div>
-            <a href="#tech" class="hero-more hero-in" style="--d:.52s">See How It Works<span aria-hidden="true">&darr;</span></a>
+            <a href="#tech" class="hero-more hero-in" style="--d:.27s">See How It Works<span aria-hidden="true">&darr;</span></a>
         </div>
     </div>
 
@@ -411,6 +418,15 @@
                     <span class="try-number">Or text <a href="sms:+13015806496?&amp;body=Hi%21%20I%27d%20like%20to%20come%20check%20out%20Capital%20Golf%20Labs%20with%20a%20free%20session.">(301) 580-6496</a></span>
                 </div>
             </aside>
+
+            <aside class="try-card gift-card reveal" id="gift">
+                <span class="eyebrow">Give It as a Gift</span>
+                <h3>Know a golfer? Give them the Lab.</h3>
+                <p>A $165 gift card covers three 1-hour sessions in a private Trackman bay, a full Session Pack. They can also put it toward a Signature membership.</p>
+                <div class="try-actions">
+                    <a href="https://booking.trackmangolf.com/venues/falls-church/topups" class="btn btn-primary btn-block" target="_blank" rel="noopener">Buy a Gift Card</a>
+                </div>
+            </aside>
         </div>
 
         <div class="updates reveal">
@@ -551,6 +567,7 @@
                 <ul>
                     <li><a href="join/#plans">Join Now</a></li>
                     <li><a href="https://booking.trackmangolf.com/venues/falls-church/booking/falls-church-simulator" target="_blank" rel="noopener">Member Booking</a></li>
+                    <li><a href="https://booking.trackmangolf.com/venues/falls-church/topups" target="_blank" rel="noopener">Gift Cards</a></li>
                     <li><a href="sms:+13015806496">Text (301) 580-6496</a></li>
                     <li><a href="mailto:blake@capitalgolflabs.com">blake@capitalgolflabs.com</a></li>
                 </ul>
